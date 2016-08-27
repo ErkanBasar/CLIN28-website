@@ -26,7 +26,7 @@ SECRET_KEY = '^2osts2_^&-=p%gmdfmav$aq1q=4c99(*)$i9oo&9om-m3#q9)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['atila16-lama.herokuapp.com']
 
 
 # Application definition
