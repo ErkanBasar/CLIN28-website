@@ -12,6 +12,7 @@ old/
 .env/
 venv/
 envati/
+*.pyc
 
 # C extensions
 *.so
