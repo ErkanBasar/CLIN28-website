@@ -2,7 +2,15 @@
 
 
 
+.white-font{
+  color: #FFF !important;
+  font-size: 15px;
+}
 
+.black-font{
+  color: #000 !important;
+  font-size: 15px;
+}
 
 #header1-40 .btn {
   font-size: 20px;
@@ -18,7 +26,8 @@
   font-size: 16px;
 }
 #menu-41.mbr-navbar--stuck .mbr-navbar__section {
-  background: #395259;
+  background: rgb(28, 73, 110);
+  border-bottom: 1px solid #FFF;
 }
 #menu-41 .mbr-brand__name a {
   font-size: 24px;
@@ -27,8 +36,9 @@
 #menu-41 .mbr-navbar__items a {
   font-family: 'Oxygen', sans-serif;
 }
-#features1-42 P {
+#features1-42{
   text-align: center;
+  color: #FFF !important;
 }
 #features1-44 P {
   text-align: center;

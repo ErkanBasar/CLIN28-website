@@ -1009,6 +1009,7 @@ html {
     top: 0;
     width: 100%;
     z-index: 9999;
+    opacity: 0.8;
   }
   .mbr-navbar--auto-collapse .mbr-navbar__menu-box {
     display: table-cell;
@@ -1429,7 +1430,7 @@ html {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 2;
+  z-index: -1;
 }
 .mbr-google-map__marker {
   color: #252525;
@@ -1450,14 +1451,40 @@ html {
   letter-spacing: 2px;
   line-height: 50px;
   margin: -18px 0 1px 0;
+  padding-bottom: 70px;
+  margin-bottom: 20px;
+  position: relative;
+  top: 8px;
+}
+.mbr-hero__title {
+  font-size: 10em;
+  font-weight: bold;
+  left: -2px;
+  letter-spacing: 2px;
+  line-height: 50px;
+  margin: -18px 100px 1px 0;
   padding-bottom: 41px;
   position: relative;
   top: 8px;
 }
+@media (max-width: 767px) {
+    .mbr-hero__title{
+      font-size: 3em;
+      margin: -18px 0 1px 0;
+  }
+}
 .mbr-hero__subtext {
   font-size: 21px;
   line-height: 29px;
-  margin: -32px 0 3px 0;
+  margin: 0px 0 3px 0;
+  padding: 0 0 41px 0;
+  position: relative;
+  top: 6px;
+}
+.mbr-hero__subtext {
+  font-size: 21px;
+  line-height: 29px;
+  margin: 0px 0 3px 0;
   padding: 0 0 41px 0;
   position: relative;
   top: 6px;
@@ -2045,4 +2072,71 @@ html {
 	text-indent: -2400px;
 	text-align: center;
 	padding: 0;
+}
+
+
+/* CUSTOM */
+
+.map {
+    height: 500px;
+    padding: 0;
+}
+
+
+
+header .intro-text {
+  padding-top: 150px;
+  /*padding-bottom: 50px;*/
+}
+header .intro-text .intro-lead-in {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+header .intro-text .intro-heading {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  header .intro-text {
+    /*padding-top: 300px;*/
+    padding-bottom: 450px;
+  }
+  header .intro-text .intro-lead-in {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+  header .intro-text .intro-heading {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10em;
+    line-height: 75px;
+    margin-bottom: 50px;
+  }
+}
+
+section h2.section-heading {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+section h3.section-subheading {
+  font-size: 16px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 30px;
 }
