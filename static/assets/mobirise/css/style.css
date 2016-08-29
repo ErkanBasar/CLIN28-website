@@ -1843,6 +1843,11 @@ html {
 }
 .mbr-footer__copyright {
   margin: 0;
+  text-decoration: none;
+}
+.mbr-footer__copyright a{
+  color: #6dadc1;
+  text-decoration: none;
 }
 .mbr-buttons {
   margin: -26px 0 13px 0;
