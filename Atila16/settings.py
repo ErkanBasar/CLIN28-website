@@ -16,14 +16,14 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '^2osts2_^&-=p%gmdfmav$aq1q=4c99(*)$i9oo&9om-m3#q9)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+
 DEBUG = True
+
 
 ALLOWED_HOSTS = ['atila16-lama.herokuapp.com', '127.0.0.1', 'localhost', 'http://applejack.science.ru.nl/atila2016']
 
