@@ -7,7 +7,7 @@ class Home(View):
 
 	def get(self, request):
 
-		underconst = True
+		underconst = False
 
 		if(underconst is False):
 			return render(request, 'video-background.html', {})
