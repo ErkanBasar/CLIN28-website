@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v2.6.1, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="{% static 'assets/images/discover-mobile-350x350-16.png' %}" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'assets/images/Radboud/favicon.png' %}" type="image/x-icon">
   <meta name="description" content="video background">
   <title>ATILA'16</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -44,7 +44,7 @@
                             <ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#program" >PROGRAM</a></li> 
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#header1-43">VENUE</a></li>
-                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#" onclick="alert('Coming Soon...');">SOCIAL EVENTS</a></li> 
+                                <!--li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#" onclick="alert('Coming Soon...');">SOCIAL EVENTS</a></li--> 
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#features1-52">PARTICIPANTS</a></li>
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#footer1-58">CONTACT</a></li></ul></div>
                         <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active">
@@ -90,96 +90,105 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 </section>
 
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="program" >
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="program" >
     <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #e7e7e7;"></div>
     <div class="mbr-section__container mbr-section__container--std-padding container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-                        <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">PROGRAM</h2>
-                        </div>
+                    <div class="mbr-header mbr-header--center mbr-header--std-padding">
+                        <h2 class="mbr-header__text">PROGRAM</h2>
+                    </div>
 
-            <ul class="nav nav-tabs nav-justified">
-                 <li class="active"><a data-toggle="tab" href="#day1">October 20<sup>th</sup></a></li>
-                 <li><a data-toggle="tab" href="#day2">October 21<sup>st</sup></a></li>
-            </ul><br>
+                    <ul class="nav nav-tabs nav-justified">
+                         <li class="active"><a data-toggle="tab" href="#day1">October 20<sup>th</sup></a></li>
+                         <li><a data-toggle="tab" href="#day2">October 21<sup>st</sup></a></li>
+                    </ul><br>
 
-                <!-- DAY 1 -->
-             <div class="tab-content">
-                <div id='day1' class="tab-pane fade in active">
-                    <ul class="timeline">
-                        {% if programDay1 %}
-                        {% for p in programDay1 %}
-                        {% if forloop.counter|divisibleby:2 %}
-                        <li  class="timeline-inverted">
-                        {% else %}
-                        <li>
-                        {% endif %}
-                          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-time" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
-                          <div class="timeline-panel">
-                            <div class="timeline-footer">
-                                <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{p.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
-                                <div class='timeline-title'><small>{{p.time}}</small></div>
-                                <h2>{{p.title}}</h2>
-                                <p>{% for s in p.speakers %}
-                                        {{ s }}
-                                    {% endfor %}</p>
-                            </div>
-                            <div id='{{p.uniqueID}}' class="timeline-body collapse">
-                              <p>{{p.abstract}}</p>
-                            </div>
-                          </div>
-                        </li>
-                        {% endfor %}
+                       
+                     <div class="tab-content">
 
-                        {% else %}
-                        There is not any event to show
-                        {% endif %}
-                        
-                        <li class="clearfix" style="float: none;"></li>
-                    </ul>
-                 </div>
+                         <!-- DAY 1 -->                        
+                        <div id='day1' class="tab-pane fade in active accordion-group">
+                            <ul class="timeline">
+                                {% if programDay1 %}
+                                    {% for p in programDay1 %}
+                                        {% if forloop.counter|divisibleby:2 %}
+                                        <li  class="timeline-inverted">
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        {% else %}
+                                        <li>
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        {% endif %}
+                                          <div class="timeline-panel">
 
-                <!-- DAY 2 -->
+                                                <div class="timeline-footer">
+                                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{p.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
+                                                    <div class='timeline-title'><small>{{p.time}}</small></div>
+                                                    <h2>{{p.title}}</h2>
+                                                    <p>{% for s in p.speakers %}
+                                                            {{ s }}{% if forloop.last %} {% else %},{% endif %}
+                                                        {% endfor %}</p>
+                                                </div>
 
-                <div id='day2' class="tab-pane fade in">
-                    <ul class="timeline">
-                        {% if programDay2 %}
-                        {% for p in programDay2 %}
-                            {% if forloop.counter|divisibleby:2 %}
-                            <li  class="timeline-inverted">
-                            {% else %}
-                            <li>
-                            {% endif %}
-                              <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-time" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
-                              <div class="timeline-panel">
-                                <div class="timeline-footer">
-                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{p.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
-                                    <div class='timeline-title'><small>{{p.time}}</small></div>
-                                    <h2>{{p.title}}</h2>
-                                    <p>{% for s in p.speakers %}
-                                            {{ s }}
-                                        {% endfor %}</p>
-                                </div>
-                                <div id='{{p.uniqueID}}' class="timeline-body collapse">
-                                  <p>{{p.abstract}}</p>
-                                </div>
-                              </div>
-                            </li>
-                        {% endfor %}
+                                                <div id='{{p.uniqueID}}' class="timeline-body collapse">
+                                                  <p>{{p.abstract}}</p>
+                                                </div>
 
-                        {% else %}
-                        There is not any event to show
-                        {% endif %}
-                        
-                        <li class="clearfix" style="float: none;"></li>
-                    </ul>
-                 </div>
+                                          </div>
+                                        </li>
+                                    {% endfor %}
+                                {% else %}
+                                There is not any event to show
+                                {% endif %}
+                                
+                                <li class="clearfix" style="float: none;"></li>
+                            </ul>
+                         </div>
 
-             </div>
+                        <!-- DAY 2 -->
 
-            </div>
+                        <div id='day2' class="tab-pane fade in">
+                            <ul class="timeline">
+                                {% if programDay2 %}
+                                    {% for p in programDay2 %}
+                                        {% if forloop.counter|divisibleby:2 %}
+                                        <li  class="timeline-inverted">
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        {% else %}
+                                        <li>
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        {% endif %}
+                                          <div class="timeline-panel">
+
+                                                <div class="timeline-footer">
+                                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{p.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
+                                                    <div class='timeline-title'><small>{{p.time}}</small></div>
+                                                    <h2>{{p.title}}</h2>
+                                                    <p>{% for s in p.speakers %}
+                                                            {{ s }}
+                                                        {% endfor %}</p>
+                                                </div>
+
+                                                <div id='{{p.uniqueID}}' class="timeline-body collapse">
+                                                  <p>{{p.abstract}}</p>
+                                                </div>
+
+                                          </div>
+                                        </li>
+                                    {% endfor %}
+
+                                {% else %}
+                                There is not any event to show
+                                {% endif %}
+                                
+                                <li class="clearfix" style="float: none;"></li>
+                            </ul>
+                         </div>
+
+                     </div><!-- tab-content -->
+
+                </div><!-- row -->
             </div>
         </div>
     </div>
@@ -208,9 +217,26 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 <label for="nameform">E-mail<span class="red-star"> *</span></label>
                                 <input type="email" class="form-control" name="email" required >
                             </div>
-                            <div class="form-group">
+                            <!--div class="form-group">
                                 <label for="nameform">Affiliation<span class="red-star"> *</span></label>
                                 <input type="text" class="form-control" name="affiliation" required >
+                            </div-->
+                            <div class="form-group">
+                                <label for="nameform">Affiliation<span class="red-star"> *</span></label><br>
+                                <div class="btn-group btn-group-justified" data-toggle="buttons">
+                                  <label class="btn btn-primary btn-check" >
+                                    <input type="radio" name='affiliation' value='clips' autocomplete="off" required><img class="undefined" src="{% static 'assets/images/Radboud/clips.png'%}" style='padding-top: 6%; max-width:60%'>
+                                  </label>
+                                  <label class="btn btn-primary btn-check">
+                                    <input type="radio" name='affiliation' value='ticc' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/ticc.png'%}" style='padding-top: 6%; max-width:50%'>
+                                  </label>
+                                  <label class="btn btn-primary btn-check">
+                                    <input type="radio" name='affiliation' value='lt3' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/lt3.png'%}" style='padding-top: 6%; max-width:50%'>
+                                  </label>
+                                  <label class="btn btn-primary btn-check">
+                                    <input type="radio" name='affiliation' value='lama' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/logo-LanguageMachines.png'%}" style='padding-top: 6%; max-width:80%'>
+                                  </label>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="nameform">Please click on the ones you will attend<span class="red-star"> *</span></label><br>
@@ -234,7 +260,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 <label for="nameform">Would you like us to reserve a hotel room for you in Soeterbeeck?<span class="red-star"> *</span></label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='hotel' value='Yes' autocomplete="off"> YES
+                                    <input type="radio" name='hotel' value='Yes' autocomplete="off" required> YES
                                   </label>
                                   <label class="btn btn-primary btn-check">
                                     <input type="radio" name='hotel' value='No' autocomplete="off"> NO
@@ -245,16 +271,19 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 <label for="nameform">What type of room do you prefer?</label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='single' autocomplete="off"> Single Room
+                                    <input type="radio" name='room' value='single' autocomplete="off" > Single Room
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='double' autocomplete="off"> Double Room
+                                    <input type="radio" name='room' value='double' autocomplete="off" > Double Room
+                                  </label>
+                                  <label class="btn btn-primary btn-check">
+                                    <input type="radio" name='room' value='na' autocomplete="off" required> N/A
                                   </label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="nameform">Please write the name of your roommate if you prefer someone</label>
-                                <input type="text" class="form-control" name="roommate" required >
+                                <input type="text" class="form-control" name="roommate">
                             </div>
                             <div class="mbr-buttons mbr-buttons--right"><input type="submit" id='reg-btn' name='register' value='REGISTER' class="mbr-buttons__btn btn btn-lg btn-primary"></div>
                         </form>
@@ -351,10 +380,10 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
             <div>
                 <div class="thumbnail">
                     <div class="image row"><a href='http://www.clips.uantwerpen.be/' target='_blank'>
-                        <img class="undefined" src="{% static 'assets/images/Radboud/clips.png'%}" style='padding-top: 6%; max-width:60%'></a></div>
+                        <img class="undefined" src="{% static 'assets/images/Radboud/clips.png'%}" style='padding-top: 6%; max-width:60%; margin-bottom:40px;'></a></div>
                     <div class="caption row">
                             <ul>{% for p in clips %}
-                                <li>{{p}}</li>
+                                <li>{{p.name}}</li>
                                 {% endfor %}
                             </ul>
                     </div>
@@ -366,7 +395,7 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
                         <img class="undefined" src="{% static 'assets/images/Radboud/ticc.png'%}"></a></div>
                     <div class="caption row">
                             <ul>{% for p in ticc %}
-                                <li>{{p}}</li>
+                                <li>{{p.name}}</li>
                                 {% endfor %}
                             </ul>
                     </div>
@@ -378,7 +407,7 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
                         <img class="undefined" src="{% static 'assets/images/Radboud/lt3.png'%}"></a></div>
                     <div class="caption row">
                             <ul>{% for p in lt3 %}
-                                <li>{{p}}</li>
+                                <li>{{p.name}}</li>
                                 {% endfor %}
                             </ul>
                     </div>
@@ -390,7 +419,7 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
                         <img class="undefined" src="{% static 'assets/images/Radboud/logo-LanguageMachines.png'%}" style='max-width:75%; margin-bottom:20px;'></a></div>
                     <div class="caption row">
                             <ul>{% for p in lama %}
-                                <li>{{p}}</li>
+                                <li>{{p.name}}</li>
                                 {% endfor %}
                             </ul>
                     </div>
@@ -480,6 +509,24 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
         }
     }
     });
+
+    $(function () {
+        var active = true;
+        $('#day1').on('show.bs.collapse', function () {
+            if (active) $('#day1 .in').collapse('hide');
+        });
+    });
+    $(function () {
+        var active = true;
+        $('#day2').on('show.bs.collapse', function () {
+            if (active) $('#day2 .in').collapse('hide');
+        });
+    });
+
+    $('button').click(function () {
+      var atLeastOneIsChecked = $('input:checkbox').is(':checked');
+      // Do something with atLeastOneIsChecked
+    });
     </script>
 
   
@@ -489,6 +536,20 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
   </script>
   {% else %}
   {% endif %}  
+
+{% if warningalert == "True" %}
+  <script type="text/javascript">
+    alert('Registration canceled because no event was chosen. Please try registering again.')
+  </script>
+{% else %}
+{% endif %}  
+
+{% if emailwarningalert == "True" %}
+  <script type="text/javascript">
+    alert('Registration canceled because the given email is already in our database. Are you sure that you are not registered?')
+  </script>
+{% else %}
+{% endif %}  
   
 </body>
 </html>
