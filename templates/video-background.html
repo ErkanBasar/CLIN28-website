@@ -666,10 +666,10 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 <label for="nameform">Would you like us to reserve a hotel room for you in Soeterbeeck?<span class="red-star"> *</span></label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='hotel' value='True' autocomplete="off"> YES
+                                    <input type="radio" name='hotel' value='Yes' autocomplete="off"> YES
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='hotel' value='False' autocomplete="off"> NO
+                                    <input type="radio" name='hotel' value='No' autocomplete="off"> NO
                                   </label>
                                 </div>
                             </div>
@@ -873,7 +873,7 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
   <script src="{% static 'assets/social-likes/social-likes.js' %}"></script>
   <script src="{% static 'assets/mobirise/js/script.js' %}"></script>
   <script src="{% static 'assets/mobirise-gallery/script.js' %}"></script>
-  
+
   <script type="text/javascript">
     $(document).ready(function () {
         $('#map').addClass('scrolloff');                // set the mouse events to none when doc is ready
@@ -892,6 +892,14 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
         
     });
     </script>
+
+  
+  {% if registeralert == "True" %}
+  <script type="text/javascript">
+    alert('Thank you for registering.')
+  </script>
+  {% else %}
+  {% endif %}  
   
 </body>
 </html>
