@@ -11,13 +11,19 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import configparser
+
+config = configparser.ConfigParser()
+config.read("data/auth.ini")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+HOSTNAME = os.uname()[1]
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^2osts2_^&-=p%gmdfmav$aq1q=4c99(*)$i9oo&9om-m3#q9)'
+SECRET_KEY = config.get('settings', 'secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -100,6 +106,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = config.get('mail', 'fromaddr')
+EMAIL_HOST_PASSWORD = config.get('mail', 'password')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -118,9 +133,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 
-STATIC_URL = '/atila2016/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "/atila2016/static")
-]
+if HOSTNAME[:9] == "applejack":     #for the server side
+    STATIC_URL = '/atila2016/static/'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "/atila2016/static/")
+    ]
+else:                               #to work on local
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static")
+    ]
+
+
 
