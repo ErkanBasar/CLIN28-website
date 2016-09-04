@@ -6,6 +6,8 @@ import os
 import pymongo as pm
 import configparser
 
+import program as p
+
 c = configparser.ConfigParser()
 c.read("data/auth.ini")
 
@@ -27,10 +29,21 @@ class Home(View):
 
 		underconst = False
 
+		programDay1 = p.programDay1
+
+		programDay2 = p.programDay2
+
+
 		if(underconst is False):
-			return render(request, 'video-background.html', {'registeralert':'False',})
+			return render(request, 'video-background.html', {
+				'registeralert':'False',
+				'programDay1':programDay1,
+				'programDay2':programDay2,
+			})
 		else:
-			return render(request, 'under_construction.html', {'registeralert':'False',})
+			return render(request, 'under_construction.html', {
+				'registeralert':'False',
+			})
 
 
 	def post(self, request):
@@ -47,9 +60,10 @@ class Home(View):
 			diet = request.POST['diet']
 
 			hotel = request.POST['hotel']
-			room = request.POST['room']			
+			room = request.POST['room']	
+			roommate = request.POST['roommate']			
 
-			info = {'name':name,'email':email,'affiliation':affiliation, 'diet':diet,'hotel':hotel,'room':room}
+			info = {'name':name,'email':email,'affiliation':affiliation, 'diet':diet,'hotel':hotel,'room':room, 'roommate':roommate}
 
 			for e in events:
 				info[e] = 'Yes'
