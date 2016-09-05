@@ -58,14 +58,6 @@ class Home(View):
 
 		if "register" in request.POST:				
 
-			programDay1 = p.programDay1
-			programDay2 = p.programDay2
-			clips = list(coll.find({'affiliation':'CLiPS'}, {'name':1,'_id':0}))
-			ticc = list(coll.find({'affiliation':'TiCC'}, {'name':1,'_id':0}))
-			lt3 = list(coll.find({'affiliation':'LT3'}, {'name':1,'_id':0}))
-			lama = list(coll.find({'affiliation':'LaMa'}, {'name':1,'_id':0}))
-
-
 			name = request.POST['name']
 			email = request.POST['email']
 			affiliation = request.POST['affiliation']
@@ -84,6 +76,13 @@ class Home(View):
 			info = {'name':name,'email':email,'affiliation':affiliation, 'diet':diet,'hotel':hotel,'room':room, 'roommate':roommate}
 
 			if(list(coll.find({'email':email}))):
+
+				programDay1 = p.programDay1
+				programDay2 = p.programDay2
+				clips = list(coll.find({'affiliation':'CLiPS'}, {'name':1,'_id':0}))
+				ticc = list(coll.find({'affiliation':'TiCC'}, {'name':1,'_id':0}))
+				lt3 = list(coll.find({'affiliation':'LT3'}, {'name':1,'_id':0}))
+				lama = list(coll.find({'affiliation':'LaMa'}, {'name':1,'_id':0}))
 
 				return render(request, 'video-background.html', {
 					'emailwarningalert':'True',
@@ -114,8 +113,21 @@ class Home(View):
 
 
 				if(affiliation=='LaMa'):
+
 					return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
+
+				elif(affiliation=='Other'):
+
+					send_mail(p.registration_email_sbj, msg, fromaddr, [c.get('mail','iris')])
+
+					return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
+
+				elif(affiliation in ['CLiPS','TiCC','LT3']):
+
+					return HttpResponseRedirect('https://fdl-ru.paydro.com/atila-2016')
+
 				else:
+
 					return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
 
 
