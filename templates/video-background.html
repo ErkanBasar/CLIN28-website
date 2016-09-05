@@ -270,14 +270,14 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                             <div class="form-group">
                                 <label for="nameform">What type of room do you prefer?</label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
-                                  <label class="btn btn-primary btn-check">
+				 <label class="btn btn-primary btn-check">
                                     <input type="radio" name='room' value='single' autocomplete="off" > Single Room
                                   </label>
                                   <label class="btn btn-primary btn-check">
                                     <input type="radio" name='room' value='double' autocomplete="off" > Double Room
                                   </label>
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='na' autocomplete="off" required> N/A
+                                  <label class="btn btn-primary btn-check" style='display: none;'>
+                                    <input type="radio" name='room' value='na' autocomplete="off" checked> N/A
                                   </label>
                                 </div>
                             </div>
@@ -539,14 +539,14 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
 
 {% if warningalert == "True" %}
   <script type="text/javascript">
-    alert('Registration canceled because no event was chosen. Please try registering again.')
+    alert('No event was chosen. Please try registering again.')
   </script>
 {% else %}
 {% endif %}  
 
 {% if emailwarningalert == "True" %}
   <script type="text/javascript">
-    alert('Registration canceled because the given email is already in our database. Are you sure that you are not registered?')
+    alert('This email has been used for registeration already.')
   </script>
 {% else %}
 {% endif %}  

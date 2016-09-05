@@ -28,10 +28,10 @@ SECRET_KEY = config.get('settings', 'secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS = ['atila16-lama.herokuapp.com', '127.0.0.1', 'localhost', 'http://applejack.science.ru.nl/atila2016']
+ALLOWED_HOSTS = ['atila16-lama.herokuapp.com', '127.0.0.1', 'localhost', 'http://applejack.science.ru.nl/atila2016/', 'applejack.science.ru.nl']
 
 
 # Application definition
