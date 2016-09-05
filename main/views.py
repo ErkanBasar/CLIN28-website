@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 
 import os
 import pymongo as pm
@@ -33,12 +34,10 @@ class Home(View):
 		programDay1 = p.programDay1
 		programDay2 = p.programDay2
 
-		clips = list(coll.find({'affiliation':'clips'}, {'name':1,'_id':0}))
-		ticc = list(coll.find({'affiliation':'ticc'}, {'name':1,'_id':0}))
-		lt3 = list(coll.find({'affiliation':'lt3'}, {'name':1,'_id':0}))
-		lama = list(coll.find({'affiliation':'lama'}, {'name':1,'_id':0}))
-
-		print(lama)
+		clips = list(coll.find({'affiliation':'CLiPS'}, {'name':1,'_id':0}))
+		ticc = list(coll.find({'affiliation':'TiCC'}, {'name':1,'_id':0}))
+		lt3 = list(coll.find({'affiliation':'LT3'}, {'name':1,'_id':0}))
+		lama = list(coll.find({'affiliation':'LaMa'}, {'name':1,'_id':0}))
 
 		if(underconst is False):
 			return render(request, 'video-background.html', {
@@ -61,10 +60,10 @@ class Home(View):
 
 			programDay1 = p.programDay1
 			programDay2 = p.programDay2
-			clips = list(coll.find({'affiliation':'clips'}, {'name':1,'_id':0}))
-			ticc = list(coll.find({'affiliation':'ticc'}, {'name':1,'_id':0}))
-			lt3 = list(coll.find({'affiliation':'lt3'}, {'name':1,'_id':0}))
-			lama = list(coll.find({'affiliation':'lama'}, {'name':1,'_id':0}))
+			clips = list(coll.find({'affiliation':'CLiPS'}, {'name':1,'_id':0}))
+			ticc = list(coll.find({'affiliation':'TiCC'}, {'name':1,'_id':0}))
+			lt3 = list(coll.find({'affiliation':'LT3'}, {'name':1,'_id':0}))
+			lama = list(coll.find({'affiliation':'LaMa'}, {'name':1,'_id':0}))
 
 
 			name = request.POST['name']
@@ -74,6 +73,9 @@ class Home(View):
 			events = request.POST.getlist('events')
 
 			diet = request.POST['diet']
+
+			if(diet==''):
+				diet = 'N/A'
 
 			hotel = request.POST['hotel']
 			room = request.POST['room']	
@@ -93,35 +95,29 @@ class Home(View):
 					'lama':lama,
 				})
 
-			elif(events):
+			else:
 				for e in events:
 					info[e] = 'Yes'
 
+				eventsstr = ', '.join(events)
+
 				coll.insert(info)
 
-				send_mail(p.registration_email_sbj, p.registration_email_msg, fromaddr, [admin])
-				send_mail(p.registration_email_sbj, p.registration_email_msg, fromaddr, [email])
+				msg = p.registration_email_msg + '\n\nName: ' + name + '\nEmail: ' + email + '\nAffiliation: ' +  affiliation +\
+												 '\nEvents that you have applied: ' + eventsstr +\
+												 '\nDiet Restrictions: ' + diet + '\nHotel: ' + hotel + '\nRoom Preference: ' + room +\
+												 '\nRoommate' + roommate
+												 
 
-				return render(request, 'video-background.html', {
-					'registeralert':'True',
-					'programDay1':programDay1,
-					'programDay2':programDay2,
-					'clips':clips,
-					'ticc':ticc,
-					'lt3':lt3,
-					'lama':lama,
-				})
+				send_mail(p.registration_email_sbj, msg, fromaddr, [admin])
+				send_mail(p.registration_email_sbj, msg, fromaddr, [email])
 
-			else:
-				return render(request, 'video-background.html', {
-					'warningalert':'True',
-					'programDay1':programDay1,
-					'programDay2':programDay2,
-					'clips':clips,
-					'ticc':ticc,
-					'lt3':lt3,
-					'lama':lama,
-				})
+
+				if(affiliation=='LaMa'):
+					return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
+				else:
+					return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
+
 
 
 

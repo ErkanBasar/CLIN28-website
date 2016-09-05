@@ -34,7 +34,8 @@
                 <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
                     <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
                         <!--span class="mbr-brand__logo"><a href=""><img class="mbr-navbar__brand-img mbr-brand__img" src="{% static 'assets/images/discover-mobile-350x350-53.png' %}" alt="Mobirise"></a></span-->
-                        <span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="#">ATILA</a></span>
+                        <span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="#"><img class="undefined" src="{% static 'assets/images/Radboud/ru-logo-white.png'%}" style='width:70%'></a></span> 
+                        <!-- white logo link: http://www.ru.nl/publish/pages/729142/ru_e_wit_2014.png, http://www.ru.nl/huisstijl/basiselementen/logo/docs/nieuwe-logo'-jpg/ -->
                     </span>
                 </div>
                 <div class="mbr-navbar__hamburger mbr-hamburger text-white"><span class="mbr-hamburger__line"></span></div>
@@ -115,25 +116,29 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                     {% for p in programDay1 %}
                                         {% if forloop.counter|divisibleby:2 %}
                                         <li  class="timeline-inverted">
-                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% else %}
                                         <li>
-                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% endif %}
                                           <div class="timeline-panel">
 
+                                          <div class='timeline-title'>{{p.time}}</div>
+
+                                                {% for pre in p.presentations %}
                                                 <div class="timeline-footer">
-                                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{p.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
-                                                    <div class='timeline-title'><small>{{p.time}}</small></div>
-                                                    <h2>{{p.title}}</h2>
-                                                    <p>{% for s in p.speakers %}
+                                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{pre.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
+                                                    
+                                                    <h2>{{pre.title}}</h2>
+                                                    <p>{% for s in pre.speakers %}
                                                             {{ s }}{% if forloop.last %} {% else %},{% endif %}
                                                         {% endfor %}</p>
                                                 </div>
 
-                                                <div id='{{p.uniqueID}}' class="timeline-body collapse">
-                                                  <p>{{p.abstract}}</p>
+                                                <div id='{{pre.uniqueID}}' class="timeline-body collapse">
+                                                  <p>{{pre.abstract}}</p>
                                                 </div>
+                                                {% endfor %}
 
                                           </div>
                                         </li>
@@ -154,25 +159,29 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                     {% for p in programDay2 %}
                                         {% if forloop.counter|divisibleby:2 %}
                                         <li  class="timeline-inverted">
-                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% else %}
                                         <li>
-                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}} - {{p.title}}" id=""></i></a></div>
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% endif %}
                                           <div class="timeline-panel">
 
+                                          <div class='timeline-title'>{{p.time}}</div>
+
+                                                {% for pre in p.presentations %}
                                                 <div class="timeline-footer">
-                                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{p.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
-                                                    <div class='timeline-title'><small>{{p.time}}</small></div>
-                                                    <h2>{{p.title}}</h2>
-                                                    <p>{% for s in p.speakers %}
-                                                            {{ s }}
+                                                    <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{pre.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
+                                                    
+                                                    <h2>{{pre.title}}</h2>
+                                                    <p>{% for s in pre.speakers %}
+                                                            {{ s }}{% if forloop.last %} {% else %},{% endif %}
                                                         {% endfor %}</p>
                                                 </div>
 
-                                                <div id='{{p.uniqueID}}' class="timeline-body collapse">
-                                                  <p>{{p.abstract}}</p>
+                                                <div id='{{pre.uniqueID}}' class="timeline-body collapse">
+                                                  <p>{{pre.abstract}}</p>
                                                 </div>
+                                                {% endfor %}
 
                                           </div>
                                         </li>
@@ -207,57 +216,56 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                         </div>
                         <div data-form-alert="true"></div>
 
-                        <form action="{% url 'home' %}" name='registerform' method="post">
+                        <form action="{% url 'home' %}" name='registerform' id='registerform' method="post">
                             {% csrf_token %}
                             <div class="form-group">
                                 <label for="nameform">Name<span class="red-star"> *</span></label>
                                 <input type="text" class="form-control" name="name" id='nameform' required>
                             </div>
                             <div class="form-group">
-                                <label for="nameform">E-mail<span class="red-star"> *</span></label>
+                                <label>E-mail<span class="red-star"> *</span></label>
                                 <input type="email" class="form-control" name="email" required >
                             </div>
-                            <!--div class="form-group">
-                                <label for="nameform">Affiliation<span class="red-star"> *</span></label>
-                                <input type="text" class="form-control" name="affiliation" required >
-                            </div-->
                             <div class="form-group">
-                                <label for="nameform">Affiliation<span class="red-star"> *</span></label><br>
+                                <label>Affiliation<span class="red-star"> *</span></label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                   <label class="btn btn-primary btn-check" >
-                                    <input type="radio" name='affiliation' value='clips' autocomplete="off" required><img class="undefined" src="{% static 'assets/images/Radboud/clips.png'%}" style='padding-top: 6%; max-width:60%'>
+                                    <input type="radio" name='affiliation' value='CLiPS' autocomplete="off" required><img class="undefined" src="{% static 'assets/images/Radboud/clips.png'%}" style='padding-top: 6%; max-width:60%'>
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='affiliation' value='ticc' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/ticc.png'%}" style='padding-top: 6%; max-width:50%'>
+                                    <input type="radio" name='affiliation' value='TiCC' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/ticc.png'%}" style='padding-top: 6%; max-width:50%'>
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='affiliation' value='lt3' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/lt3.png'%}" style='padding-top: 6%; max-width:50%'>
+                                    <input type="radio" name='affiliation' value='LT3' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/lt3.png'%}" style='padding-top: 6%; max-width:50%'>
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='affiliation' value='lama' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/logo-LanguageMachines.png'%}" style='padding-top: 6%; max-width:80%'>
+                                    <input type="radio" name='affiliation' value='LaMa' autocomplete="off"><img class="undefined" src="{% static 'assets/images/Radboud/logo-LanguageMachines.png'%}" style='padding-top: 6%; max-width:80%'>
+                                  </label>
+                                  <label class="btn btn-primary btn-check">
+                                    <input type="radio" name='affiliation' value='Other' autocomplete="off">Other
                                   </label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="nameform">Please click on the ones you will attend<span class="red-star"> *</span></label><br>
+                                <label>Please click on the events you will attend<span class="red-star"> *</span></label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                   <label class="btn btn-primary btn-check">
-                                    <input type="checkbox" name='events' value='day1' autocomplete="off"> Day 1
+                                    <input type="checkbox" name='events' value='Day1' autocomplete="off"> Day 1
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="checkbox" name='events' value='day2' autocomplete="off"> Day 2
+                                    <input type="checkbox" name='events' value='Day2' autocomplete="off"> Day 2
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="checkbox" name='events' value='dinner' autocomplete="off"> Dinner
+                                    <input type="checkbox" name='events' value='Dinner' autocomplete="off"> Dinner
                                   </label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                  <label for="nameform">Please indicate if you have any diet restrictions</label>
+                                  <label>Please indicate if you have any diet restrictions</label>
                                   <textarea class="form-control" name="diet" rows="1"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="nameform">Would you like us to reserve a hotel room for you in Soeterbeeck?<span class="red-star"> *</span></label><br>
+                                <label>Would you like us to reserve a hotel room for you in Soeterbeeck?<span class="red-star"> *</span></label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                   <label class="btn btn-primary btn-check">
                                     <input type="radio" name='hotel' value='Yes' autocomplete="off" required> YES
@@ -268,24 +276,30 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="nameform">What type of room do you prefer?</label><br>
+                                <label>What type of room do you prefer?</label><br>
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
-				 <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='single' autocomplete="off" > Single Room
+				                          <label class="btn btn-primary btn-check">
+                                    <input type="radio" name='room' value='Single' autocomplete="off" > Single Room
                                   </label>
                                   <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='double' autocomplete="off" > Double Room
+                                    <input type="radio" name='room' value='Double' autocomplete="off" > Double Room
                                   </label>
                                   <label class="btn btn-primary btn-check" style='display: none;'>
-                                    <input type="radio" name='room' value='na' autocomplete="off" checked> N/A
+                                    <input type="radio" name='room' value='N/A' autocomplete="off" checked> N/A
                                   </label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="nameform">Please write the name of your roommate if you prefer someone</label>
+                                <label>Please write the name of your roommate if you prefer someone</label>
                                 <input type="text" class="form-control" name="roommate">
                             </div>
-                            <div class="mbr-buttons mbr-buttons--right"><input type="submit" id='reg-btn' name='register' value='REGISTER' class="mbr-buttons__btn btn btn-lg btn-primary"></div>
+                            <div class="form-group">
+                                <label><!-- Please write the note about the price between these 'label' tags -->  </label>
+                            </div>
+                            <div class="mbr-buttons mbr-buttons--right"><div class="mbr-buttons--right" id='loading' style="display: inline; margin: 0 auto; visibility:hidden;">
+                               Please wait...
+                              <img src="{% static 'assets/images/Radboud/loading.gif' %}" style='width:60px;' name="loading" >
+                            </div><input type="submit" id='reg-btn' name='register' value='REGISTER' class="mbr-buttons__btn btn btn-lg btn-primary"></div>
                         </form>
                     </div>
                 </div>
@@ -438,22 +452,22 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
                 <h2 class="mbr-header__text text-muted">CONTACT & INFO</h2>
             </div>
         </div>
-        <div class="mbr-footer mbr-footer--wysiwyg row">
+        <div class="mbr-footer mbr-footer--wysiwyg row" style='padding: 0px;'>
             <div class="col-sm-12 text-center">
-                <p class="mbr-footer__copyright">Do not hesitate to contact us: </p><br>
-                <p class="mbr-footer__copyright">Organisation: <a href="http://i-hx.nl/" target='_blank'>iris@i-hx.nl</a> | Website: <a href="http://www.mebasar.com/" target='_blank'>ebasar@science.ru.nl</a></p><hr>
+                <p class="mbr-footer__copyright">Do not hesitate to contact us: <br><br>
+                <p class="mbr-footer__copyright">Organisation: <a href="http://applejack.science.ru.nl/languagemachines/" target='_blank'>Language Machines</a> | Contact Person: <a href="mailto:iris@i-hx.nl" target='_blank'>Iris Hendrickx</a> | Website: <a href="http://www.mebasar.com/" target='_blank'>Mustafa Erkan Basar</a></p><hr>
             </div>
         </div>
     </div>
-    <div class='row'>
+    <!--div class='row' -->
         <!--div class="col-md-6" id='overlama'>
             <a href="http://applejack.science.ru.nl/languagemachines/"><img src="{% static 'assets/images/Radboud/logo-LanguageMachines.png' %}" alt="logo Language Machines"></a>
         </div-->
-        <div class="col-md-12" id='overru'>
-            <a href="http://www.ru.nl/"><img src="{% static 'assets/images/Radboud/logo-RU.png' %}" alt="logo Radboud Universiteit"></a>
+        <!--div class="col-md-12" id='overru'>
+            <a href="http://www.ru.nl/"><img src="{% static 'assets/images/Radboud/RO_logo_EN.png' %}" alt="logo Radboud Universiteit" style='max-width:100%;'></a>
         </div>
-    </div>
-    <div class="mbr-footer mbr-footer--wysiwyg row">
+    </div-->
+    <div class="mbr-footer mbr-footer--wysiwyg row" style='padding: 0px 0px 39px'>
         <div class="col-sm-12 text-center">
                 <p class="mbr-footer__copyright">Timelapse video by <a href="http://nymegen.blogspot.nl/2015/06/time-lapse-anderhalf-uur-zonsondergang.html" target='_blank'>Arthur.</a> | <a href='https://mobirise.com/bootstrap-template/' target='_blank'>Mobirise</a> Bootstrap Template  | Fueled by <a href='https://www.djangoproject.com/' target='_blank'>Django</a> & <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a></p> 
         </div>
@@ -523,11 +537,23 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
         });
     });
 
-    $('button').click(function () {
-      var atLeastOneIsChecked = $('input:checkbox').is(':checked');
-      // Do something with atLeastOneIsChecked
+
+
+    $('#registerform').submit(function() {
+        if ($("#registerform input:checkbox:checked").length > 0)
+        {
+              $('#loading').css('visibility', 'visible');
+              return true;
+        }
+        else
+        {
+             alert('Please choose at least one event')
+             return false;
+        }
+
     });
-    </script>
+
+</script>
 
   
   {% if registeralert == "True" %}
@@ -536,13 +562,6 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
   </script>
   {% else %}
   {% endif %}  
-
-{% if warningalert == "True" %}
-  <script type="text/javascript">
-    alert('No event was chosen. Please try registering again.')
-  </script>
-{% else %}
-{% endif %}  
 
 {% if emailwarningalert == "True" %}
   <script type="text/javascript">

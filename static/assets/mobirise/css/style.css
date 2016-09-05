@@ -2220,6 +2220,14 @@ html {
 .timeline-footer{
     padding:15px;
     background-color:#FFF;
+    text-align: center;
+}
+.timeline-title{
+    padding: 5px 13% 5px 0;
+    background-color:#FFF;
+    text-align: center;
+    border-bottom: 1px solid #e9e9e9;
+    font-weight: bold;
 }
 .timeline-footer > a{
     cursor: pointer;
@@ -2488,6 +2496,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
 #reg-btn{
   background-color:rgb(28, 73, 110) !important;
   border: none;
+  color:#FFF;
 }
 
 #reg-btn:hover{
@@ -2503,7 +2512,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
 }
 
 .btn-check{
-    border: 1px solid #FFF;
+    border: 1px solid #e9e9e9;
     background-color: #f6f6f6;
     color: rgb(28, 73, 110);
     padding: 15px 18px;
@@ -2584,6 +2593,9 @@ hr{
 }
 
 
+.form-control{
+  border: 2px solid #e9e9e9; 
+}
 
 
 
