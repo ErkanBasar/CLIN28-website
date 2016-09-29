@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                            <h2 class="mbr-header__text">Please write your password below</h2>
+                            <h2 class="mbr-header__text">Please submit your password</h2>
                         </div>
 						{{ warning }}
                         <form method="post" name="confirmpassform" action="{% url 'displaydata' %}" >
@@ -51,7 +51,7 @@
 
 						<table>
 							  <tr>
-								<th>Name/Email</th>
+								<th>Name & Email</th>
 								<th>Affiliation</th>
 								<th>Day1</th>
 								<th>Day2</th>
@@ -71,9 +71,20 @@
 									<td>{% if d.hotel == 'Yes' %}Hotel{% elif d.hotel == 'No' %}-{% endif %}</td>
 									<td>{% if d.room == 'N/A' %}-{% else %}{{ d.room }}{% endif %}</td>
 									<td>{% if d.roommate %}{{ d.roommate }}{% else %}-{% endif %}</td>
-									<td>{% if d.diet == 'N/A' %}-{% else %}{{ d.diet }}{% endif %}</td>
+									<td>{% if d.diet in 'N/ANAnonenope' %}-{% else %}{{ d.diet }}{% endif %}</td>
 								  </tr>
 							  {% endfor %}
+							  <tr>
+								<th>Total: {{ totalCount }}</th>
+								<th>-</th>
+								<th>{{ day1Count }}</th>
+								<th>{{ day2Count }}</th>
+								<th>{{ dinnerCount }}</th>
+								<th>{{ hotelCount }}</th>
+								<th>S: {{ singleCount }}, D: {{ doubleCount }}</th>
+								<th>-</th>
+								<th>-</th>
+							  </tr>
 						</table>
 						
                 </div>

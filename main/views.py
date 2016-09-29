@@ -168,10 +168,25 @@ class DisplayData(View):
 					logging.info('Request to display data page : ' + client_address)
 
 					dalist = list(coll.find().sort('affiliation',1))
+	
+					totalCount = coll.find().count()
+					day1Count = coll.find({'Day1':'Yes'}).count()
+					day2Count = coll.find({'Day2':'Yes'}).count()
+					dinnerCount = coll.find({'Dinner':'Yes'}).count()
+					hotelCount = coll.find({'hotel':'Yes'}).count()
+					singleCount = coll.find({'room':'Single'}).count()
+					doubleCount = coll.find({'room':'Double'}).count()
 
 					return render(request, 'displaydata.html', {
 							'askpass': False,
 							'dalist': dalist,
+							'totalCount':totalCount,
+							'day1Count':day1Count,
+							'day2Count':day2Count,
+							'dinnerCount':dinnerCount,
+							'hotelCount':hotelCount,
+							'singleCount':singleCount,
+							'doubleCount':doubleCount,
 					})
 
 				else:

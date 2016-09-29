@@ -2614,6 +2614,11 @@ tr:nth-child(even) {
     background-color: #ebebeb;
 }
 
+tr:last-child {
+    background-color: #FFF;
+	border-top: 2px solid #1c496e;
+}
+
 
 /* color = rgb(28, 73, 110) */
 
