@@ -20,5 +20,7 @@ from main.views import *
 
 urlpatterns = [
 
-    url(r'^$', Home.as_view(), name='home')
+    url(r'^$', Home.as_view(), name='home'),
+
+	url(r'^data$', DisplayData.as_view(), name='displaydata')
 ]

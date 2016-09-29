@@ -4,10 +4,17 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 
 import os
+import logging
 import pymongo as pm
 import configparser
 
 import program as p
+
+logging.basicConfig(
+		format='%(asctime)s, %(levelname)s: %(message)s',
+		filename='data/atila.log',
+		datefmt='%d-%m-%Y, %H:%M',
+		level=logging.INFO)
 
 c = configparser.ConfigParser()
 c.read("data/auth.ini")
@@ -23,6 +30,13 @@ if os.uname()[1][:9] != "applejack":
 	atdb.authenticate(c.get('db','user'), c.get('db','pass'))
 
 coll = atdb[c.get('db','coll')] 
+
+
+def get_client_ip(request):
+	ip = request.META.get('HTTP_CF_CONNECTING_IP')
+	if ip is None:
+		ip = request.META.get('REMOTE_ADDR')
+	return ip
 
 
 class Home(View):
@@ -131,6 +145,41 @@ class Home(View):
 					return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
 
 
+class DisplayData(View):
+
+	def get(self, request):
+
+		return render(request, 'displaydata.html', {	
+				'askpass': True,
+		})
+
+	def post(self, request):
+
+			if "confirmpass" in request.POST:				
+
+				user_pass = request.POST['adminpass']
+
+				admin_pass = c.get('admin', 'pass')
+			
+				if(user_pass == admin_pass):
+
+					client_address = get_client_ip(request)
+
+					logging.info('Request to display data page : ' + client_address)
+
+					dalist = list(coll.find().sort('affiliation',1))
+
+					return render(request, 'displaydata.html', {
+							'askpass': False,
+							'dalist': dalist,
+					})
+
+				else:
+
+					return render(request, 'displaydata.html', {	
+							'askpass': True,
+							'warning': 'Invalid password, please try again.',
+					})
 
 
 
