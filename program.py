@@ -21,7 +21,7 @@ programDay1 = [
                                   'title': 'Registration',
                                   'speakers':[''],
                                   'uniqueID':'registration',
-                                  'abstract':'In this talk we present the latest results in several social media mining projects.'
+                                  'abstract':''
                                   },
                                   ]
                },
@@ -32,7 +32,7 @@ programDay1 = [
 											'title': 'Social media Analytics',
 											'speakers':['Ali Hurriyetoglu', 'Florian Kunneman', 'Eric Sanders'],
 											'uniqueID':'AliFloEric',
-											'abstract':''
+											'abstract':'In this talk we present the latest results in several social media mining projects.'
 										},
 									]
 				},
@@ -110,13 +110,12 @@ programDay1 = [
                                   },
                                   ]
                },
-
-               { 'time':'15:30-15.40 [Slides Introduction] 1 minute - 1 slide intro',
+               { 'time':'15:30-15:40',
                'icon': 'fa-files-o',
                'presentations' : [
                                   {
-                                  'title': '',
-                                  'speakers':[''],
+                                  'title': 'Slides Introduction',
+                                  'speakers':['(1 minute - 1 slide intro)'],
                                   'uniqueID':'SlidesIntro',
                                   'abstract':''
                                   },
@@ -142,8 +141,7 @@ programDay1 = [
                                   'speakers':['Akos Kadar', '[TiCC]'],
                                   'uniqueID':'Akos',
                                   'abstract':''
-                                  }
-                                  
+                                  },
                                   {
                                   'title': 'Structuring the visual world through language learning',
                                   'speakers':['Madhumita', '[UZA, CLiPS]'],
@@ -161,9 +159,7 @@ programDay1 = [
                                   'speakers':['Ayla Rigouts Terryn' '[LT3]'],
                                   'uniqueID':'Ayla',
                                   'abstract':''
-                                  }
-
-                                  
+                                  },
                                   {
                                   'title': 'Data-to-text system for soccer reports',
                                   'speakers':['Chris van der Lee', 'Emiel Krahmer', 'Sander Wubben', '[TiCC]'],
@@ -246,8 +242,7 @@ programDay2 = [
                                   'abstract':''
                                   },
                                   ]
-               },
-               
+               }, 
                { 'time':'11:30 - 12:30 [Invited talk]',
                'icon': 'fa-comment',
                'presentations' : [
@@ -257,7 +252,6 @@ programDay2 = [
                                   'uniqueID':'InvitedTalk',
                                   'abstract':''
                                   },
-                                  
                                   ]
                },
                { 'time':'12:30 - 14:00',
@@ -270,8 +264,7 @@ programDay2 = [
                                   'abstract':''
                                   },
                                   ]
-               },
-               
+               },   
                { 'time':'14:00 - 15:30  [Session 5: Text Mining]',
                'icon': 'fa-comment',
                'presentations' : [
