@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="{% static 'assets/mobirise-gallery/style.css' %}">
   <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
   <link href="{% static 'assets//font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-  
+
 </head>
 <body>
 
@@ -35,7 +35,7 @@
                 <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
                     <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
                         <!--span class="mbr-brand__logo"><a href=""><img class="mbr-navbar__brand-img mbr-brand__img" src="{% static 'assets/images/discover-mobile-350x350-53.png' %}" alt="Mobirise"></a></span-->
-                        <span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="{% url 'home' %}"><img class="undefined" src="{% static 'assets/images/Radboud/ru-logo-white.png'%}" style='width:70%'></a></span> 
+                        <span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="{% url 'home' %}"><img class="undefined" src="{% static 'assets/images/Radboud/ru-logo-white.png'%}" style='width:70%'></a></span>
                         <!-- white logo link: http://www.ru.nl/publish/pages/729142/ru_e_wit_2014.png, http://www.ru.nl/huisstijl/basiselementen/logo/docs/nieuwe-logo'-jpg/ -->
                     </span>
                 </div>
@@ -44,9 +44,9 @@
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
                         <div class="mbr-navbar__column">
                             <ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
-                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#program" >PROGRAM</a></li> 
+                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#program" >PROGRAM</a></li>
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#venue">VENUE</a></li>
-                                <!--li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#" onclick="alert('Coming Soon...');">SOCIAL EVENTS</a></li--> 
+                                <!--li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#" onclick="alert('Coming Soon...');">SOCIAL EVENTS</a></li-->
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#participants">PARTICIPANTS</a></li>
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href="#contact">CONTACT</a></li></ul></div>
                         <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active">
@@ -60,7 +60,7 @@
 
 {% block main %}
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" 
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40"
 data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 <!--style="background-image: url({% static 'assets/images/Radboud/nijmegen-waalkade.jpg' %});"-->
 
@@ -109,10 +109,10 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                          <li><a data-toggle="tab" href="#day2">October 21<sup>st</sup></a></li>
                     </ul><br>
 
-                       
+
                      <div class="tab-content">
 
-                         <!-- DAY 1 -->                        
+                         <!-- DAY 1 -->
                         <div id='day1' class="tab-pane fade in active accordion-group">
                             <ul class="timeline">
                                 {% if programDay1 %}
@@ -121,17 +121,18 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                         <li  class="timeline-inverted">
                                         <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% else %}
-                                        <li>
-                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
+                                        <li class="timeline-inverted">
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% endif %}
                                           <div class="timeline-panel">
 
-                                          <div class='timeline-title'>{{p.time}}</div>
+                                          <div class='timeline-title ptime'>{{p.time}}</div>
+                                          <div class='timeline-title pname'>{{ p.name|safe }}</div>
 
                                                 {% for pre in p.presentations %}
                                                 <div class="timeline-footer">
                                                     <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{pre.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
-                                                    
+
                                                     <h2>{{pre.title}}</h2>
                                                     <p>{% for s in pre.speakers %}
                                                             {{ s }}{% if forloop.last %} {% else %},{% endif %}
@@ -149,7 +150,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 {% else %}
                                 There is not any event to show
                                 {% endif %}
-                                
+
                                 <li class="clearfix" style="float: none;"></li>
                             </ul>
                          </div>
@@ -164,17 +165,18 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                         <li  class="timeline-inverted">
                                         <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% else %}
-                                        <li>
-                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}}" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
+                                        <li class="timeline-inverted">
+                                        <div class="timeline-badge primary"><a><i class="fa {{p.icon}} invert" rel="tooltip" title="{{p.time}}" id=""></i></a></div>
                                         {% endif %}
                                           <div class="timeline-panel">
 
-                                          <div class='timeline-title'>{{p.time}}</div>
+                                          <div class='timeline-title ptime'>{{p.time}}</div>
+                                          <div class='timeline-title pname'>{{ p.name|safe }}</div>
 
                                                 {% for pre in p.presentations %}
                                                 <div class="timeline-footer">
                                                     <button type="button" class="btn pull-right" data-toggle="collapse" data-target="#{{pre.uniqueID}}"><span class="glyphicon glyphicon-menu-down"></span>&nbsp;</button>
-                                                    
+
                                                     <h2>{{pre.title}}</h2>
                                                     <p>{% for s in pre.speakers %}
                                                             {{ s }}{% if forloop.last %} {% else %},{% endif %}
@@ -193,7 +195,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 {% else %}
                                 There is not any event to show
                                 {% endif %}
-                                
+
                                 <li class="clearfix" style="float: none;"></li>
                             </ul>
                          </div>
@@ -208,7 +210,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 
 
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="register" style="background-color: <!--rgb(239, 239, 239);">
-    
+
     <div class="mbr-section__container mbr-section__container--std-padding container">
         <div class="row">
             <div class="col-sm-12">
@@ -385,7 +387,7 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
 </section>
 
 <section class="content-2 col-4" id="participants" style="background-color: rgb(255, 255, 255);">
-    
+
     <div class="container">
         <div class="col-md-12">
                 <div class="mbr-header mbr-header--center mbr-header--std-padding">
@@ -473,7 +475,7 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
     </div-->
     <div class="mbr-footer mbr-footer--wysiwyg row" style='padding: 0px 0px 39px'>
         <div class="col-sm-12 text-center">
-                <p class="mbr-footer__copyright">Timelapse video by <a href="http://nymegen.blogspot.nl/2015/06/time-lapse-anderhalf-uur-zonsondergang.html" target='_blank'>Arthur.</a> | Fueled by <a href='https://www.djangoproject.com/' target='_blank'>Django</a> & <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a></p> 
+                <p class="mbr-footer__copyright">Timelapse video by <a href="http://nymegen.blogspot.nl/2015/06/time-lapse-anderhalf-uur-zonsondergang.html" target='_blank'>Arthur.</a> | Fueled by <a href='https://www.djangoproject.com/' target='_blank'>Django</a> & <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a></p>
         </div>
     </div>
 
@@ -496,19 +498,19 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
   <script type="text/javascript">
     $(document).ready(function () {
         $('#map').addClass('scrolloff');                // set the mouse events to none when doc is ready
-        
+
         $('#overlay-map').on("mouseup",function(){          // lock it when mouse up
-            $('#map').addClass('scrolloff'); 
+            $('#map').addClass('scrolloff');
             //somehow the mouseup event doesn't get call...
         });
         $('#overlay-map').on("mousedown",function(){        // when mouse down, set the mouse events free
             $('#map').removeClass('scrolloff');
         });
-        $("#map").mouseleave(function () {              // becuase the mouse up doesn't work... 
+        $("#map").mouseleave(function () {              // becuase the mouse up doesn't work...
             $('#map').addClass('scrolloff');            // set the pointer events to none when mouse leaves the map area
                                                         // or you can do it on some other event
         });
-        
+
     });
 
     $(document).ready(function(){
@@ -559,20 +561,20 @@ When you have passed under the railway viaduct, you can already see Soeterbeeck 
 
 </script>
 
-  
+
   {% if registeralert == "True" %}
   <script type="text/javascript">
     alert('Thank you for registering.')
   </script>
   {% else %}
-  {% endif %}  
+  {% endif %}
 
 {% if emailwarningalert == "True" %}
   <script type="text/javascript">
     alert('This email has been used for registeration already.')
   </script>
 {% else %}
-{% endif %}  
-  
+{% endif %}
+
 </body>
 </html>

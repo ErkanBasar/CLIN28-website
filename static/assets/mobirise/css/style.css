@@ -2085,6 +2085,7 @@ html {
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
+  width: 85%;
 }
 .timeline:before {
   top: 0;
@@ -2094,14 +2095,13 @@ html {
   width: 5px;
   background-color: #FFF;
   border: 1px solid rgba(0, 0, 0, 0.175);
-  left: 50%;
+  left: 16%;
   margin-left: -1.5px;
 }
 .timeline > li {
   margin-bottom: 30px;
-  margin-top: 30px;
   position: relative;
-  width: 50%;
+  width: 84.3%;
   float: left;
   clear: left;
 }
@@ -2226,7 +2226,6 @@ html {
     padding: 5px 13% 5px 0;
     background-color:#FFF;
     text-align: center;
-    border-bottom: 1px solid #e9e9e9;
     font-weight: bold;
 }
 .timeline-footer > a{
@@ -2244,7 +2243,6 @@ html {
     font-size: 20px;
 }
 .timeline-footer > p{
-    font-weight: bold;
     margin: 0;
 }
 .timeline-footer > h2{
@@ -2264,12 +2262,12 @@ html {
     font-size:11px;
     opacity:0;
     filter:alpha(opacity=0);
-    
+
 }
 .tooltip.in{
     /*opacity:0;
     filter:alpha(opacity=80);*/
-    
+
 }
 .tooltip.top{
     margin-top:-2px;
@@ -2332,17 +2330,11 @@ html {
     height:0;
 }
 .timeline > li.timeline-inverted{
-  float: right; 
+  float: right;
   clear: right;
-  margin-top: 30px;
   margin-bottom: 30px;
 }
-.timeline > li:nth-child(2){
-  margin-top: 60px;
-}
-.timeline > li:nth-child(1){
-  margin-top: 0;
-}
+
 .timeline > li.timeline-inverted > .timeline-badge{
   left: -12px;
 }
@@ -2388,9 +2380,9 @@ html {
             left: -14px;
             right: auto;
         }
-    
+
 .timeline > li.timeline-inverted{
-  float: left; 
+  float: left;
   clear: left;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -2403,7 +2395,7 @@ html {
 
 .timeline h2{
 display: block;
-font-size: 1.5em;
+font-size: 1.1em;
 margin-before: 0.83em;
 margin-after: 0.83em;
 margin-start: 0;
@@ -2486,7 +2478,7 @@ section h3.section-subheading {
 }
 
 
-textarea:focus, input:focus, .uneditable-input:focus {   
+textarea:focus, input:focus, .uneditable-input:focus {
     border: 1px solid rgb(28, 73, 110) !important;
     box-shadow: 0 0.1px 1px rgb(28, 73, 110) inset, 0 0 8px rgb(28, 73, 110) !important;
     outline: 0 none !important;
@@ -2524,7 +2516,7 @@ textarea:focus, input:focus, .uneditable-input:focus {
     border: 1px solid rgb(28, 73, 110) !important;
     background-color: #FFF !important;
     color: rgb(28, 73, 110);
-} 
+}
 
 hr{
   width: 10%;
@@ -2594,7 +2586,7 @@ hr{
 
 
 .form-control{
-  border: 2px solid #e9e9e9; 
+  border: 2px solid #e9e9e9;
 }
 
 
@@ -2619,6 +2611,20 @@ tr:last-child {
 	border-top: 2px solid #1c496e;
 }
 
+.ptime{
+    font-size: 1.2em;
+    border-bottom: 1px solid #e9e9e9;
+}
+.pname{
+    font-size: 1.3em;
+    color: rgb(28, 73, 110);
+    border-bottom: 1px dashed #e9e9e9;
+}
 
-/* color = rgb(28, 73, 110) */
+.pname > h4 {
+  font-size: 0.8em;
+  color: black;
+}
 
+
+/* color : rgb(28, 73, 110) */
