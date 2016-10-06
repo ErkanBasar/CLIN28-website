@@ -14,7 +14,7 @@ registration_email_msg = 'Dear Madam/Sir\n\nThank you for registering for ATILA 
 # 'uniqueID' field can be even random, but should be unique no matter what, otherwise dropdown buttons would open wrong panels
 
 programDay1 = [
-               { 'time':'9:30 - 10:00',
+               { 'time':'9:30 - 10:30',
                'icon': 'fa-registered',
                'name':'Registration',
                },
@@ -85,11 +85,11 @@ programDay1 = [
                'icon': 'fa-thumbs-o-up',
                'name': 'Discussion on potential joint project proposals',
                },
-               { 'time':'15:30-15:40',
+               { 'time':'15:30 - 15:40',
                'icon': 'fa-files-o',
                'name':'Slides Introduction <h4>(1 minute - 1 slide intro)</h4>',
                },
-               { 'time':'15.40-17.30',
+               { 'time':'15:40 - 17:30',
                'name': 'Poster and Demonstration Session <h4>(accompanied with coffee)</h4>',
                'icon': 'fa-files-o',
                'presentations' : [
@@ -115,13 +115,13 @@ programDay1 = [
                                   'title': 'Structuring the visual world through language learning',
                                   'speakers':['Madhumita [UZA, CLiPS]'],
                                   'uniqueID':'Madhumita',
-                                  'abstract':''
+                                  'abstract':'Doctor\'s notes about a patient contain useful information like symptoms, diagnoses, medication, etc. Initial psychiatric evaluation notes of patients are an example of such notes. We explore multiple features in the notes to automatically identify severity of a set of psychiatric symptoms in a patient, given one document per patient. We analyze the severity on a scale of 0-4, ranging from absent to severe. We conclude that positive mentions of psychiatric diagnoses and related concepts are a good indicator of symptom severity. More complex techniques have a limited benefit, we believe due to small size of the dataset. Techniques like bootstrapping unannotated data, and outlier removal show a small improvement in system performance.'
                                   },
                                   {
                                   'title': 'AHA: Anagram Hashing Application',
                                   'speakers':['Martin Reynaert [TiCC, LaMas]'],
                                   'uniqueID':'Martin',
-                                  'abstract':''
+                                  'abstract':'We present AHA, the Anagram Hashing Application, a new CLAM web application and service that allows researchers to effortlessly analyse the lexical variation present in their Gold Standard data and to publish the results. AHA enables researchers to obtain character confusion lists and attendant frequency statistics from word lists. The tool serves to obtain derived information for a variety of purposes such as diachronical or dialectical language variance studies, spelling and OCR-error profiling, etc. A major aim of the web application/service provided is to enable researchers to give a succinct quantitative summary of their gold standard data in terms of the commonly accepted Damerau-Levenshtein error categories of insertion, deletion, substitution, transposition and combinations or special variants e.g. regarding capitalization or spacing. Given for instance a corpus-derived list of the words in a diachronical corpus and a contemporary word list, the tool allows for efficiently determining which historical spelling variations are prevalent in the data. AHA is a subservice of the PICCL (Philosophical Integrator of Computational and Corpus Libraries) corpus building workflow currently being developed at CLST and TiCC in a CLARIAH project.'
                                   },
                                   {
                                   'title': 'Collection, Annotation, Evaluation: A Gold Standard for Automatic Terminology Extraction',
@@ -139,25 +139,25 @@ programDay1 = [
                                   'title': 'Classifier setups for predicting clinical codes.',
                                   'speakers':['Elyne Scheurwegs', 'Kim Luyckx', 'Walter Daelemans [ADReM, CLiPS, UZA]'],
                                   'uniqueID':'ElyneKimWalter',
-                                  'abstract':''
+                                  'abstract':'The diagnoses and performed procedures of a patient during a hospital stay can be represented by clinical codes. These clinical codes are often manually assigned to a patient and are based on a myriad of information sources, including but not limited to monitoring notes, discharge summaries, and tests. These information sources only show part of the patient\'s story, as a lot of data is missing and they generally are quite noisy. Most information comes from textual sources, represented as a list of multi-word expressions. In our work, we cast the assignment of clinical codes as a multi-label classification task. We compare predicting each class individually, hierarchical classification (where we predict whether a group of codes is present and then predict the underlying codes) and a hybrid multi-class classifier that trains a single classifier for multiple, mutually exclusive classes. These setups are evaluated on real-life clinical datasets that show different medical specialties. Aside from the performance of the different models, we are also interested in the runtime of the pipeline.'
                                   },
                                   {
                                   'title': 'FLAT - A linguistic annotation tool for FoLiA',
                                   'speakers':['Maarten van Gompel [LaMas]'],
                                   'uniqueID':'Maarten',
-                                  'abstract':''
+                                  'abstract':'FLAT is a web-based linguistic annotation environment based around the FoLiA format, a rich XML-based format for linguistic annotation. FLAT allows users to view annotated FoLiA documents and enrich these documents with new annotations. A wide variety of linguistic annotation types is supported. It is a document-centric tool that fully preserves and visualises document structure. It has been used in multiple annototation projects already.'
                                   },
                                   {
                                   'title': 'WhiteLab 2.0.',
                                   'speakers':['Matje van der Camp', 'Martin Reynaert [LaMas]'],
                                   'uniqueID':'MatjeMartin',
-                                  'abstract':''
+                                  'abstract':'We proudly present the second version of the corpus search and exploration tool WhiteLab and, with it, OpenSoNaR+. WhiteLab now offers support for multiple corpora, phonetic transcriptions, audio, and better application management through a newly added admin interface. Powered by WhiteLab, OpenSoNaR+ brings to all, online, the full contents of both the Spoken and Written corpora of Contemporary Dutch. With the 10M word tokens of CGN, the corpus of spoken Dutch, come all of its sound recordings, listenable on the level of the hit, the sentence or even the document of the hit. For SoNaR, the 540M word token corpus of contemporary written Dutch, as for CGN, all texts are retrievable and open to researchers. Texts originated and were collected in both major Dutch language areas, both the Netherlands and the Flemish part of Belgium. All texts come with rich metadata, united through the new WhiteLab version where for instance \'speakers\' in the spoken may be equated to \'authors\' in the written corpus and thereby become jointly searchable. Searching or querying the data comes on differing levels of expertise, from \'Simple\', over \'Advanced\' through \'Extended\' to \'Expert, in line with users\' needs and whims. The user may impose any number of filters, whether based on metadata or lexical features, or any combination of these. Exploration of the data relies on clear visualisations of the contents, allows for obtaining lexical or other statistics on ad-hoc subsets of the texts.'
                                   },
                                   {
                                   'title': 'Taalmonsters Metadata Editor',
                                   'speakers':['Matje van der Camp [LaMas]'],
                                   'uniqueID':'Matje',
-                                  'abstract':''
+                                  'abstract':'A generic, highly configurable web application for online exploration and editing of large metadata collections. The application is built in Ruby on Rails and uses ElasticSearch for fast filtering and retrieval of data. It is currently being used by the MEDIATE project (http://www.mediate18.nl/) to edit the metadata records of over 4,700 book auction catalogues from the 18th century (http://metadata.mediate18.nl/). The home page of the application shows visualisations of metadata statistics, which can be filtered using a host of filters directly derived from the data. Only after signing up and logging in can you actually view the metadata records, which again can be filtered using the same filters as on the home page. Registered users can be assigned different roles to determine what they can see and edit. Admin users, for instance, can lock documents when they are satisfied with the edits made by themselves or other users. All users can see the number of locked documents, thus keeping track of annotation progress. The application allows for attachments to be included for each document described in the metadata collection. This can be useful when the value of certain metadata fields depends on an external document and you want to provide this document to users when editing the data. In the case of MEDIATE, this feature is used to attach a pre-generated sample image of the scanned pages to each document so that users can annotate the quality of the scans. Currently, the application only offers support for two metadata formats, both based on the format generated internally by the corpus search and exploration tool WhiteLab 2.0. However, it is still in active development, so more formats are expected to be added in the near future.'
                                   },
                                   {
                                   'title': 'Identifying mood of songs using musical and linguistic information',
@@ -168,16 +168,16 @@ programDay1 = [
                                   {
                                   'title': 'Reddit Reply generation with RNNs',
                                   'speakers':['Sander Wubben', 'Bram Willemsen [TiCC]'],
-                                  'uniqueID':'gsgfsg',
+                                  'uniqueID':'SanderBram',
                                   'abstract':''
                                   }
                                   ]
                },
-                { 'time':'17:48-18:06',
+                { 'time':'17:48 - 18:06',
                 'icon': 'fa-train',
                 'name':'Train to Nijmegen',
                 },
-                { 'time':'18:10-18:45',
+                { 'time':'18:10 - 18:45',
                 'icon': 'fa-street-view',
                 'name':'Walk through Nijmegen city centre',
                 },
@@ -187,7 +187,7 @@ programDay1 = [
                },
                { 'time':'20:15',
                'icon': 'fa-cutlery',
-               'name':'Dinner',
+               'name':'Dinner <h4>at the restaurant Humphrey\'s (Vismarkt 7, 6511 VJ Nijmegen)</h4>',
                },
                { 'time':'',
                'icon': 'fa-clock-o',
@@ -197,7 +197,7 @@ programDay1 = [
 
 programDay2 = [
 
-               { 'time':'9.30-11.00',
+               { 'time':'9:30 - 11:00',
                'name': 'Session 4: Language Learning',
                'icon': 'fa-comment',
                'presentations' : [
@@ -265,7 +265,7 @@ programDay2 = [
                                   }
                                   ]
                },
-               { 'time':'15.30-17.00',
+               { 'time':'15:30 - 17:00',
                'icon': 'fa-beer ',
                'name':'Drinks',
                }
