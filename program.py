@@ -106,13 +106,13 @@ programDay1 = [
                                   'abstract':''
                                   },
                                   {
-                                  'title': 'Symptom Severity Identification from Psychiatric Evaluation Notes',
-                                  'speakers':['Akos Kadar [TiCC]'],
+                                  'title': 'Structuring the visual world through language learning',
+			          'speakers':['Ákos Kádár [TiCC]'],
                                   'uniqueID':'Akos',
                                   'abstract':''
                                   },
                                   {
-                                  'title': 'Structuring the visual world through language learning',
+                                  'title': 'Symptom Severity Identification from Psychiatric Evaluation Notes',
                                   'speakers':['Madhumita [UZA, CLiPS]'],
                                   'uniqueID':'Madhumita',
                                   'abstract':'Doctor\'s notes about a patient contain useful information like symptoms, diagnoses, medication, etc. Initial psychiatric evaluation notes of patients are an example of such notes. We explore multiple features in the notes to automatically identify severity of a set of psychiatric symptoms in a patient, given one document per patient. We analyze the severity on a scale of 0-4, ranging from absent to severe. We conclude that positive mentions of psychiatric diagnoses and related concepts are a good indicator of symptom severity. More complex techniques have a limited benefit, we believe due to small size of the dataset. Techniques like bootstrapping unannotated data, and outlier removal show a small improvement in system performance.'
