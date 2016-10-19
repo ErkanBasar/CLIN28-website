@@ -42,7 +42,7 @@ programDay1 = [
                },
                { 'time':'11:30 - 13:00',
                  'name': 'Session 2: Social Media',
-		 'chair':'Lisa Hilte',
+		 			'chair':'Lisa Hilte',
 				  'icon': 'fa-comment',
 				  'presentations' : [
                                      {
@@ -91,10 +91,12 @@ programDay1 = [
                { 'time':'15:00 - 15:30',
                'icon': 'fa-thumbs-o-up',
                'name': 'Discussion on potential joint project proposals',
+				'chair':'Maria Eskevich'
                },
                { 'time':'15:30 - 15:40',
                'icon': 'fa-files-o',
                'name':'Slides Introduction <h4>(1 minute - 1 slide intro)</h4>',
+				'chair':'Maria Eskevich'
                },
                { 'time':'15:40 - 17:30',
                'name': 'Poster and Demonstration Session <h4>(accompanied with coffee)</h4>',
@@ -108,7 +110,7 @@ programDay1 = [
                                   },
                                   {
                                   'title': 'Relevancer: Finding and Labeling Relevant Information in Tweet Collections',
-                                  'speakers':['Ali Hurriyetoglu [LaMas]'],
+                                  'speakers':['Mustafa Erkan Basar','Ali Hurriyetoglu [LaMas]'],
                                   'uniqueID':'Ali',
                                   'abstract':''
                                   },
@@ -206,7 +208,7 @@ programDay2 = [
 
                { 'time':'9:30 - 11:00',
                'name': 'Session 4: Language Learning',
-	       'chair':'Cynthia Van Hee',
+	       		'chair':'Cynthia Van Hee',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
@@ -235,7 +237,7 @@ programDay2 = [
                },
                { 'time':'11:30 - 12:30',
                'name': 'Invited Talk',
-	       'chair':'Antal van den Bosch',
+	       		'chair':'Antal van den Bosch',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
@@ -252,7 +254,7 @@ programDay2 = [
                },
                { 'time':'14:00 - 15:30',
                'name': 'Session 5: Text Mining',
-	       'chair':'Louis Onrust',
+	       		'chair':'Louis Onrust',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
