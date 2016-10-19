@@ -127,7 +127,10 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                           <div class="timeline-panel">
 
                                           <div class='timeline-title ptime'>{{p.time}}</div>
-                                          <div class='timeline-title pname'>{{ p.name|safe }}</div>
+                                          <div class='timeline-title pname'>{{ p.name|safe }}
+										  {% if p.chair %}
+										  <div class='timeline-title pchair'>Chair: {{ p.chair|safe }}</div>
+                                          {% endif %}</div>
 
                                                 {% for pre in p.presentations %}
                                                 <div class="timeline-footer">

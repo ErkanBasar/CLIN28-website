@@ -2626,5 +2626,13 @@ tr:last-child {
   color: black;
 }
 
+.pchair{
+	font-size: 0.8em;
+    color: black;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 0;
+}
+
 
 /* color : rgb(28, 73, 110) */

@@ -21,6 +21,7 @@ programDay1 = [
                { 'time':'10:30 - 11:00',
 				  'icon': 'fa-comment',
                   'name':'Session 1: Social Media',
+                  'chair':'John Doe',
 				  'presentations' : [
 										 {
 											'title': 'Social media Analytics',
