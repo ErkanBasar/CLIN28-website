@@ -14,14 +14,18 @@ registration_email_msg = 'Dear Madam/Sir\n\nThank you for registering for ATILA 
 # 'uniqueID' field can be even random, but should be unique no matter what, otherwise dropdown buttons would open wrong panels
 
 programDay1 = [
-               { 'time':'9:30 - 10:30',
+               { 'time':'9:30 - 10:25',
                'icon': 'fa-registered',
                'name':'Registration',
                },
-               { 'time':'10:30 - 11:00',
+	       { 'time':'10:25 - 10:35',
+               'icon': 'fa-play',
+               'name':'Opening by Antal van den Bosch',
+               },
+               { 'time':'10:35 - 11:05',
 				  'icon': 'fa-comment',
                   'name':'Session 1: Social Media',
-                  'chair':'John Doe',
+
 				  'presentations' : [
 										 {
 											'title': 'Social media Analytics',
@@ -32,12 +36,13 @@ programDay1 = [
 									]
 				},
 
-               { 'time':'11:00 - 11:30',
+               { 'time':'11:05 - 11:30',
                'icon': 'fa-coffee',
                'name':'Coffee Break',
                },
                { 'time':'11:30 - 13:00',
-                'name': 'Session 2: Social Media',
+                 'name': 'Session 2: Social Media',
+		 'chair':'Lisa Hilte',
 				  'icon': 'fa-comment',
 				  'presentations' : [
                                      {
@@ -66,6 +71,7 @@ programDay1 = [
                },
                { 'time':'14:00 - 15:00',
                'name': 'Session 3: Text Generation',
+	       'chair':'Ákos Kádár',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
@@ -200,6 +206,7 @@ programDay2 = [
 
                { 'time':'9:30 - 11:00',
                'name': 'Session 4: Language Learning',
+	       'chair':'Cynthia Van Hee',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
@@ -228,6 +235,7 @@ programDay2 = [
                },
                { 'time':'11:30 - 12:30',
                'name': 'Invited Talk',
+	       'chair':'Antal van den Bosch',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
@@ -244,6 +252,7 @@ programDay2 = [
                },
                { 'time':'14:00 - 15:30',
                'name': 'Session 5: Text Mining',
+	       'chair':'Louis Onrust',
                'icon': 'fa-comment',
                'presentations' : [
                                   {
