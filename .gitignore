@@ -11,8 +11,10 @@ old/
 *.pid
 .env/
 venv/
-envati/
+env/
 *.pyc
+
+.DS_Store
 
 # C extensions
 *.so

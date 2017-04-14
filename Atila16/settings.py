@@ -28,7 +28,7 @@ SECRET_KEY = config.get('settings', 'secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['atila16-lama.herokuapp.com', '127.0.0.1', 'localhost', 'http://applejack.science.ru.nl/atila2016/', 'applejack.science.ru.nl']
@@ -145,6 +145,3 @@ else:                               #to work on local
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "static")
     ]
-
-
-
