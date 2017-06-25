@@ -22,5 +22,8 @@ urlpatterns = [
 
     url(r'^$', Home.as_view(), name='home'),
 
-	url(r'^data$', DisplayData.as_view(), name='displaydata')
+	url(r'^data$', DisplayData.as_view(), name='displaydata'),
+
+    url(r'^program$', ModifyProgram.as_view(), name='modify_program')
+
 ]
