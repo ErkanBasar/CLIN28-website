@@ -2648,7 +2648,7 @@ hr{
 }
 
 .participant-table tr:last-child {
-  background-color: #FFF;
+    background-color: #FFF;
 	border-top: 2px solid #1c496e;
 }
 
@@ -2658,11 +2658,6 @@ hr{
   border: 1px solid rgb(28, 73, 110);
 }
 
-.program-table th, .program-table td {
-     border-top: none !important;
-      border-bottom: none !important;
- }
-
 .program-table tr:first-child th {
   background: white;
   color: rgb(28, 73, 110);
@@ -2671,12 +2666,8 @@ hr{
   height: 40px;
 }
 
-.program-table tr:first-child th:nth-child(2n) {
+.program-table tr:first-child th:last-child {
   font-size: 1.5em;
-}
-
-.program-table tr:first-child th:first-child {
-  text-align: left;
 }
 
 /* color : rgb(28, 73, 110) */

@@ -31,6 +31,7 @@ if os.uname()[1][:9] != "applejack":
 
 program_collection = clindb[c.get('db','program_collection')]
 participants_collection = clindb[c.get('db','participants_collection')]
+organization_collection = clindb[c.get('db','organization_team')]
 
 def get_client_ip(request):
 	ip = request.META.get('HTTP_CF_CONNECTING_IP')
@@ -43,13 +44,13 @@ class Home(View):
 
 	def get(self, request):
 
+#		if(True):
 		if(os.uname()[1][:9] == 'applejack'):
 			return render(request, 'under_construction.html', {})
 
 		else:
 
 			program = list(program_collection.find())
-
 			# Sort the sesisons by time
 			program = sorted(program, key=lambda k: k['time'])
 
@@ -57,10 +58,11 @@ class Home(View):
 				if('slots' in session):
 					session['slots'] = sorted(session['slots'], key=lambda k: k['time'])
 
-			print(program)
+			organization_team = list(organization_collection.find())[0]['team']
 
 			return render(request, 'video-background.html', {
-				'program':program
+				'program':program,
+				'organization_team':organization_team,
 			})
 
 	def post(self, request):
@@ -69,22 +71,15 @@ class Home(View):
 
 			name = request.POST['name']
 			email = request.POST['email']
-			events = request.POST.getlist('events')
-			diet = request.POST['diet'] if request.POST['diet'] != '' else 'N/A'
-
-			hotel = request.POST['hotel']
-			room = request.POST['room']
-			roommate = request.POST['roommate']
 
 			info = {
 					'name':name,
 					'email':email,
 					'diet':diet,
-					'hotel':hotel,
-					'room':room,
-					'roommate':roommate
+
 			}
 
+			# already registered warning
 			if(list(participants_collection.find({'email':email}))):
 
 				programDay1 = p.programDay1
@@ -117,7 +112,7 @@ class Home(View):
 				send_mail(p.registration_email_sbj, msg, fromaddr, [admin])
 				send_mail(p.registration_email_sbj, msg, fromaddr, [email])
 
-				return HttpResponseRedirect('http://applejack.science.ru.nl/atila2016/')
+				return HttpResponseRedirect('http://clin28.cls.ru.nl')
 
 
 class ModifyProgram(View):
