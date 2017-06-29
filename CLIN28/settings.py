@@ -27,8 +27,10 @@ SECRET_KEY = config.get('settings', 'secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-
-DEBUG = False
+if HOSTNAME[:9] == "applejack":
+	DEBUG = True
+else:
+	DEBUG = False
 
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'clin28.cls.ru.nl','soothsayer.cls.ru.nl']
