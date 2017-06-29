@@ -31,7 +31,7 @@ SECRET_KEY = config.get('settings', 'secret_key')
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'clin28.cls.ru.nl']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'clin28.cls.ru.nl','soothsayer.cls.ru.nl']
 
 
 # Application definition
