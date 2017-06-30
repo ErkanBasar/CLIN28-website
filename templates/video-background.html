@@ -49,6 +49,7 @@
                     <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
                         <div class="mbr-navbar__column">
                             <ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
+                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white" href='#about'>ABOUT</a></li>
                                 <li class="mbr-navbar__item"  data-toggle="tooltip"  data-placement="bottom" title="To Be Announced"><a class="mbr-buttons__link btn text-white">DATES</a></li>
                                 <li class="mbr-navbar__item"  data-toggle="tooltip"  data-placement="bottom" title="To Be Announced"><a class="mbr-buttons__link btn text-white">CALL FOR PAPERS</a></li>
                                 <li class="mbr-navbar__item"  data-toggle="tooltip"  data-placement="bottom" title="To Be Announced"><a class="mbr-buttons__link btn text-white">PROGRAM</a></li>
@@ -120,7 +121,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 
             <p>The first CLIN conference was held in 1990 in Utrecht. For an impression of the previous CLIN conferences see the CLIN conference pages from previous years:</p>
 
-            <span class="open" style="color: #1c496e;" data-toggle="collapse" data-target="#prev-years">Click to see the previous years &raquo;</span><br><br>
+            <span class="open" style="color: #1c496e; cursor: pointer;" data-toggle="collapse" data-target="#prev-years">Click to see the previous years &raquo;</span><br><br>
             <div id="prev-years" class="collapse">
 
               <ul>
@@ -172,7 +173,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                 <div class="row">
                     <div class="mbr-header mbr-header--center mbr-header--std-padding">
                         <h2 class="mbr-header__text">PROGRAM</h2>
-                        <h4 class="section-subheading" style='color:#FF0000'>This section is under construction and will be hidden when the page is deployed.</h4>
+                        <h4 class="section-subheading" style='color:#FF0000'><b>The section is under construction.</b><br>It will be hidden until the design is finished and the content of the program is prepared.</h4>
                     </div>
 
                     {% for session in program %}
@@ -240,6 +241,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                     <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid">
                         <div class="mbr-header mbr-header--center mbr-header--std-padding">
                             <h2 class="mbr-header__text">REGISTRATION</h2>
+                            <h4 class="section-subheading" style='color:#FF0000'><b>This section will be hidden until the registration started.</b></h4>
                         </div>
                         <!--div style="color:#C20000; font-size:13px; margin: 5px 0;">
                           Please send us the presentation abstracts and poster titles before <b>September 25</b>, and register before <b>October 5</b>.</div-->
@@ -254,53 +256,6 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                                 <label>E-mail<span class="red-star"> *</span></label>
                                 <input type="email" class="form-control" name="email" required >
                             </div>
-                            <!--div class="form-group">
-                                <label>Please click on each of the events that you will attend<span class="red-star"> *</span></label><br>
-                                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="checkbox" name='events' value='Day1' autocomplete="off"> Day 1
-                                  </label>
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="checkbox" name='events' value='Day2' autocomplete="off"> Day 2
-                                  </label>
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="checkbox" name='events' value='Dinner' autocomplete="off"> Dinner
-                                  </label>
-                                </div>
-                            </div-->
-                            <!--div class="form-group">
-                                  <label>Please indicate if you have any diet restrictions</label>
-                                  <textarea class="form-control" name="diet" rows="1"></textarea>
-                            </div-->
-                            <!--div class="form-group">
-                                <label>Would you like us to reserve a hotel room for you in Soeterbeeck?<span class="red-star"> *</span></label><br>
-                                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='hotel' value='Yes' autocomplete="off" required> YES
-                                  </label>
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='hotel' value='No' autocomplete="off"> NO
-                                  </label>
-                                </div>
-                            </div-->
-                            <!--div class="form-group">
-                                <label>What type of room do you prefer?</label><br>
-                                <div class="btn-group btn-group-justified" data-toggle="buttons">
-				                          <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='Single' autocomplete="off" > Single Room
-                                  </label>
-                                  <label class="btn btn-primary btn-check">
-                                    <input type="radio" name='room' value='Double' autocomplete="off" > Double Room
-                                  </label>
-                                  <label class="btn btn-primary btn-check" style='display: none;'>
-                                    <input type="radio" name='room' value='N/A' autocomplete="off" checked> N/A
-                                  </label>
-                                </div>
-                            </div-->
-                            <!--div class="form-group">
-                                <label>Optional for the double room choice: let us know with whom you would like to share a room</label>
-                                <input type="text" class="form-control" name="roommate">
-                            </div-->
                             <div class="form-group">
                                 <label> The registration fee for all partipants is ?? euro. <br>After you registered, you are going to be redirected to the payment page. <!-- Please write the note about the price between these 'label' tags -->  </label>
                             </div>
@@ -324,7 +279,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
         <div class="container" style='margin-top: 50px; margin-bottom:70px;'>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3 class="mbr-header__text text-muted">VENUE</h3>
+                    <h3 class="mbr-header__text">VENUE</h3>
                     <h4 class="section-subheading black-font ">Conference will be held at</h4>
                 </div>
             </div>
@@ -346,7 +301,8 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                     <div class="caption black-font">
                         <div>
                             <h3>BY CAR</h3>
-                            <p>...</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas auctor molestie dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p>
                         </div>
                         <p class="group"><a href="http://www.routenet.nl/" target="_blank" class="mbr-buttons__btn btn btn-default">ROUTENET</a></p>
                     </div>
@@ -372,9 +328,10 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                     <div class="caption black-font">
                         <div>
                             <h3>BY TRAIN</h3>
-                            <p>...</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas auctor molestie dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p>
                         </div>
-                        <p class="group"><a href="http://www.ns.nl/reisplanner-v2/index.shtml" target="_blank" class="mbr-buttons__btn btn btn-default">NS PLANNER</a></p>
+                        <p class="group"><a href="http://www.ns.nl/en/journeyplanner/" target="_blank" class="mbr-buttons__btn btn btn-default">NS PLANNER</a></p>
                     </div>
                 </div>
             </div>
@@ -388,51 +345,75 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 
 <section class="content-2 col-4" id="sponsors" style="background-color: rgb(255, 255, 255);">
 
-    <div class="container">
-        <div class="col-md-12">
-                <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                    <h3 class="mbr-header__text ">SPONSORS</h3>
-                    <!--h4 class="section-subheading black-font "></h4-->
-                </div>
+  <div class="container">
+    <div class="col-md-12">
+      <div class="mbr-header mbr-header--center">
+        <h2 class="mbr-header__text">SPONSORS</h2>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h4 class="gold">GOLDEN</h4>
+    </div>
+    <div class="row">
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip" data-placement="bottom" title="War is Peace; Freedom is Slavery; Ignorance is Strength.">
+          <a href='https://en.wikipedia.org/wiki/Ingsoc' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/ingsoc1984.jpg'%}"></img>
+          </a>
         </div>
-        <div class="row">
-            <div>
-                <div class="thumbnail">
-                    <div class="image row"><a href='http://www.clips.uantwerpen.be/' target='_blank'>
-                        <img class="undefined" src="{% static 'assets/images/Radboud/clips.png'%}" style='padding-top: 6%; max-width:60%; margin-bottom:40px;'></a></div>
-                    <div class="caption row">
-
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="thumbnail">
-                    <div class="image row"><a href='https://www.tilburguniversity.edu/research/institutes-and-research-groups/ticc/' target='_blank'>
-                        <img class="undefined" src="{% static 'assets/images/Radboud/ticc.png'%}"></a></div>
-                    <div class="caption row">
-
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="thumbnail">
-                    <div class="image row"><a href='https://www.lt3.ugent.be/' target='_blank'>
-                        <img class="undefined" src="{% static 'assets/images/Radboud/lt3.png'%}"></a></div>
-                    <div class="caption row">
-
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="thumbnail">
-                    <div class="image row"><a href='http://applejack.science.ru.nl/languagemachines/' target='_blank'>
-                        <img class="undefined" src="{% static 'assets/images/Radboud/logo-LanguageMachines.png'%}" style='max-width:75%; margin-bottom:20px;'></a></div>
-                    <div class="caption row">
-
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h4 class="silver">SILVER</h4>
+    </div>
+    <div class="row">
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip" data-placement="bottom" title="All you need and so much more!">
+          <a href='http://pixar.wikia.com/wiki/Buy_n_Large' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/buynlarge.png'%}" />
+          </a>
         </div>
+      </div>
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Okay then, we hold the world ransom for... One... Hundred... BILLION DOLLARS!">
+          <a href='https://en.wikipedia.org/wiki/Dr._Evil' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/virtucon.png'%}" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h4 class="bronze">BRONZE</h4>
+    </div>
+    <div class="row">
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Impossibility in it's purest form.">
+          <a href='https://abstergo.org/' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/abstergo.png'%}" />
+          </a>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Our bussiness is life itself.">
+          <a href='http://residentevil.wikia.com/wiki/Umbrella_Corporation' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/umbrella.png'%}" />
+          </a>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="We deliver the future to your present.">
+          <a href='http://half-life.wikia.com/wiki/Black_Mesa_Research_Facility' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/blackmesa.jpg'%}" />
+          </a>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="We do what we must because we can.">
+          <a href='https://theportalwiki.com/wiki/Aperture_Science' target='_blank'>
+            <img src="{% static 'assets/images/fake_logos/aperture.png'%}" />
+          </a>
+        </div>
+      </div>
     </div>
 </section>
 
