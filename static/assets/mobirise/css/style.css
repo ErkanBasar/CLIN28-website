@@ -2457,8 +2457,8 @@ header .intro-text .intro-heading {
 
 section h2.section-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 2em;
-  letter-spacing: 4px;
+  font-size: 1.8em;
+  letter-spacing: 3px;
   margin-bottom: 15px;
   font-weight: 700;
 }
@@ -2655,8 +2655,34 @@ hr{
   text-align: left;
 }
 
-/* SPONSORS */
+/* Navbar Items */
 
+.mbr-navbar__item .btn {
+  padding: 10px;
+}
+
+@media (min-width: 1200px) {
+  .mbr-navbar__item .btn {
+    padding: 10px 18px;
+  }
+}
+
+/* Menu Register Button */
+
+.register-btn, .register-btn::after, .register-btn:hover, .register-btn:focus  {
+   color: white;
+   border-color: white;
+}
+
+.register-btn::after {
+  border-bottom: none !important;
+}
+
+.register-btn:hover, .register-btn:focus {
+  background-color: #b82b22;
+}
+
+/* SPONSORS */
 
 .gold,
 .silver,
@@ -2680,6 +2706,29 @@ hr{
 .bronze {
   border-color: #CD7F32;
   color: #CD7F32;
+}
+
+/* Keynote Speaker */
+
+.keynote-row {
+  color: white;
+}
+
+#keynote-name {
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+
+#keynote-img {
+  width: 80%;
+  border-radius: 50px 15px;
+  -moz-border-radius: 50px 15px;
+  -webkit-border-top-left-radius: 50px;
+  -webkit-border-top-right-radius: 15px;
+  -webkit-border-bottom-right-radius: 50px;
+  -webkit-border-bottom-left-radius: 15px;
+  -khtml-border-radius: 30px;
 }
 
 /* color : rgb(28, 73, 110) */
