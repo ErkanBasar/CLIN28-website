@@ -26,9 +26,8 @@ c.read("data/auth.ini")
 client = pm.MongoClient(c.get('db','host'), int(c.get('db','port')))
 clindb = client[c.get('db','db')]
 
-# uncomment when the local db in use
-#if os.uname()[1][:9] != "applejack":
-clindb.authenticate(c.get('db','user'), c.get('db','pass'))
+if os.uname()[1][:9] != "applejack":
+	clindb.authenticate(c.get('db','user'), c.get('db','pass'))
 
 program_collection = clindb[c.get('db','program_collection')]
 participants_collection = clindb[c.get('db','participants_collection')]
