@@ -1,12 +1,16 @@
 from django.shortcuts import render
 from django.views.generic import View
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+
+from django.conf import settings
 
 import os
+import json
 import logging
 import pymongo as pm
 import configparser
+from datetime import datetime
 
 import program as p
 
@@ -19,19 +23,18 @@ logging.basicConfig(
 c = configparser.ConfigParser()
 c.read("data/auth.ini")
 
-admin = c.get('mail','admin')
-fromaddr = c.get('mail','fromaddr')
-
 client = pm.MongoClient(c.get('db','host'), int(c.get('db','port')))
-
 clindb = client[c.get('db','db')]
 
-if os.uname()[1][:9] != "applejack":
-	clindb.authenticate(c.get('db','user'), c.get('db','pass'))
+# uncomment when the local db in use
+#if os.uname()[1][:9] != "applejack":
+clindb.authenticate(c.get('db','user'), c.get('db','pass'))
 
 program_collection = clindb[c.get('db','program_collection')]
 participants_collection = clindb[c.get('db','participants_collection')]
-organization_collection = clindb[c.get('db','organization_team')]
+organization_collection = clindb[c.get('db','organization_collection')]
+dates_collection = clindb[c.get('db','dates_collection')]
+
 
 def get_client_ip(request):
 	ip = request.META.get('HTTP_CF_CONNECTING_IP')
@@ -39,8 +42,24 @@ def get_client_ip(request):
 		ip = request.META.get('REMOTE_ADDR')
 	return ip
 
+# Not in use;
+def check_email(request):
+	response = {}
+	if(participants_collection.find_one({'email': request.GET['email']})):
+		response['exists'] = True
+	else:
+		response['exists'] = False
+	return HttpResponse(json.dumps(response), content_type="application/json")
 
 class Home(View):
+
+	program = sorted(list(program_collection.find()), key=lambda k: k['time'])
+	for session in program:
+		if('slots' in session):
+			session['slots'] = sorted(session['slots'], key=lambda k: k['time'])
+	organization_team = list(organization_collection.find())[0]['team']
+
+	template = 'base.html'
 
 	def get(self, request):
 
@@ -50,145 +69,73 @@ class Home(View):
 
 		else:
 
-			program = list(program_collection.find())
-			# Sort the sesisons by time
-			program = sorted(program, key=lambda k: k['time'])
-
-			for session in program:
-				if('slots' in session):
-					session['slots'] = sorted(session['slots'], key=lambda k: k['time'])
-
-			organization_team = list(organization_collection.find())[0]['team']
-
-			return render(request, 'video-background.html', {
-				'program':program,
-				'organization_team':organization_team,
+			return render(request, self.template, {
+				'program': self.program,
+				'organization_team': self.organization_team,
 			})
 
 	def post(self, request):
 
 		if "register" in request.POST:
 
-			name = request.POST['name']
-			email = request.POST['email']
-
-			info = {
-					'name':name,
-					'email':email,
-					'diet':diet,
-
+			registeration_info = {
+					'name': request.POST['name'],
+					'email': request.POST['email'],
+					'registration_time': datetime.now()
 			}
 
-			# already registered warning
-			if(list(participants_collection.find({'email':email}))):
+			participants_collection.insert(registeration_info)
 
-				programDay1 = p.programDay1
-				programDay2 = p.programDay2
+			msg = p.registration_email_msg + '\n\nName: ' + registeration_info['name'] + '\nEmail: ' + registeration_info['email'] + '\n\n'
 
-				return render(request, 'video-background.html', {
-					'emailwarningalert':'True',
-					'programDay1':programDay1,
-					'programDay2':programDay2,
-					'clips':clips,
-					'ticc':ticc,
-					'lt3':lt3,
-					'lama':lama,
-				})
+			send_mail(p.registration_email_sbj, msg, settings.EMAIL_HOST_USER, [registeration_info['email']])
 
-			else:
-				for e in events:
-					info[e] = 'Yes'
-
-				eventsstr = ', '.join(events)
-
-				participants_collection.insert(info)
-
-				msg = p.registration_email_msg + '\n\nName: ' + name + '\nEmail: ' + email +\
-												 '\nEvents that you have applied: ' + eventsstr +\
-												 '\nDiet Restrictions: ' + diet + '\nHotel: ' + hotel + '\nRoom Preference: ' + room +\
-												 '\nRoommate: ' + roommate
+			return HttpResponseRedirect('http://clin28.cls.ru.nl')
 
 
-				send_mail(p.registration_email_sbj, msg, fromaddr, [admin])
-				send_mail(p.registration_email_sbj, msg, fromaddr, [email])
+class Dates(View):
 
-				return HttpResponseRedirect('http://clin28.cls.ru.nl')
-
-
-class ModifyProgram(View):
-
+	organization_team = list(organization_collection.find())[0]['team']
+	template = 'dates.html'
 
 	def get(self, request):
 
-		return render(request, 'modify_program.html', {
-				'askpass': True,
+		dates_list = list(dates_collection.find().sort('order',1))
+
+		return render(request, self.template, {
+			'organization_team': self.organization_team,
+			'dates_list': dates_list,
 		})
 
-	def post(self, request):
 
-			if "confirmpass" in request.POST:
+class Calls(View):
 
-				user_pass = request.POST['adminpass']
-
-				admin_pass = c.get('admin', 'pass')
-
-				if(user_pass == admin_pass):
-
-					return render(request, 'displaydata.html', {
-							'askpass': False,
-							'dalist': dalist,
-							'counts': counts,
-					})
-
-				else:
-
-					return render(request, 'displaydata.html', {
-							'askpass': True,
-							'warning': 'Invalid password, please try again.',
-					})
-
-class DisplayData(View):
+	organization_team = list(organization_collection.find())[0]['team']
+	template = 'calls.html'
 
 	def get(self, request):
 
-		return render(request, 'displaydata.html', {
-				'askpass': True,
+		return render(request, self.template, {
+			'organization_team': self.organization_team,
 		})
 
-	def post(self, request):
 
-			if "confirmpass" in request.POST:
+class DisplayParticipants(View):
 
-				user_pass = request.POST['adminpass']
+	template = 'display_participants.html'
 
-				admin_pass = c.get('admin', 'pass')
+	def get(self, request):
 
-				if(user_pass == admin_pass):
+		client_address = get_client_ip(request)
 
-					client_address = get_client_ip(request)
+		logging.info('Request to display data page : ' + client_address)
 
-					logging.info('Request to display data page : ' + client_address)
+		participant_list = list(participants_collection.find().sort('registration_time',1))
 
-					dalist = list(participants_collection.find().sort('affiliation',1))
+		counts = {}
+		counts['total'] = participants_collection.find().count()
 
-					counts = {}
-					counts['totalCount'] = participants_collection.find().count()
-					counts['day1Count'] = participants_collection.find({'Day1':'Yes'}).count()
-					counts['day2Count'] = participants_collection.find({'Day2':'Yes'}).count()
-					counts['dinnerCount'] = participants_collection.find({'Dinner':'Yes'}).count()
-					counts['hotelCount'] = participants_collection.find({'hotel':'Yes'}).count()
-					counts['singleCount'] = participants_collection.find({'room':'Single'}).count()
-					counts['doubleCount'] = participants_collection.find({'room':'Double'}).count()
-
-					return render(request, 'displaydata.html', {
-							'askpass': False,
-							'dalist': dalist,
-							'counts': counts,
-					})
-
-				else:
-
-					return render(request, 'displaydata.html', {
-							'askpass': True,
-							'warning': 'Invalid password, please try again.',
-					})
+		return render(request, self.template, {
+			'participant_list': participant_list,
+			'counts': counts,
+		})

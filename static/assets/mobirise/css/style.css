@@ -2472,6 +2472,11 @@ section h3.section-subheading {
   letter-spacing: 4px;
 }
 
+.warning {
+  color: #FF0000;
+  width: 80%;
+  margin: auto;
+}
 
 textarea:focus, input:focus, .uneditable-input:focus {
     border: 1px solid rgb(28, 73, 110) !important;
@@ -2604,7 +2609,7 @@ hr{
 }
 
 
-/* Participant Table */
+/* Participant Data Table */
 
 .participant-table {
     font-family: arial, sans-serif;
@@ -2620,7 +2625,15 @@ hr{
 }
 
 .participant-table tr:nth-child(even) {
-    background-color: #ebebeb;
+    background-color: #efeeee;
+}
+
+.participant-table tr:nth-child(odd) {
+    background-color: #f3f3f3;
+}
+
+.participant-table tr:first-child {
+  background-color: #FFF;
 }
 
 .participant-table tr:last-child {
@@ -2635,8 +2648,8 @@ hr{
 }
 
 .program-table th, .program-table td {
-     border-top: none !important;
-      border-bottom: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
  }
 
 .program-table tr:first-child th {

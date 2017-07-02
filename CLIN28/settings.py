@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -100,6 +101,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -108,7 +111,6 @@ EMAIL_HOST_USER = config.get('mail', 'fromaddr')
 EMAIL_HOST_PASSWORD = config.get('mail', 'password')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
