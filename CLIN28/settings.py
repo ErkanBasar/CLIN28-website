@@ -21,7 +21,7 @@ SECRET_KEY = config.get('settings', 'secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 if HOSTNAME[:9] == "applejack":
-	DEBUG = False
+	DEBUG = True
 else:
 	DEBUG = True
 

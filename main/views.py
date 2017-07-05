@@ -62,11 +62,10 @@ class Home(View):
 
 	def get(self, request):
 
-#		if(True):
-		if(os.uname()[1][:9] == 'applejack'):
-			return render(request, 'under_construction.html', {})
-
-		else:
+#		Uncomment to display under construction page.
+#		if(os.uname()[1][:9] == 'applejack'):
+#			return render(request, 'under_construction.html', {})
+#		else:
 
 			return render(request, self.template, {
 				'program': self.program,
