@@ -6,7 +6,7 @@
   <!-- Mobirise Free Bootstrap Template, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v2.6.1, mobirise.com">
+5B  <meta name="generator" content="Mobirise v2.6.1, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="{% static 'assets/images/favicon/favicon_trans.png' %}" type="image/x-icon">
   <meta name="description" content="video background">
@@ -64,7 +64,7 @@
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="#keynote">KEYNOTE</a>
                 </li>
-                <li class="mbr-navbar__item" data-toggle="tooltip"  data-placement="bottom" title="To Be Announced">
+                <li class="mbr-navbar__item" data-toggle="tooltip"  data-placement="bottom">
                   <a class="btn text-white" href="#sponsors">SPONSORS</a>
                 </li>
                 <li class="mbr-navbar__item">
@@ -179,126 +179,129 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 
 <!-- PROGRAM -->
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="program" >
-    <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #efefef;"></div>
-    <div class="mbr-section__container mbr-section__container--std-padding container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="mbr-header mbr-header--center mbr-header--std-padding">
-                        <h2 class="mbr-header__text">PROGRAM</h2>
-                        <h4 class="section-subheading warning"><b>The section is under construction.</b><br>It will be hidden until the content and the design is ready.</h4>
-                    </div>
+<!-- <section class="mbr-box mbr-section mbr-section--relative mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="program" > -->
+<!--     <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #efefef;"></div> -->
+<!--     <div class="mbr-section__container mbr-section__container--std-padding container"> -->
+<!--         <div class="row"> -->
+<!--             <div class="col-sm-12"> -->
+<!--                 <div class="row"> -->
+<!--                     <div class="mbr-header mbr-header--center mbr-header--std-padding"> -->
+<!--                         <h2 class="mbr-header__text">PROGRAM</h2> -->
+<!-- 			To be announced... -->
+<!--                         <\!-- <h4 class="section-subheading warning"><b>The section is under construction.</b><br>It will be hidden until the content and the design is ready.</h4> -\-> -->
+<!--                     </div> -->
 
-                    {% for session in program %}
+<!--                     <\!-- {% for session in program %} -\-> -->
 
-                    <table class="table table-hover program-table">
+<!--                     <\!-- <table class="table table-hover program-table"> -\-> -->
 
-                      <thead>
-                        <tr>
-                          <th class="col-md-1 align-middle" span="row">{{ session.time }}</th>
-                          <th colspan="4" class="col-md-10">{{ session.title }}</th>
-                        </tr>
-                        {% if session.slots %}
-                        <tr>
-                          <th></th>
-                          <th>{{ session.headers.column1 }}</th>
-                          <th>{{ session.headers.column2 }}</th>
-                          <th>{{ session.headers.column3 }}</th>
-                          <th>{{ session.headers.column4 }}</th>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>{{ session.chairs.column1 }}</th>
-                          <td>{{ session.chairs.column2 }}</th>
-                          <td>{{ session.chairs.column3 }}</th>
-                          <td>{{ session.chairs.column4 }}</th>
-                        </tr>
-                        {% endif %}
-                      </thead>
+<!--                     <\!--   <thead> -\-> -->
+<!--                     <\!--     <tr> -\-> -->
+<!--                     <\!--       <th class="col-md-1 align-middle" span="row">{{ session.time }}</th> -\-> -->
+<!--                     <\!--       <th colspan="4" class="col-md-10">{{ session.title }}</th> -\-> -->
+<!--                     <\!--     </tr> -\-> -->
+<!--                     <\!--     {% if session.slots %} -\-> -->
+<!--                     <\!--     <tr> -\-> -->
+<!--                     <\!--       <th></th> -\-> -->
+<!--                     <\!--       <th>{{ session.headers.column1 }}</th> -\-> -->
+<!--                     <\!--       <th>{{ session.headers.column2 }}</th> -\-> -->
+<!--                     <\!--       <th>{{ session.headers.column3 }}</th> -\-> -->
+<!--                     <\!--       <th>{{ session.headers.column4 }}</th> -\-> -->
+<!--                     <\!--     </tr> -\-> -->
+<!--                     <\!--     <tr> -\-> -->
+<!--                     <\!--       <td></td> -\-> -->
+<!--                     <\!--       <td>{{ session.chairs.column1 }}</th> -\-> -->
+<!--                     <\!--       <td>{{ session.chairs.column2 }}</th> -\-> -->
+<!--                     <\!--       <td>{{ session.chairs.column3 }}</th> -\-> -->
+<!--                     <\!--       <td>{{ session.chairs.column4 }}</th> -\-> -->
+<!--                     <\!--     </tr> -\-> -->
+<!--                     <\!--     {% endif %} -\-> -->
+<!--                     <\!--   </thead> -\-> -->
 
-                      {% if session.slots %}
+<!--                     <\!--   {% if session.slots %} -\-> -->
 
-                      <tbody>
+<!--                     <\!--   <tbody> -\-> -->
 
-                        {% for slot in session.slots %}
-                        <tr >
-                          <td class="col-md-1" scope="row">{{ slot.time }}</td>
-                          <td class="col-md-2">{{ slot.column1 }}</td>
-                          <td class="col-md-2">{{ slot.column2 }}</td>
-                          <td class="col-md-2">{{ slot.column3 }}</td>
-                          <td class="col-md-2">{{ slot.column4 }}</td>
-                        </tr>
-                        {% endfor %}
+<!--                     <\!--     {% for slot in session.slots %} -\-> -->
+<!--                     <\!--     <tr > -\-> -->
+<!--                     <\!--       <td class="col-md-1" scope="row">{{ slot.time }}</td> -\-> -->
+<!--                     <\!--       <td class="col-md-2">{{ slot.column1 }}</td> -\-> -->
+<!--                     <\!--       <td class="col-md-2">{{ slot.column2 }}</td> -\-> -->
+<!--                     <\!--       <td class="col-md-2">{{ slot.column3 }}</td> -\-> -->
+<!--                     <\!--       <td class="col-md-2">{{ slot.column4 }}</td> -\-> -->
+<!--                     <\!--     </tr> -\-> -->
+<!--                     <\!--     {% endfor %} -\-> -->
 
-                      </tbody>
+<!--                     <\!--   </tbody> -\-> -->
 
-                      {% endif %}
+<!--                     <\!--   {% endif %} -\-> -->
 
-                    </table>
+<!--                     <\!-- </table> -\-> -->
 
-                    {% endfor %}
+<!--                     <\!-- {% endfor %} -\-> -->
 
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--                 </div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </section> -->
 
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="register" style="background-color: <!--rgb(239, 239, 239);">
+<!-- <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="register" style="background-color: <\!--rgb(239, 239, 239);"> -->
 
-  <div class="mbr-section__container mbr-section__container--std-padding container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid">
+<!--   <div class="mbr-section__container mbr-section__container--std-padding container"> -->
+<!--     <div class="row"> -->
+<!--       <div class="col-sm-12"> -->
+<!--         <div class="row"> -->
+<!--           <div class="col-sm-8 col-sm-offset-2" data-form-type="formoid"> -->
 
-            <div class="mbr-header mbr-header--center mbr-header--std-padding">
-              <h2 class="mbr-header__text">REGISTRATION</h2>
-            </div>
+<!--             <div class="mbr-header mbr-header--center mbr-header--std-padding"> -->
+<!--               <h2 class="mbr-header__text">REGISTRATION</h2> -->
+<!--             </div> -->
 
-            <!--div style="color:#C20000; font-size:13px; margin: 5px 0;">
-            Please send us the presentation abstracts and poster titles before <b>September 25</b>, and register before <b>October 5</b>.</div-->
-            <!--Registration is now closed.</div-->
-            <form action="{% url 'home' %}" name='registerform' id='registerform' method="post">
-              {% csrf_token %}
+<!--             <\!--div style="color:#C20000; font-size:13px; margin: 5px 0;"> -->
+<!--             Please send us the presentation abstracts and poster titles before <b>September 25</b>, and register before <b>October 5</b>.</div-\-> -->
+<!-- 	    <center> -->
+<!--             Registration will be opened on December 1 2017 -->
+<!-- 	    </center> -->
+<!--             <\!-- <form action="{% url 'home' %}" name='registerform' id='registerform' method="post"> -\-> -->
+<!--             <\!--   {% csrf_token %} -\-> -->
 
-              <div class="form-group">
-                <label for="nameform">Name<span class="red-star"> *</span></label>
-                <input type="text" class="form-control" name="name" id='register-name' required>
-              </div>
+<!--             <\!--   <div class="form-group"> -\-> -->
+<!--             <\!--     <label for="nameform">Name<span class="red-star"> *</span></label> -\-> -->
+<!--             <\!--     <input type="text" class="form-control" name="name" id='register-name' required> -\-> -->
+<!--             <\!--   </div> -\-> -->
 
-              <div class="form-group">
-                <label>E-mail<span class="red-star"> *</span></label>
-                <input type="email" class="form-control" name="email" id='register-email' required >
-                <h4 class="warning" id="email-warning" style="margin:0; display: none;">This email is already in use.</h4>
-              </div>
+<!--             <\!--   <div class="form-group"> -\-> -->
+<!--             <\!--     <label>E-mail<span class="red-star"> *</span></label> -\-> -->
+<!--             <\!--     <input type="email" class="form-control" name="email" id='register-email' required > -\-> -->
+<!--             <\!--     <h4 class="warning" id="email-warning" style="margin:0; display: none;">This email is already in use.</h4> -\-> -->
+<!--             <\!--   </div> -\-> -->
 
-              <div class="form-group">
-                <label>
-                  The registration fee for all partipants is ?? euro.<br>After you registered, you are going to be redirected to the payment page.
-                </label>
-              </div>
+<!--             <\!--   <div class="form-group"> -\-> -->
+<!--             <\!--     <label> -\-> -->
+<!--             <\!--       The registration fee for all partipants is ?? euro.<br>After you registered, you are going to be redirected to the payment page. -\-> -->
+<!--             <\!--     </label> -\-> -->
+<!--             <\!--   </div> -\-> -->
 
-              <div class="mbr-buttons mbr-buttons--right">
+<!--             <\!--   <div class="mbr-buttons mbr-buttons--right"> -\-> -->
 
-                <div class="mbr-buttons--right" id='loading' style="display: none; margin: 0 auto;">
-                  Please wait...
-                  <img src="{% static 'assets/images/Radboud/loading.gif' %}" style='width:60px;' name="loading" >
-                </div>
+<!--             <\!--     <div class="mbr-buttons--right" id='loading' style="display: none; margin: 0 auto;"> -\-> -->
+<!--             <\!--       Please wait... -\-> -->
+<!--             <\!--       <img src="{% static 'assets/images/Radboud/loading.gif' %}" style='width:60px;' name="loading" > -\-> -->
+<!--             <\!--     </div> -\-> -->
 
-                <input type="submit" id='reg-btn' name='register' value='REGISTER' class="mbr-buttons__btn btn btn-lg btn-primary">
-              </div>
+<!--             <\!--     <input type="submit" id='reg-btn' name='register' value='REGISTER' class="mbr-buttons__btn btn btn-lg btn-primary"> -\-> -->
+<!--             <\!--   </div> -\-> -->
 
-            </form>
+<!--             </form> -->
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!--           </div> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </section> -->
 
 <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="venue" style="background-image: url({% static 'assets/images/Radboud/vereeniging-nijmegen.jpg' %}); height:100%;">
     <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #e7e7e7;"></div>
@@ -321,49 +324,49 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                         <i class="fa fa-external-link fa-stack-2x"></i></a>
                 </div>
             </div>
-            <div class="row text-center" style='margin-top:50px;'>
-                <div class="col-md-6">
-                    <span class="fa-stack fa-3x">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-car fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <div class="caption black-font">
-                        <div>
-                            <h3>BY CAR</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas auctor molestie dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p>
-                        </div>
-                        <p class="group"><a href="http://www.routenet.nl/" target="_blank" class="mbr-buttons__btn btn btn-default">ROUTENET</a></p>
-                    </div>
-                </div>
-                <!--div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x "></i>
-                        <i class="fa fa-bus fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <div class="caption black-font">
-                        <div>
-                            <h3>BY BUS</h3>
-                            <p>Duis sodales arcu eget gravida mollis. Sed condimentum nibh at dapibus semper. Etiam mattis leo at commodo eleifend. Integer mauris est, luctus vitae lobortis sed, tristique in eros.&nbsp;</p>
-                        </div>
-                        <p class="group"><a href="https://mobirise.com/bootstrap-template/" target="_blank" class="mbr-buttons__btn btn btn-default">LEARN MORE</a></p>
-                    </div>
-                </div-->
-                <div class="col-md-6">
-                    <span class="fa-stack fa-3x">
-                        <i class="fa fa-circle fa-stack-2x "></i>
-                        <i class="fa fa-train fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <div class="caption black-font">
-                        <div>
-                            <h3>BY TRAIN</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p>
-                        </div>
-                        <p class="group"><a href="http://www.ns.nl/en/journeyplanner/" target="_blank" class="mbr-buttons__btn btn btn-default">NS PLANNER</a></p>
-                    </div>
-                </div>
-            </div>
+            <!-- <div class="row text-center" style='margin-top:50px;'> -->
+            <!--     <div class="col-md-6"> -->
+            <!--         <span class="fa-stack fa-3x"> -->
+            <!--             <i class="fa fa-circle fa-stack-2x"></i> -->
+            <!--             <i class="fa fa-car fa-stack-1x fa-inverse"></i> -->
+            <!--         </span> -->
+            <!--         <div class="caption black-font"> -->
+            <!--             <div> -->
+            <!--                 <h3>BY CAR</h3> -->
+            <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p> -->
+            <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas auctor molestie dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p> -->
+            <!--             </div> -->
+            <!--             <p class="group"><a href="http://www.routenet.nl/" target="_blank" class="mbr-buttons__btn btn btn-default">ROUTENET</a></p> -->
+            <!--         </div> -->
+            <!--     </div> -->
+            <!--     <\!--div class="col-md-4"> -->
+            <!--         <span class="fa-stack fa-4x"> -->
+            <!--             <i class="fa fa-circle fa-stack-2x "></i> -->
+            <!--             <i class="fa fa-bus fa-stack-1x fa-inverse"></i> -->
+            <!--         </span> -->
+            <!--         <div class="caption black-font"> -->
+            <!--             <div> -->
+            <!--                 <h3>BY BUS</h3> -->
+            <!--                 <p>Duis sodales arcu eget gravida mollis. Sed condimentum nibh at dapibus semper. Etiam mattis leo at commodo eleifend. Integer mauris est, luctus vitae lobortis sed, tristique in eros.&nbsp;</p> -->
+            <!--             </div> -->
+            <!--             <p class="group"><a href="https://mobirise.com/bootstrap-template/" target="_blank" class="mbr-buttons__btn btn btn-default">LEARN MORE</a></p> -->
+            <!--         </div> -->
+            <!--     </div-\-> -->
+            <!--     <div class="col-md-6"> -->
+            <!--         <span class="fa-stack fa-3x"> -->
+            <!--             <i class="fa fa-circle fa-stack-2x "></i> -->
+            <!--             <i class="fa fa-train fa-stack-1x fa-inverse"></i> -->
+            <!--         </span> -->
+            <!--         <div class="caption black-font"> -->
+            <!--             <div> -->
+            <!--                 <h3>BY TRAIN</h3> -->
+            <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p> -->
+            <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p> -->
+            <!--             </div> -->
+            <!--             <p class="group"><a href="http://www.ns.nl/en/journeyplanner/" target="_blank" class="mbr-buttons__btn btn btn-default">NS PLANNER</a></p> -->
+            <!--         </div> -->
+            <!--     </div> -->
+            <!-- </div> -->
         </div>
     </section>
 </section>
@@ -385,15 +388,17 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
               <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
                 <h2 id="keynote-name">Andy Way</h2>
                 <h4><b>School of Computing, Dublin City University</b></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p> -->
               </div>
               <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
                 <img id="keynote-img" src="{% static 'assets/images/keynote_mini.jpg'%}"/>
               </div>
               <div class="col-sm-4 text-center">
-                <h4 style="font-size: 1.5em;">Abstract</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam bibendum elit, vel lobortis augue vehicula vitae. Aenean aliquam quis ante sed malesuada. In quis justo metus. Cras vitae libero in eros sodales auctor. Etiam mattis augue ut risus fermentum, quis molestie libero fringilla.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel mauris libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas auctor molestie dapibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</p>
+                <!-- <h4 style="font-size: 1.5em;">Abstract</h4> -->
+                <p>Prof. Way obtained a B.Sc. (Hons) in 1986, an M.Sc. in 1989, and his PhD in 2001 from the University of Essex, Colchester, U.K. From 1988-91 he worked at the University of Essex, U.K., on the Eurotra MT project. He joined DCU in 1991 and was promoted to Senior Lecturer in 2001, Associate Professor in 2006 and Full Professor in 2015. He was nominated DCU Senior Albert College Fellow 2002-2003, has been IBM CAS Scientist since 2003 and an SFI Fellow since 2005. More recently, he was the recipient of the 2014-15 DCU President’s Research Award for Science and Engineering.
+		</p>
+                <p>Prof. Way’s research interests include all areas of machine translation: statistical MT, example-based MT, neural MT, rule-based MT, hybrid models of MT, MT evaluation, teaching MT, etc. Prof. Way’s MT team at DCU have won several international competitions for the best MT system worldwide, including in 2016 the best systems for English-to-Finnish.
+		</p>
               </div>
             </div>
           </div>
@@ -417,11 +422,11 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
     </div>
     <div class="row">
       <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip" data-placement="bottom" title="War is Peace; Freedom is Slavery; Ignorance is Strength.">
-          <a href='https://en.wikipedia.org/wiki/Ingsoc' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/ingsoc1984.jpg'%}"></img>
-          </a>
-        </div>
+        <!-- <div class="image row" data-toggle="tooltip" data-placement="bottom" title="War is Peace; Freedom is Slavery; Ignorance is Strength."> -->
+        <!--   <a href='https://en.wikipedia.org/wiki/Ingsoc' target='_blank'> -->
+        <!--     <img src="{% static 'assets/images/fake_logos/ingsoc1984.jpg'%}"></img> -->
+        <!--   </a> -->
+        <!-- </div> -->
       </div>
     </div>
     <div class="col-md-12">
@@ -429,52 +434,57 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
     </div>
     <div class="row">
       <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip" data-placement="bottom" title="All you need and so much more!">
-          <a href='http://pixar.wikia.com/wiki/Buy_n_Large' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/buynlarge.png'%}" />
-          </a>
-        </div>
+        <!-- <div class="image row" data-toggle="tooltip" data-placement="bottom" title="All you need and so much more!"> -->
+        <!--   <a href='http://pixar.wikia.com/wiki/Buy_n_Large' target='_blank'> -->
+        <!--     <img src="{% static 'assets/images/fake_logos/buynlarge.png'%}" /> -->
+        <!--   </a> -->
+        <!-- </div> -->
       </div>
-      <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Okay then, we hold the world ransom for... One... Hundred... BILLION DOLLARS!">
-          <a href='https://en.wikipedia.org/wiki/Dr._Evil' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/virtucon.png'%}" />
-          </a>
-        </div>
-      </div>
+      <!-- <div class="thumbnail"> -->
+      <!--   <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Okay then, we hold the world ransom for... One... Hundred... BILLION DOLLARS!"> -->
+      <!--     <a href='https://en.wikipedia.org/wiki/Dr._Evil' target='_blank'> -->
+      <!--       <img src="{% static 'assets/images/fake_logos/virtucon.png'%}" /> -->
+      <!--     </a> -->
+      <!--   </div> -->
+      <!-- </div> -->
     </div>
     <div class="col-md-12">
       <h4 class="bronze">BRONZE</h4>
     </div>
     <div class="row">
       <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Impossibility in it's purest form.">
-          <a href='https://abstergo.org/' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/abstergo.png'%}" />
+        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Textgain">
+          <a href='https://www.textgain.com' target='_blank'>
+            <img src="{% static 'assets/images/logos/textgainlogo.jpg'%}" />
           </a>
         </div>
+        <!-- <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Impossibility in it's purest form."> -->
+        <!--   <a href='https://abstergo.org/' target='_blank'> -->
+        <!--     <img src="{% static 'assets/images/fake_logos/abstergo.png'%}" /> -->
+        <!--   </a> -->
+        <!-- </div> -->
       </div>
-      <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Our bussiness is life itself.">
-          <a href='http://residentevil.wikia.com/wiki/Umbrella_Corporation' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/umbrella.png'%}" />
-          </a>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="We deliver the future to your present.">
-          <a href='http://half-life.wikia.com/wiki/Black_Mesa_Research_Facility' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/blackmesa.jpg'%}" />
-          </a>
-        </div>
-      </div>
-      <div class="thumbnail">
-        <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="We do what we must because we can.">
-          <a href='https://theportalwiki.com/wiki/Aperture_Science' target='_blank'>
-            <img src="{% static 'assets/images/fake_logos/aperture.png'%}" />
-          </a>
-        </div>
-      </div>
+      <!-- <div class="thumbnail"> -->
+      <!--   <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Our bussiness is life itself."> -->
+      <!--     <a href='http://residentevil.wikia.com/wiki/Umbrella_Corporation' target='_blank'> -->
+      <!--       <img src="{% static 'assets/images/fake_logos/umbrella.png'%}" /> -->
+      <!--     </a> -->
+      <!--   </div> -->
+      <!-- </div> -->
+      <!-- <div class="thumbnail"> -->
+      <!--   <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="We deliver the future to your present."> -->
+      <!--     <a href='http://half-life.wikia.com/wiki/Black_Mesa_Research_Facility' target='_blank'> -->
+      <!--       <img src="{% static 'assets/images/fake_logos/blackmesa.jpg'%}" /> -->
+      <!--     </a> -->
+      <!--   </div> -->
+      <!-- </div> -->
+      <!-- <div class="thumbnail"> -->
+      <!--   <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="We do what we must because we can."> -->
+      <!--     <a href='https://theportalwiki.com/wiki/Aperture_Science' target='_blank'> -->
+      <!--       <img src="{% static 'assets/images/fake_logos/aperture.png'%}" /> -->
+      <!--     </a> -->
+      <!--   </div> -->
+      <!-- </div> -->
     </div>
 </section>
 
@@ -491,7 +501,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
     </div>
     <div class="mbr-footer mbr-footer--wysiwyg row" style='padding: 0px;'>
       <div class="col-sm-12 text-center">
-        <p class="mbr-footer__copyright">Do not hesitate to contact us! <br>E-mail: <a href="mailto:clin28@cls.ru.nl" target='_blank'>clin28@cls.ru.nl</a></p><hr>
+        <p class="mbr-footer__copyright">Do not hesitate to contact us! <br>E-mail: <a href="mailto:clin28@cls.ru.nl" target='_blank'>clin28@cls.ru.nl</a> - Twitter: <a href="https://twitter.com/clin_28" target='_blank'>@clin_28</a></p><hr>
         </div>
       </div>
     </div>
