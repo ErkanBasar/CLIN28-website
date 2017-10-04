@@ -15,11 +15,13 @@ urlpatterns = [
 
     url(r'^$', views.Home.as_view(), name='home'),
 
-	url(r'^participants$', login_required(views.DisplayParticipants.as_view()), name='display_participants'),
+    url(r'^participants$', login_required(views.DisplayParticipants.as_view()), name='display_participants'),
 
     url(r'^dates$', views.Dates.as_view(), name='dates'),
 
     url(r'^call_for_papers$', views.Calls.as_view(), name='calls'),
+
+    url(r'^shared_task$', views.SharedTask.as_view(), name='shared_task'),
 
     # Not in use;
     url(r'^check_email/$', views.check_email, name='check_email'),

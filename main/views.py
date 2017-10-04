@@ -82,9 +82,9 @@ class Home(View):
 					'registration_time': datetime.now()
 			}
 
-			participants_collection.insert(registeration_info)
+                        participants_collection.insert(registeration_info)
 
-			msg = p.registration_email_msg + '\n\nName: ' + registeration_info['name'] + '\nEmail: ' + registeration_info['email'] + '\n\n'
+                        msg = p.registration_email_msg + '\n\nName: ' + registeration_info['name'] + '\nEmail: ' + registeration_info['email'] + '\n\n'
 
 			send_mail(p.registration_email_sbj, msg, settings.EMAIL_HOST_USER, [registeration_info['email']])
 
@@ -110,6 +110,17 @@ class Calls(View):
 
 	organization_team = list(organization_collection.find())[0]['team']
 	template = 'calls.html'
+
+	def get(self, request):
+
+		return render(request, self.template, {
+			'organization_team': self.organization_team,
+		})
+
+class SharedTask(View):
+
+	organization_team = list(organization_collection.find())[0]['team']
+	template = 'shared_task.html'
 
 	def get(self, request):
 
