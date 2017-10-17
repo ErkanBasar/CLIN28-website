@@ -19,9 +19,11 @@ urlpatterns = [
 
     url(r'^dates$', views.Dates.as_view(), name='dates'),
 
-    url(r'^call_for_papers$', views.Calls.as_view(), name='calls'),
+    url(r'^calls$', views.Calls.as_view(), name='calls'),
 
     url(r'^shared_task$', views.SharedTask.as_view(), name='shared_task'),
+
+    url(r'^stil_thesis_prize$', views.ThesisPrize.as_view(), name='stil_thesis_prize'),
 
     # Not in use;
     url(r'^check_email/$', views.check_email, name='check_email'),

@@ -122,6 +122,20 @@ class SharedTask(View):
 
     def get(self, request):
 
+        dates = dates_collection.find_one({'title' : 'Shared task: Spelling correction'})
+
+        return render(request, self.template, {
+            'organization_team': self.organization_team,
+            'dates': dates,
+        })
+
+class ThesisPrize(View):
+
+    organization_team = list(organization_collection.find())[0]['team']
+    template = 'stil_thesis_prize.html'
+
+    def get(self, request):
+
         return render(request, self.template, {
             'organization_team': self.organization_team,
         })
