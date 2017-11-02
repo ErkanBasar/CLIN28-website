@@ -34,31 +34,7 @@ participants_collection = clindb[c.get('db','participants_collection')]
 organization_collection = clindb[c.get('db','organization_collection')]
 dates_collection = clindb[c.get('db','dates_collection')]
 
-
-def get_client_ip(request):
-    ip = request.META.get('HTTP_CF_CONNECTING_IP')
-    if ip is None:
-        ip = request.META.get('REMOTE_ADDR')
-    return ip
-
-# Not in use;
-def check_email(request):
-    response = {}
-    if(participants_collection.find_one({'email': request.GET['email']})):
-        response['exists'] = True
-    else:
-        response['exists'] = False
-    return HttpResponse(json.dumps(response), content_type="application/json")
-
 class Home(View):
-
-    program = sorted(list(program_collection.find()), key=lambda k: k['time'])
-    for session in program:
-        if('slots' in session):
-            session['slots'] = sorted(session['slots'], key=lambda k: k['time'])
-    organization_team = list(organization_collection.find())[0]['team']
-
-    template = 'base.html'
 
     def get(self, request):
 
@@ -67,96 +43,58 @@ class Home(View):
 #            return render(request, 'under_construction.html', {})
 #        else:
 
-            return render(request, self.template, {
+            program = sorted(list(program_collection.find()), key=lambda k: k['time'])
+            for session in program:
+                if('slots' in session):
+                    session['slots'] = sorted(session['slots'], key=lambda k: k['time'])
+
+            organization_team = list(organization_collection.find())[0]['team']
+
+            return render(request, 'base.html', {
                 'program': self.program,
                 'organization_team': self.organization_team,
             })
 
-    def post(self, request):
-
-        if "register" in request.POST:
-
-            registeration_info = {
-                    'name': request.POST['name'],
-                    'email': request.POST['email'],
-                    'registration_time': datetime.now()
-            }
-
-            participants_collection.insert(registeration_info)
-
-            msg = p.registration_email_msg + '\n\nName: ' + registeration_info['name'] + '\nEmail: ' + registeration_info['email'] + '\n\n'
-
-            send_mail(p.registration_email_sbj, msg, settings.EMAIL_HOST_USER, [registeration_info['email']])
-
-            return HttpResponseRedirect('http://clin28.cls.ru.nl')
-
 class Dates(View):
-
-    organization_team = list(organization_collection.find())[0]['team']
-    template = 'dates.html'
 
     def get(self, request):
 
+        organization_team = list(organization_collection.find())[0]['team']
         dates_list = list(dates_collection.find().sort('order',1))
 
-        return render(request, self.template, {
-            'organization_team': self.organization_team,
+        return render(request, 'dates.html', {
+            'organization_team': organization_team,
             'dates_list': dates_list,
         })
 
 class Calls(View):
 
-    organization_team = list(organization_collection.find())[0]['team']
-    template = 'calls.html'
-
     def get(self, request):
 
-        return render(request, self.template, {
-            'organization_team': self.organization_team,
+        organization_team = list(organization_collection.find())[0]['team']
+
+        return render(request, 'calls.html', {
+            'organization_team': organization_team,
         })
 
 class SharedTask(View):
 
-    organization_team = list(organization_collection.find())[0]['team']
-    template = 'shared_task.html'
-
     def get(self, request):
 
+        organization_team = list(organization_collection.find())[0]['team']
         dates = dates_collection.find({'title' : 'Shared task: Spelling correction'})[0]
 
-        return render(request, self.template, {
-            'organization_team': self.organization_team,
+        return render(request, 'shared_task.html', {
+            'organization_team': organization_team,
             'dates': dates,
         })
 
 class ThesisPrize(View):
 
-    organization_team = list(organization_collection.find())[0]['team']
-    template = 'stil_thesis_prize.html'
-
     def get(self, request):
 
-        return render(request, self.template, {
-            'organization_team': self.organization_team,
-        })
+        organization_team = list(organization_collection.find())[0]['team']
 
-
-class DisplayParticipants(View):
-
-    template = 'display_participants.html'
-
-    def get(self, request):
-
-        client_address = get_client_ip(request)
-
-        logging.info('Request to display data page : ' + client_address)
-
-        participant_list = list(participants_collection.find().sort('registration_time',1))
-
-        counts = {}
-        counts['total'] = participants_collection.find().count()
-
-        return render(request, self.template, {
-            'participant_list': participant_list,
-            'counts': counts,
+        return render(request, 'stil_thesis_prize.html', {
+            'organization_team': organization_team,
         })
