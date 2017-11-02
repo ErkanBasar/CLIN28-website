@@ -1,0 +1,160 @@
+{% extends 'second_base.html' %}
+{% load static %}
+
+{% block header %}SHARED TASK: SPELLING CORRECTION{% endblock %}
+
+{% block main %}
+
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="form1-54346" style="background-color: #efefef;">
+
+  <div class="mbr-section__container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;">
+
+            <div class="col-sm-10 col-sm-offset-1">
+
+              <h3>Task description</h3>
+
+              <p>
+Automatic spell checking and correction has been subject of research for decades. Although state of the art spell checkers perform reasonably well for everyday-life applications, reaching high accuracy remains to be a challenging task. This shared task focuses on the detection and correction of spelling errors in Dutch Wikipedia texts. Wikipedia articles aim to be standard-Dutch texts, which may contain jargon. In particular, this task addresses the <i>detection and correction</i> of the types of spelling errors listed below.
+              </p>
+
+	      <p>
+	      <i>Note:</i>              
+
+		<ul>
+		  <li> Submitted spelling correctors will be evaluated for detection and correction of these – and only these – types of errors. </li>
+		  <li> The spelling errors do not have to be categorized into the categories that are listed below – only detected and corrected. </li>
+		  <li> In case of officially accepted spelling variation or doubt about the correct spelling, all correct variants are accepted. </li>
+		  <li> The corrections are evaluated in accordance with the Woordenlijst Nederlandse Taal (<a href="http://woordenlijst.org/">http://woordenlijst.org/</a>) and the Leidraad (<a href="http://woordenlijst.org/leidraad">http://woordenlijst.org/leidraad</a>). </li>
+		</ul>
+              </p>
+
+	      <h3>Data and Evaluation</h3>
+
+              <p>
+		The data and evaluation scripts are shared through <a href="https://github.com/LanguageMachines/CLIN28_ST_spelling_correction">https://github.com/LanguageMachines/CLIN28_ST_spelling_correction</a>. 
+	      </p>
+
+	      <p>
+		We initially deliver three annotated documents for validation purposes. A validation set consisting of 50 Wikipedia articles will follow before the end of October. The documents may contain zero, one or more spelling errors. The validation set contains all of the spelling error categories listed below. In December, a full test set will be published in the same format. 
+              </p>
+
+              <p>
+		Detection and correction of spelling errors are evaluated separately, in terms of precision, recall and F-score. The script for automatic evaluation of the submissions will be published as soon as possible. 
+              </p>
+
+	      <h3>Important dates</h3>
+
+              <p style="font-size: 1em;">
+		<ul>
+		{% for date in dates.dates %}
+
+                   {% if date.active %}
+                      <li>{{ date.text }}: {{ date.date }} </li>
+
+                   {% else %}
+                      <span style="text-decoration: line-through;"><b>{{ date.text }}:</b> {{ date.date }} <br></span>
+
+                   {% endif %}
+
+                {% endfor %}
+		</ul>
+              </p>
+	      
+
+              <!-- <p> -->
+	      <!-- The important dates for the shared task can be found under <a href="{% url 'dates' %}">Dates</a>. -->
+	      <!-- </p> -->
+
+	      
+
+	      <!-- 	<ul> -->
+	      <!-- 	  <li>  October 2017: Publishing validation data set</li> -->
+	      <!-- 	  <li> 1 December 2017: Publishing test data set</li> -->
+	      <!-- 	  <li> 22 December 2017: Deadline for submission of source code and output</li> -->
+	      <!-- 	  <li> 8 January 2018: Feedback to submissions</li> -->
+	      <!-- 	  <li> 26 January 2018: Presenting the results at the CLIN conference</li> -->
+	      <!-- 	</ul> -->
+	      
+	      <h3>Errors to detect and correct</h3>
+
+	      <p>
+		<ul>
+		  <li> <i>real-word confusions</i>, word is confused with a near neighbor (confusion with non-native spelling, homophony, grammatical errors, et cetera):
+		    <ul>
+		      <li> ik wordt → ik word </li>
+		      <li> stijl → steil </li>
+		      <li> hobbies → hobby’s </li>
+		      <li> me → mijn </li>
+		      <li> als → dan </li>
+		     </ul>
+		  </li>
+		  <li> <i>split errors</i>, compound words which are incorrectly separated:
+		    <ul>
+		      <li> beleids medewerker → beleidsmedewerker </li>
+		      <li> lang durig → langdurig </li>
+		    </ul>
+		  </li>
+		  <li> <i>runon errors</i>, incorrect concatenation of words:
+		    <ul>
+		      <li> etcetera → et cetera </li>
+		      <li> zeidat → zei dat </li>
+		    </ul>
+		  </li>
+		  <li> <i>missing words</i>, sentence is ungrammatical due to missing elements:
+		    <ul>
+		      <li> samen met vrouw die → samen met de vrouw die </li>
+		    </ul>
+		  </li>
+		  <li> <i>redundant words</i>, sentence is ungrammatical due to redundant elements: 
+		    <ul>
+		      <li> door doordat → doordat </li>
+		    </ul>
+		  </li>
+		  <li> <i>missing punctuation</i>, missing diacritical symbols and hyphenation marks (other cases of missing punctuation are excluded from the task):
+		    <ul>
+		      <li> een en ander → één en ander </li>
+		      <li> financiele → financiële </li>
+		      <li> autoongeluk → auto-ongeluk </li>
+		    </ul>
+		  </li>
+		  <li> <i>redundant punctuation</i>, redundant diacritical symbols and hyphenation marks (other cases of redundant punctuation are excluded from the task):
+		    <ul>
+		      <li> financiëel → financieel </li>
+		      <li> co-assistent → coassistent </li>
+		    </ul>
+		  </li>
+		  <li> <i>capitalisation errors</i>, incorrect use of capital letters:
+		    <ul>
+		      <li> Joodse → joodse </li>
+		      <li> Minister van Onderwijs → minister van Onderwijs </li>
+		      <li> amstelveen → Amstelveen </li>
+		    </ul>
+		  </li>
+		  <li> <i> archaic spelling</i>, outdated spelling:
+		    <ul>
+		      <li> aktie → actie </li>
+		      <li> paardebloem → paardenbloem </li>
+		    </ul>
+		  </li>
+		  <li> <i>non-word errors</i>, words that do not exist in Dutch:
+		    <ul>
+		      <li> voek → boek </li>
+		      <li> assrtief → assertief </li>
+		    </ul>
+		  </li>     
+		</ul>
+	      </p>
+
+              </div>
+	   </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

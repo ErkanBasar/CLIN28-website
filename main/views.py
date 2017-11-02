@@ -122,7 +122,7 @@ class SharedTask(View):
 
     def get(self, request):
 
-        dates = dates_collection.find_one({'title' : 'Shared task: Spelling correction'})
+        dates = dates_collection.find({'title' : 'Shared task: Spelling correction'})[0]
 
         return render(request, self.template, {
             'organization_team': self.organization_team,
