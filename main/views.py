@@ -18,7 +18,7 @@ c.read("data/auth.ini")
 client = pm.MongoClient(c.get('db', 'host'), int(c.get('db', 'port')))
 clindb = client[c.get('db', 'db')]
 
-authorized_hosts = ["applejack", "xarou.hom"]
+authorized_hosts = ["applejack"]
 if os.uname()[1][:9] not in authorized_hosts:
     clindb.authenticate(c.get('db', 'user'), c.get('db', 'pass'))
 
