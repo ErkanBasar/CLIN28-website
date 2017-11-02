@@ -51,8 +51,8 @@ class Home(View):
             organization_team = list(organization_collection.find())[0]['team']
 
             return render(request, 'base.html', {
-                'program': self.program,
-                'organization_team': self.organization_team,
+                'program': program,
+                'organization_team': organization_team,
             })
 
 class Dates(View):
