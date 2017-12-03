@@ -5,46 +5,48 @@
 
 {% block main %}
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="form1-54346" style="background-color: #efefef;">
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
 
   <div class="mbr-section__container">
     <div class="row">
       <div class="col-sm-12">
         <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container mbr-section--full-height" style="background-color:white;">
+          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;">
 
             <div class="col-sm-10 col-sm-offset-1">
 
-              <h3>Call for Abstracts</h3>
+              <h4 class="blue">Call for Abstracts</h4>
 
               <p>
-		Researchers are invited to submit, in English, abstracts describing work on all aspects of computational linguistics and related language and speech technologies and applications.
+                Researchers are invited to submit, in English, abstracts describing work on all aspects of computational linguistics and related language and speech technologies and applications.
 
-		Submissions should include: 
-		<ul>
-		  <li> Name, affiliation and contact details of each author</li>
-		  <li> Presentation title</li>
-		  <li> An abstract in PDF of 500 words maximum (excluding references), outlining their presentation</li>
-		  <li> A stated preference for oral presentation or poster</li>
-		</ul>
+                Submissions should include:
+                <ul>
+                  <li> Name, affiliation and contact details of each author</li>
+                  <li> Presentation title</li>
+                  <li> An abstract in PDF of 500 words maximum (excluding references), outlining their presentation</li>
+                  <li> A stated preference for oral presentation or poster</li>
+                </ul>
 
-		Presentation abstracts should be submitted electronically, no later than November 14th, 2017 (12PM, GMT/UTC + 01:00 hour) via the submission website at <a href="https://easychair.org/conferences/?conf=clin28" target="_blank">EasyChair</a>.
+                Presentation abstracts should be submitted electronically, no later than November 14th, 2017 (12PM, GMT/UTC + 01:00 hour) via the submission website at <a href="https://easychair.org/conferences/?conf=clin28" target="_blank">EasyChair</a>.
 
               </p>
 
- 	      <h3>STIL Thesis Prize</h3>
-
-	      <p>
-		Since CLIN 20, a special annual thesis prize, sponsored by STIL, is awarded to the best Master thesis in computational linguistics. STIL is the Stichting Toepassing Inductieve Leertechnieken. Master theses submitted to and evaluated at a university or organization of higher education in the Netherlands or Flanders are eligible for the prize. The thesis should address a topic in computational linguistics or its applications, and may be written in Dutch or English. See <a href="{% url 'dates' %}">Thesis prize</a> for the full requirements and procedure.
-
-	      <h3>Shared Task</h3>
+              <h4 class="blue">STIL Thesis Prize</h4>
 
               <p>
-		CLIN 28 includes a shared task on spelling correction for Dutch. See <a href="{% url 'shared_task' %}">Shared task</a> for the full details. 
+                Since CLIN 20, a special annual thesis prize, sponsored by STIL, is awarded to the best Master thesis in computational linguistics. STIL is the Stichting Toepassing Inductieve Leertechnieken. Master theses submitted to and evaluated at a university or organization of higher education in the Netherlands or Flanders are eligible for the prize. The thesis should address a topic in computational linguistics or its applications, and may be written in Dutch or English. See <a href="{% url 'stil_thesis_prize' %}">Thesis prize</a> for the full requirements and procedure.
               </p>
 
-              </div>
+              <h4 class="blue">Shared Task</h4>
 
+              <p>
+                CLIN 28 includes a shared task on spelling correction for Dutch. See <a href="{% url 'shared_task' %}">Shared task</a> for the full details.
+              </p>
+
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

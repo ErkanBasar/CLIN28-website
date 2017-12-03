@@ -5,44 +5,44 @@
 
 {% block main %}
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="form1-54346" style="background-color: #efefef;">
-
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
   <div class="mbr-section__container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container mbr-section--full-height" style="background-color:white;">
-
-            <div class="col-sm-10 col-sm-offset-1">
-
-            {% for section in dates_list %}
-
-              <h4 style="font-size:2em; font-weight:700; color: #1c496e;">{{ section.title }}</h4>
-
-              <p style="font-size: 1em;">
-              {% for date in section.dates %}
-
-                {% if date.active %}
-
-                <b>{{ date.text }}:</b> {{ date.date }} <br>
-
-                {% else %}
-
-                <span style="text-decoration: line-through;"><b>{{ date.text }}:</b> {{ date.date }} <br></span>
-
-                {% endif %}
-
-              {% endfor %}
-              </p>
-
-              <br>
-            {% endfor %}
-            </div>
-
+        <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;" id="dates-table">
         </div>
       </div>
     </div>
   </div>
 </section>
 
+{% endblock %}
+
+{% block datesJS %}
+  <script>
+    $.getJSON(window.globaldict.urls.dates, function (data) {
+      console.log(data);
+      var toPush = $('<div>', {
+        class: 'col-sm-10 col-sm-offset-1'
+      });
+      data.forEach(function (item) {
+        toPush.append($('<h4>', {
+          class: 'blue',
+          text: item.title
+        }));
+        toPush.append($('<p>', {}));
+        item.dates.forEach(function (impDate) {
+          var spanClass = (impDate.active) ? '' : 'inactive'
+          toPush.append($('<span>', {
+            class: spanClass
+          }).append($('<b>', {
+            text: impDate.text + ': '
+          })).append(impDate.date));
+          toPush.append($('<br>'));
+        });
+        toPush.append($('<br>'));
+      });
+      $('#dates-table').html(toPush);
+    });
+  </script>
 {% endblock %}
