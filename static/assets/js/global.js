@@ -1,12 +1,8 @@
-
-
-window.globaldict = {};
-
-
 // eslint-disable-next-line no-unused-vars
-(function (window, document, globaldict, $, undefined) {
+(function (window, document, $, undefined) {
 
-  globaldict.urls = {};
+  window.globaldict = {};
+  window.globaldict.urls = {};
 
   $(document).ready(function () {
     $('#map').addClass('scrolloff');                // set the mouse events to none when doc is ready
@@ -17,8 +13,7 @@ window.globaldict = {};
       $('#map').removeClass('scrolloff');
     });
     $('#map').mouseleave(function () {              // becuase the mouse up doesn't work...
-      $('#map').addClass('scrolloff');            // set the pointer events to none when mouse leaves the map area
-                                                  // or you can do it on some other event
+      $('#map').addClass('scrolloff');            // set the pointer events to none when mouse leaves the map area or you can do it on some other event
     });
   });
 
@@ -49,16 +44,16 @@ window.globaldict = {};
   });
 
 
-  // Not in use;
-  window.check_email = function (email) {
-    $.ajax({
-      url: 'check_email/',
-      data: {'email': email},
-      type: 'GET',
-      success : function(data) {
-        console.log(data);
-      }
-    });
-  };
+  // // Not in use;
+  // window.check_email = function (email) {
+  //   $.ajax({
+  //     url: 'check_email/',
+  //     data: {'email': email},
+  //     type: 'GET',
+  //     success : function(data) {
+  //       console.log(data);
+  //     }
+  //   });
+  // };
 
-})(window, window.document, window.globaldict, window.jQuery);
+})(window, window.document, window.jQuery);

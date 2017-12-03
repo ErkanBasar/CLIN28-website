@@ -16,35 +16,34 @@
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="{% url 'home' %}#about">ABOUT</a>
                 </li>
-                <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'dates' %}">DATES</a>
+                <li class="mbr-navbar__item dropdown-item">
+                    <a class="btn text-white" href="{% url 'calls' %}">DATES & CALLS</a>
+                    <div class="dropdown-item-content">
+                      <a href="{% url 'dates' %}">IMPORTANT DATES</a>
+                      <a href="{% url 'calls' %}">CALLS</a>
+                      <a href="{% url 'shared_task' %}">SHARED TASK</a>
+                      <a href="{% url 'stil_thesis_prize' %}">THESIS PRIZE</a>
+                    </div>
                 </li>
-                <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'calls' %}">CALLS</a>
-                </li>
-                <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'shared_task' %}">SHARED TASK</a>
-                </li>
-                <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'stil_thesis_prize' %}">THESIS PRIZE</a>
-                </li>
-                <li class="mbr-navbar__item">
+                <li class="mbr-navbar__item"  data-toggle="tooltip"  data-placement="bottom" title="To Be Announced">
                   <a class="btn text-white" href="{% url 'home' %}#program">PROGRAM</a>
                 </li>
-                <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'home' %}#venue">VENUE</a>
-                </li>
-                <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'home' %}#accomodation">ACCOM.</a>
+                <li class="mbr-navbar__item dropdown-item">
+                    <a class="btn text-white" href="{% url 'home' %}#venue">VENUE</a>
+                    <div class="dropdown-item-content">
+                      <a href="{% url 'home' %}#venue">CONFERENCE CENTER</a>
+                      <a href="{% url 'home' %}#venue">ACOMMODATION</a>
+                      <!-- <a href="http://www.netherlands-tourism.com/nijmegen/", target="_blank">ABOUT NIJMEGEN</a> -->
+                    </div>
                 </li>
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="{% url 'home' %}#keynote">KEYNOTE</a>
                 </li>
-                <li class="mbr-navbar__item">
+                <li class="mbr-navbar__item" data-toggle="tooltip"  data-placement="bottom">
                   <a class="btn text-white" href="{% url 'home' %}#sponsors">SPONSORS</a>
                 </li>
                 <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="#contact">CONTACT</a>
+                  <a class="btn text-white" href="{% url 'home' %}#contact">CONTACT</a>
                 </li>
                 <li class="mbr-navbar__item">
                   <a class="mbr-buttons__btn btn btn-default text-white register-btn" href="https://fdl-ru.paydro.com/clin28">REGISTER</a>
@@ -59,21 +58,16 @@
 </section>
 
 <section class="header-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted mbr-after-navbar mbr-parallax-background" style="color:white; background-image: url({% static 'assets/images/Radboud/nijmegen2.jpg' %}); text-align:center; padding:100px 0; font-size:3em;">
-  <div class="mbr-overlay" style="opacity: 0.3; background-color: #503e3e;"></div>
-
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: #503e3e;"></div>
   <section id="#features1-42">
-
       <div class="container">
           <div class="row">
               <div class="col-lg-12 text-center">
                   <header>{% block header %}{% endblock %}</header>
               </div>
           </div>
-
       </div>
-
   </section>
-
 </section>
 
 {% endblock %}

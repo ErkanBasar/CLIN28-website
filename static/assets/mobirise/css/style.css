@@ -2744,4 +2744,63 @@ hr{
   -khtml-border-radius: 30px;
 }
 
+h4.blue {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1c496e;
+  padding: 7px 0px;
+  text-decoration: none;
+}
+
+#dates-table > div > p {
+  font-size: 1em;
+}
+
+#dates-table > div > span {
+  font-size: 1em;
+}
+
+.inactive {
+  text-decoration: line-through;
+}
+
+.clin-logo {
+  color: white;
+  font-family: "FinalFrontier", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: -3px -1px 0 rgb(28, 73, 110), 0 1px rgb(28, 73, 110), 1px 0 rgb(28, 73, 110), 0 -1px rgb(28, 73, 110);
+}
+
+
+/* Dropdown in Menu */
+
+.dropdown-item {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-item-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-item-content a {
+    color: #545454;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-item-content a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdown-item:hover .dropdown-item-content {
+    display: block;
+}
+
 /* color : rgb(28, 73, 110) */

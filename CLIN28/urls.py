@@ -1,26 +1,19 @@
 """
 CLIN28 URL Configuration
 """
-
 from django.conf.urls import url
-from django.contrib import admin
-from django.contrib.auth import views as auth_views
-from django.contrib.auth.decorators import login_required
-
 from main import views
 
 urlpatterns = [
 
-    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^$', views.home, name='home'),
 
-    url(r'^$', views.Home.as_view(), name='home'),
+    url(r'^dates$', views.dates, name='dates'),
 
-    url(r'^dates$', views.Dates.as_view(), name='dates'),
+    url(r'^calls$', views.calls, name='calls'),
 
-    url(r'^calls$', views.Calls.as_view(), name='calls'),
+    url(r'^shared_task$', views.shared_task, name='shared_task'),
 
-    url(r'^shared_task$', views.SharedTask.as_view(), name='shared_task'),
-
-    url(r'^stil_thesis_prize$', views.ThesisPrize.as_view(), name='stil_thesis_prize'),
+    url(r'^stil_thesis_prize$', views.thesis_prize, name='stil_thesis_prize'),
 
 ]
