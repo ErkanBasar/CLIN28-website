@@ -15,27 +15,17 @@
   {
     "title": "Shared task: Spelling correction",
     "dates": [{
-        "text": "Validation data set online",
-        "date": "31 October 2017",
-        "active": true
-      },
-      {
-        "text": "Release of test data set",
-        "date": "1 December 2017",
-        "active": true
-      },
-      {
-        "text": "Submission deadline of source code and output",
-        "date": "22 December 2017",
+        "text": "Submission deadline (submit source code and output)",
+        "date": "12 January 2018",
         "active": true
       },
       {
         "text": "Feedback to submissions",
-        "date": "8 January 2018",
+        "date": "19 January 2018",
         "active": true
       },
       {
-        "text": "Presentation of results at the CLIN conference",
+        "text": "Presentation of results at the 28th CLIN conference",
         "date": "26 January 2018",
         "active": true
       }
