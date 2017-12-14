@@ -2378,6 +2378,96 @@ font-weight: bold;
 }
 
 
+/**********************************************/
+/*
+/*   POPUP WINDOW
+/*
+/*********************************************/
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 11001; /* Sit on top */
+    padding-top: 20vh; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+    min-width: 250px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #FFF;
+    color: black;
+}
+
+.modal-body {
+   padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
+/* The Close Button */
+.close {
+    color: #000 !important;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px !important;
+    margin-bottom: 15px !important;
+    opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#talk-title {
+  font-size: 1.5em;
+  color: #1c496e;
+  padding: 20px 20px 0px 20px;
+}
+
+#talk-authors {
+  padding: 0px 20px 0px 20px;
+  font-style: italic;
+}
+
+#talk-abstract {
+  padding: 20px;
+}
+
 /*****************************************/
 /*                                       */
 /*          CUSTOM                       */
@@ -2644,28 +2734,66 @@ hr{
 /* Program Table */
 
 .program-table {
+  background-color: white;
+  margin: 30px 0px;
   border: 1px solid rgb(28, 73, 110);
 }
 
-.program-table th, .program-table td {
-  border-top: none !important;
-  border-bottom: none !important;
- }
-
-.program-table tr:first-child th {
-  background: white;
-  color: rgb(28, 73, 110);
-  font-weight: 600;
-  text-align: center;
+.slot-header {
+  /*background: #7fb6bb;*/
+  background: rgb(28, 73, 110);
+  color: white;
   height: 40px;
 }
 
-.program-table tr:first-child th:nth-child(2n) {
-  font-size: 1.5em;
+.slot-header div:first-child {
+  font-size: 1em;
+  padding: 10px 0px;
+  text-align: center;
 }
 
-.program-table tr:first-child th:first-child {
-  text-align: left;
+.slot-header div:nth-child(2) {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 5px 0px 5px 30px;
+}
+
+.slot-header small {
+  padding-left: 10px;
+  font-size: 0.6em;
+  font-weight: normal;
+}
+
+.sessions-row .col-md-11 {
+  padding: 20px 0px 0px 15px;
+}
+
+.sessions-row .col-md-11 h4 {
+  font-size: 15px;
+  margin: 0px;
+  margin-bottom: 5px;
+  color: #1c496e;
+}
+
+.sessions-row .col-md-11 p {
+  font-size: 13px;
+}
+
+.subslot-row .col-md-11 {
+  padding-right: 0px;
+}
+
+.subslot-time {
+  padding-top: 15px;
+}
+
+.program-talk {
+  padding: 15px;
+}
+
+.program-talk:hover {
+  box-shadow: 0px 0px 6px 1px #1c496e;
+  cursor: pointer;
 }
 
 /* Navbar Items */
@@ -2801,6 +2929,20 @@ h4.blue {
 
 .dropdown-item:hover .dropdown-item-content {
     display: block;
+}
+
+.collapse-button {
+  padding-right:15px;
+  cursor:pointer;
+}
+
+.collapse-button::before {
+   content: '\f077';
+   font-family: 'FontAwesome'
+}
+
+.collapse-button.collapsed::before {
+   content: '\f078';
 }
 
 /* color : rgb(28, 73, 110) */

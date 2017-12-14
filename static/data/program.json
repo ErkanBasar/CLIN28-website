@@ -1,0 +1,294 @@
+[
+  {
+    "start": "09:30",
+    "end": "11:30",
+    "title": "First session",
+    "description": "Description",
+    "sessions" : [
+      {
+        "title": "Deep Learning Learning Learning Learning 1",
+        "location": "Room-1B",
+        "chair": "John Doe"
+      },
+      {
+        "title": "Deep Learning 2",
+        "location": "Room-2B",
+        "chair": "John Doe"
+      },
+      {
+        "title": "Deep Learning 3",
+        "location": "Room-3B",
+        "chair": "John Doe"
+      },
+      {
+        "title": "Deep Learning 4",
+        "location": "Room-4B",
+        "chair": "John Doe"
+      }
+    ],
+    "subSlots": [
+      {
+        "talks": [
+          {
+            "title": "Talk1",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk2",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk3",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk4",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      },
+      {
+        "talks": [
+          {
+            "title": "Machine translation-based language model adaptation for automatic speech recognition of spoken translations",
+            "abstract": "We present AHA, the Anagram Hashing Application, a new CLAM web application and service that allows researchers to effortlessly analyse the lexical variation present in their Gold Standard data and to publish the results. AHA enables researchers to obtain character confusion lists and attendant frequency statistics from word lists. The tool serves to obtain derived information for a variety of purposes such as diachronical or dialectical language variance studies, spelling and OCR-error profiling, etc. A major aim of the web application/service provided is to enable researchers to give a succinct quantitative summary of their gold standard data in terms of the commonly accepted Damerau-Levenshtein error categories of insertion, deletion, substitution, transposition and combinations or special variants e.g. regarding capitalization or spacing. Given for instance a corpus-derived list of the words in a diachronical corpus and a contemporary word list, the tool allows for efficiently determining which historical spelling variations are prevalent in the data. AHA is a subservice of the PICCL (Philosophical Integrator of Computational and Corpus Libraries) corpus building workflow currently being developed at CLST and TiCC in a CLARIAH project.",
+            "authors": "Joris Pelemans, Tom Vanallemeersch, Kris Demuynck, Lyan Verwimp, Hugo Van Hamme and Patrick Wambacq"
+          },
+          {
+            "title": "Talk6",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "important talk7",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk9",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "11:30",
+    "end": "11:45",
+    "title": "Coffee Break",
+    "description": "",
+    "location": "Hallway"
+  },
+  {
+    "start": "09:30",
+    "end": "11:30",
+    "title": "Poster session",
+    "description": "Description",
+    "location": "Room-4A",
+    "subSlots":  [
+      {
+        "talks": [
+          {
+            "title": "A novel approach to aspect extraction taking into account linguistic structure",
+            "abstract": "abstract",
+            "authors": "Stéphan Tulkens and Walter Daelemans"
+          },
+          {
+            "title": "Poster Title 2",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 3",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 4",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      },
+      {
+        "talks": [
+          {
+            "title": "A novel approach to aspect extraction taking into account linguistic structure",
+            "abstract": "abstract",
+            "authors": "Stéphan Tulkens and Walter Daelemans"
+          },
+          {
+            "title": "Poster Title 2",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 3",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 4",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      },
+      {
+        "talks": [
+          {
+            "title": "A novel approach to aspect extraction taking into account linguistic structure",
+            "abstract": "abstract",
+            "authors": "Stéphan Tulkens and Walter Daelemans"
+          },
+          {
+            "title": "Poster Title 2",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 3",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 4",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      },
+      {
+        "talks": [
+          {
+            "title": "A novel approach to aspect extraction taking into account linguistic structure",
+            "abstract": "abstract",
+            "authors": "Stéphan Tulkens and Walter Daelemans"
+          },
+          {
+            "title": "Poster Title 2",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 3",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 4",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      },
+      {
+        "talks": [
+          {
+            "title": "Poster Title 5",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 6",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 7",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Poster Title 8",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "13:00",
+    "end": "15:50",
+    "title": "Second session",
+    "description": "Description",
+    "sessions" : [
+      {
+        "title": "Deep Learning Learning Learning Learning 1",
+        "location": "Room-1B",
+        "chair": "John Doe"
+      },
+      {
+        "title": "Deep Learning 2",
+        "location": "Room-2B",
+        "chair": "John Doe"
+      },
+      {
+        "title": "Deep Learning 3",
+        "location": "Room-3B",
+        "chair": "John Doe"
+      },
+      {
+        "title": "Deep Learning 4",
+        "location": "Room-4B",
+        "chair": "John Doe"
+      }
+    ],
+    "subSlots": [
+      {
+        "talks": [
+          {
+            "title": "Talk1",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk2",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk3",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk4",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      },
+      {
+        "talks": [
+          {
+            "title": "Machine translation-based language model adaptation for automatic speech recognition of spoken translations",
+            "abstract": "We present AHA, the Anagram Hashing Application, a new CLAM web application and service that allows researchers to effortlessly analyse the lexical variation present in their Gold Standard data and to publish the results. AHA enables researchers to obtain character confusion lists and attendant frequency statistics from word lists. The tool serves to obtain derived information for a variety of purposes such as diachronical or dialectical language variance studies, spelling and OCR-error profiling, etc. A major aim of the web application/service provided is to enable researchers to give a succinct quantitative summary of their gold standard data in terms of the commonly accepted Damerau-Levenshtein error categories of insertion, deletion, substitution, transposition and combinations or special variants e.g. regarding capitalization or spacing. Given for instance a corpus-derived list of the words in a diachronical corpus and a contemporary word list, the tool allows for efficiently determining which historical spelling variations are prevalent in the data. AHA is a subservice of the PICCL (Philosophical Integrator of Computational and Corpus Libraries) corpus building workflow currently being developed at CLST and TiCC in a CLARIAH project.",
+            "authors": "Joris Pelemans, Tom Vanallemeersch, Kris Demuynck, Lyan Verwimp, Hugo Van Hamme and Patrick Wambacq"
+          },
+          {
+            "title": "Talk6",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "important talk7",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          },
+          {
+            "title": "Talk9",
+            "abstract": "abstract",
+            "authors": "John Doe"
+          }
+        ]
+      }
+    ]
+  }
+]
