@@ -483,107 +483,6 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       return text;
     }
 
-    $.getJSON(window.globaldict.urls.program, function (data) {
-      // console.log(data);
-      data.forEach(function (slot) {
-        slot.uniqueId = data.indexOf(slot).toString() + makeid();
-        var slotHTML = $('<div>', {
-          class: 'program-table container'
-        });
-
-        // Header
-        var slotHeader = $('<div>', {
-          class: 'row slot-header'
-        }).append($('<div>', {
-          class: 'col-md-1',
-          text: slot.start + ' - ' + slot.end
-        }));
-
-        var slotTitle = $('<div>', {
-          class: 'col-md-11',
-          text: slot.title
-        }).append($('<small>', {
-          html: slot.location ? ' Loc: ' + slot.location + '' : ''
-        }));
-
-        if (slot.subSlots) {
-          var slotContent = $('<div>', {
-            id: slot.uniqueId
-          });
-        }
-
-        // Session Titles
-        if(slot.sessions) {
-          var tableRow = $('<div>', {
-            class: 'row sessions-row'
-          });
-          var timeColumn = $('<div>', {
-            class: 'col-md-1'
-          });
-          tableRow.append(timeColumn);
-          var infoColumns = $('<div>', {
-            class: 'col-md-11'
-          })
-          slot.sessions.forEach(function (session) {
-            var talkColumn = $('<div>', {
-              class: 'col-md-3',
-              html: '<h4>' + session.title + '</h4><p>Chair: ' + session.chair + '<br>Loc: ' + session.location + '</p>'
-            });
-            infoColumns.append(talkColumn);
-          });
-          tableRow.append(infoColumns);
-          slotContent.append(tableRow);
-        }
-
-        // Talks
-        if(slot.subSlots) {
-          slot.subSlots.forEach(function (subslot, index) {
-            var time = '';
-            if (slot.sessions) {
-              var mins = 20*index;
-              time = moment('26 January 2018 ' + slot.start).add(mins, 'm').format('HH:mm');
-            }
-            var tableRow = $('<div>', {
-              class: 'row subslot-row'
-            });
-            var timeColumn = $('<div>', {
-              class: 'col-md-1 subslot-time',
-              text: time
-            });
-            tableRow.append(timeColumn);
-            var infoColumns = $('<div>', {
-              class: 'col-md-11'
-            })
-            subslot.talks.forEach(function (talk) {
-              var talkColumn = $('<div>', {
-                class: 'col-md-3 program-talk',
-                html: '<b>' + talk.title + '</b><br><i>' + talk.authors + '</i>',
-                'data-title': talk.title,
-                'data-authors': talk.authors,
-                'data-abstract': talk.abstract
-              });
-              infoColumns.append(talkColumn);
-            });
-            tableRow.append(infoColumns);
-            slotContent.append(tableRow);
-          });
-        }
-
-        if (slotContent) {
-          var collapseButton = $('<span>', {
-            class: 'fa collapse-button pull-right' + (slot.sessions ? '' : ' collapsed'),
-            'data-divid': slot.uniqueId
-          });
-          slotTitle.append(collapseButton);
-        }
-
-        slotHeader.append(slotTitle);
-        slotHTML.append(slotHeader);
-        slotHTML.append(slotContent);
-        $("#program-table-wrapper").append(slotHTML);
-      });
-    });
-
     function initialize () {
       $('.program-talk').click(function () {
         $('#talk-title').html($(this).data('title'));
@@ -613,14 +512,130 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
           }
         });
       });
-
-
       $('#program').css('display', 'none');
-
     }
 
+    $.getJSON(window.globaldict.urls.program, function (data) {
+      // console.log(data);
+      data.forEach(function (slot) {
+        slot.uniqueId = data.indexOf(slot).toString() + makeid();
+        var slotHTML = $('<div>', {
+          class: 'program-table container'
+        });
 
-    $(document).ready(initialize);
+        // Header
+        var slotHeader = $('<div>', {
+          class: 'row slot-header'
+        }).append($('<div>', {
+          id: 'slot-' + slot.uniqueId + '-time',
+          class: 'col-md-1',
+          text: slot.start + ' - ' + slot.end
+        }));
+
+        var slotTitle = $('<div>', {
+          class: 'col-md-11',
+          text: slot.title
+        }).append($('<small>', {
+          html: slot.location ? ' Loc: ' + slot.location + '' : ''
+        }));
+
+        if (slot.subslots) {
+          var slotContent = $('<div>', {
+            class: 'slot-body',
+            id: slot.uniqueId
+          });
+        }
+
+        slot.columnWidth = 3;
+        slot.columnWidthCustom = '';
+
+        // Session Titles
+        if(slot.sessions) {
+          slot.columnWidth = Math.floor(12/slot.sessions.length);
+          slot.columnWidthCustom = (12/slot.sessions.length).toFixed(1).toString().replace('.', '').replace(',', '');
+          var tableRow = $('<div>', {
+            class: 'row sessions-row'
+          });
+          var timeColumn = $('<div>', {
+            class: 'col-md-1'
+          });
+          tableRow.append(timeColumn);
+          var infoColumns = $('<div>', {
+            class: 'col-md-11'
+          })
+          slot.sessions.forEach(function (session) {
+            var talkColumn = $('<div>', {
+              class: 'col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
+              html: '<h4>' + session.title + '</h4><p>' + (session.chair ? 'Chair: ' + session.chair + '<br>' : '') + 'Loc: ' + session.location + '</p>'
+            });
+            infoColumns.append(talkColumn);
+          });
+          tableRow.append(infoColumns);
+          slotContent.append(tableRow);
+        }
+
+        // Talks
+        var time = '';
+        if(slot.subslots) {
+          slot.subslots.forEach(function (subslot, index) {
+            if (slot.sessions) {
+              // if (slot.sessions.length > subslot.length && index < 3) {
+              //   subslot.push({"abstract": "tba", "authors": "tba", "title": "tba"});
+              // }
+              var mins = 20*index;
+              time = moment('26 January 2018 ' + slot.start).add(mins, 'm').format('HH:mm');
+            } else {
+              slot.columnWidth = Math.floor(12/subslot.length);
+              slot.columnWidthCustom = (12/subslot.length).toFixed(1).toString().replace('.', '').replace(',', '');
+            }
+            var tableRow = $('<div>', {
+              class: 'row subslot-row'
+            });
+            var timeColumn = $('<div>', {
+              class: 'col-md-1 subslot-time',
+              text: time
+            });
+            tableRow.append(timeColumn);
+            var infoColumns = $('<div>', {
+              class: 'col-md-11'
+            })
+            subslot.forEach(function (talk) {
+              var talkColumn = $('<div>', {
+                class: 'program-talk col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
+                html: '<b>' + talk.title + '</b><br><i>' + (talk.authors ? talk.authors : '') + '</i>',
+                'data-title': talk.title,
+                'data-authors': talk.authors,
+                'data-abstract': talk.abstract
+              });
+              infoColumns.append(talkColumn);
+            });
+            tableRow.append(infoColumns);
+            slotContent.append(tableRow);
+          });
+        }
+
+        if (slotContent) {
+          var collapseButton = $('<span>', {
+            class: 'fa collapse-button pull-right' + (slot.sessions ? '' : ' collapsed'),
+            'data-divid': slot.uniqueId
+          });
+          slotTitle.append(collapseButton);
+        }
+
+        slotHeader.append(slotTitle);
+        slotHTML.append(slotHeader);
+        slotHTML.append(slotContent);
+        $("#program-table-wrapper").append(slotHTML);
+        if (time && !slot.end) {
+          time = moment('26 January 2018 ' + time).add(20, 'm').format('HH:mm');
+          $('#slot-' + slot.uniqueId + '-time').text(slot.start + ' - ' + time);
+        }
+      });
+
+      initialize();
+    });
+
+    // $(document).ready(initialize);
 
   </script>
 
