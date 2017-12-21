@@ -187,7 +187,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
 
 <!-- PROGRAM -->
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="program" >
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted mbr-parallax-background" id="program" >
     <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #efefef;"></div>
     <div class="mbr-section__container mbr-section__container--std-padding container">
         <div class="row">
@@ -221,9 +221,12 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                         <h2 class="section-heading">Concertgebouw De Vereeniging</h2></a>
                     <h3 class="section-subheading ">Keizer Karelplein 2D - 6511 NC - Nijmegen</h3>
                     <p class="black-font">CLIN28 will be held at Concertgebouw De Vereeniging, located in the city centre of Nijmegen at a walking distance from the central train station. Click the link below for more information, including parking options.</p>
-                    <a href="https://www.stadsschouwburgendevereeniging.nl/info/Praktische_info/" style='color:black; text-decoration:none; cursor:pointer;' target='_blank'>
-                        <i class="fa fa-external-link fa-stack-2x"></i></a>
                 </div>
+            </div>
+            <div class="row">
+              <a href="https://www.stadsschouwburgendevereeniging.nl/info/Praktische_info/" style="color:black; text-decoration:none; cursor:pointer;" target="_blank">
+                <i class="fa fa-external-link fa-stack-2x"></i>
+              </a>
             </div>
             <div class="row text-center" id="acommodation">
                 <div class="col-md-12">
@@ -231,7 +234,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-car fa-stack-1x fa-inverse"></i>
                     </span> -->
-                    <div class="caption black-font">
+                    <div class="black-font">
                         <div>
                             <h3>Acommodation</h3>
                             <ul>
@@ -340,14 +343,14 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       <div class="thumbnail">
         <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="SIKS">
           <a href="http://www.siks.nl"  target="_blank">
-            <img src="{% static 'assets/images/logos/siks-logo.jpeg'%}" width=50% height=50% />
+            <img src="{% static 'assets/images/logos/siks-logo.jpeg'%}" width="50%" height="50%" />
           </a>
         </div>
       </div>
       <div class="thumbnail">
         <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="CLARIAH">
           <a href="http://www.clariah.nl"  target="_blank">
-            <img src="{% static 'assets/images/logos/logo_clariah.png'%}" width=75% height=75%/>
+            <img src="{% static 'assets/images/logos/logo_clariah.png'%}" width="75%" height="75%"/>
           </a>
         </div>
       </div>
@@ -361,14 +364,14 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       <div class="thumbnail">
         <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="NOTaS">
           <a href="http://notas.nl/"  target="_blank">
-            <img src="{% static 'assets/images/logos/logo_NOTaS.png'%}" width=60% height=60% />
+            <img src="{% static 'assets/images/logos/logo_NOTaS.png'%}" width="60%" height="60%" />
           </a>
         </div>
       </div>
       <div class="thumbnail">
         <div class="image row" data-toggle="tooltip"  data-placement="bottom" title="Beeld en Geluid">
-          <a href='http://www.beeldengeluid.nl/'  target="_blank">
-            <img src="{% static 'assets/images/logos/logo_beeld_geluid.png'%}" width=80% height=80% />
+          <a href="http://www.beeldengeluid.nl/" target="_blank">
+            <img src="{% static 'assets/images/logos/logo_beeld_geluid.png'%}" width="80%" height="80%" />
           </a>
         </div>
       </div>
@@ -394,6 +397,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       <!--   </div> -->
       <!-- </div> -->
     </div>
+  </div>
 </section>
 
 {% endblock %}
@@ -447,6 +451,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       <p id="talk-authors"></p>
     </div>
     <div class="modal-body">
+      <a id="download-abstract-pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Download the PDF</a>
       <p id="talk-abstract"></p>
     </div>
   </div>
@@ -474,6 +479,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
   <script>
     window.globaldict.urls.program = '{% static "data/program.json" %}';
     window.globaldict.urls.dates = '{% static "data/dates.json" %}';
+    window.globaldict.urls.pdfPath = '{% static "data/abstract-pdf/123" %}';
 
     function makeid(text) {
       var text = text ? text : "";
@@ -483,11 +489,19 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       return text;
     }
 
-    function initialize () {
+    function initialize (hideProgram) {
       $('.program-talk').click(function () {
         $('#talk-title').html($(this).data('title'));
         $('#talk-authors').html($(this).data('authors'));
         $('#talk-abstract').html($(this).data('abstract'));
+        if ($(this).data('pdf')) {
+          var url_mask = window.globaldict.urls.pdfPath.replace(/123/, $(this).data('pdf'));
+          $('#download-abstract-pdf').attr("href", url_mask);
+          $('#download-abstract-pdf').show();
+        } else {
+          $('#download-abstract-pdf').attr("href", '');
+          $('#download-abstract-pdf').hide();
+        }
         $('#abstract-popup').show();
       });
       $('.close').click(function () {
@@ -512,7 +526,10 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
           }
         });
       });
-      $('#program').css('display', 'none');
+      //  <a href="{% static 'data/abstract-pdf/mbt-manual.pdf' %}" download="HTML 5 PDF">click me</a>
+      if (hideProgram) {
+        $('#program').css('display', 'none');
+      }
     }
 
     $.getJSON(window.globaldict.urls.program, function (data) {
@@ -605,7 +622,8 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                 html: '<b>' + talk.title + '</b><br><i>' + (talk.authors ? talk.authors : '') + '</i>',
                 'data-title': talk.title,
                 'data-authors': talk.authors,
-                'data-abstract': talk.abstract
+                'data-abstract': talk.abstract,
+                'data-pdf': talk.pdf ? talk.pdf : ''
               });
               infoColumns.append(talkColumn);
             });
@@ -632,10 +650,8 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
         }
       });
 
-      initialize();
+      initialize(true);
     });
-
-    // $(document).ready(initialize);
 
   </script>
 
