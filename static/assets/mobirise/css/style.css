@@ -2474,7 +2474,6 @@ font-weight: bold;
 /*                                       */
 /*****************************************/
 
-
 @font-face {
   font-family: FinalFrontier;
   src: url(../../fonts/FINALOLD.ttf);
@@ -2505,6 +2504,15 @@ font-weight: bold;
 @media (min-width: 991px) {
   .uni-logo {
     width: 100%;
+  }
+  .program-table .col-md-15 {
+    width: 12% !important;
+  }
+  .program-table .col-md-17 {
+    width: 14% !important;
+  }
+  .program-table .col-md-24 {
+    width: 20% !important;
   }
 }
 
@@ -2741,9 +2749,9 @@ hr{
 
 .slot-header {
   /*background: #7fb6bb;*/
-  background: rgb(28, 73, 110);
-  color: white;
-  height: 40px;
+  color: rgb(28, 73, 110);
+  background: white;
+  /*height: 40px;*/
 }
 
 .slot-header div:first-child {
@@ -2762,6 +2770,10 @@ hr{
   padding-left: 10px;
   font-size: 0.6em;
   font-weight: normal;
+}
+
+.slot-body {
+  border-top: 1px solid rgb(28, 73, 110);
 }
 
 .sessions-row .col-md-11 {
