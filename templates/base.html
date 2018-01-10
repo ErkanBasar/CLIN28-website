@@ -504,7 +504,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
         }
         $('#abstract-popup').show();
       });
-      $('.close').click(function () {
+      $('.close').click(function (event) {
         event.stopImmediatePropagation();
         var divId = $(this).data('divid');
         $('#' + divId).hide();
