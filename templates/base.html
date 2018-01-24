@@ -278,7 +278,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
                 <!-- <h4 style="font-size: 1.5em;">Abstract</h4> -->
                 <p>Martha Larson combines a unique profile of mathematics, linguistics, speech and language technogy and information retrieval to focus on multimedia retrieval. She is a professor in Multimedia Information Technology at the faculty of Science and faculty of Arts at the Radboud University. She also works one day per week at the Multimedia Computing Group at TU Delft.
 		</p>
-                <p>She is the founder of MediaEval, a Multimedia Evaluation Benchmark that offers challenges in the form of shared tasks that aim to develop and evaluate new algorithms and technologies for multimedia retrieval, access and exploration. MediaEval focuses on the human and social aspects of multimedia and encompasses the potential of multiple modalities, including speech, language and context. 
+                <p>She is the founder of MediaEval, a Multimedia Evaluation Benchmark that offers challenges in the form of shared tasks that aim to develop and evaluate new algorithms and technologies for multimedia retrieval, access and exploration. MediaEval focuses on the human and social aspects of multimedia and encompasses the potential of multiple modalities, including speech, language and context.
 		</p>
               </div>
             </div>
@@ -451,6 +451,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
       <p id="talk-authors"></p>
     </div>
     <div class="modal-body">
+      <a id="copy-abstract-url"></a>
       <a id="download-abstract-pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Download the PDF</a>
       <p id="talk-abstract"></p>
     </div>
@@ -494,6 +495,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
         $('#talk-title').html($(this).data('title'));
         $('#talk-authors').html($(this).data('authors'));
         $('#talk-abstract').html($(this).data('abstract'));
+        $('#copy-abstract-url').html('<i class="fa fa-link"></i> http://clin28.cls.ru.nl/#abstract-' + $(this).attr('id'));
         if ($(this).data('pdf')) {
           var url_mask = window.globaldict.urls.pdfPath.replace(/123/, $(this).data('pdf'));
           $('#download-abstract-pdf').attr("href", url_mask);
@@ -527,7 +529,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
         });
       });
       if(window.location.href.match(/#abstract-/)) {
-        var talkId = window.location.href.split('http://clin28.cls.ru.nl/#abstract-')[1];
+        var talkId = window.location.href.split('/')[3].split('-')[1];
         $('#' + talkId).click();
       }
       //  <a href="{% static 'data/abstract-pdf/mbt-manual.pdf' %}" download="HTML 5 PDF">click me</a>
@@ -621,6 +623,7 @@ data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
               class: 'col-md-11'
             })
             subslot.forEach(function (talk) {
+              console.log(talk.id);
               var talkColumn = $('<div>', {
                 class: 'program-talk col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
                 id: talk.id,

@@ -2473,6 +2473,10 @@ font-weight: bold;
   display: none;
 }
 
+#copy-abstract-url {
+  padding: 20px;
+}
+
 /*****************************************/
 /*                                       */
 /*          CUSTOM                       */
