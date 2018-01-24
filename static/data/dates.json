@@ -3,12 +3,12 @@
     "dates": [{
         "text": "Submissions due",
         "date": "14 November 2017 (extended)",
-        "active": true
+        "active": false
       },
       {
         "text": "Notification of acceptance",
         "date": "5 December 2017",
-        "active": true
+        "active": false
       }
     ]
   },
@@ -17,7 +17,7 @@
     "dates": [{
         "text": "Submission deadline (submit source code and output)",
         "date": "12 January 2018",
-        "active": true
+        "active": false
       },
       {
         "text": "Feedback to submissions",
@@ -36,6 +36,11 @@
     "dates": [{
         "text": "Registration open",
         "date": "1 December 2017",
+        "active": true
+      },
+      {
+        "text": "Registration closes",
+        "date": "19 January 2018",
         "active": true
       },
       {
