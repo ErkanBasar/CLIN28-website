@@ -1,0 +1,74 @@
+{% extends 'second_base.html' %}
+{% load static %}
+
+{% block header %}CALLS{% endblock %}
+
+{% block main %}
+
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
+
+  <div class="mbr-section__container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;">
+
+            <div class="col-sm-10 col-sm-offset-1">
+
+              <h4 class="blue">Call for Participation</h4>
+
+              <p>
+		The 28th Meeting of Computational Linguistics in The Netherlands (CLIN 28) will take place in Nijmegen, The Netherlands on January 26, 2018. We invite everyone with an interest in computational linguistics to take part in the meeting. 
+	      </p>
+		
+	      <p>
+		Online registration can be done by clicking on 'register' in the menu of this website. The fee is 55 euro for regular registrations, and a reduced fee of 25 euros for master students (limited number of tickets available). 
+	      </p>
+
+	      <p>
+		Also, as part of the co-operation with SIKS, SIKS-PhD-students can register for CLIN 28 without paying the fee. To participate, inform the SIKS office that you want to join the event by sending an e-mail to office@siks.nl (no registration on the CLIN 28 website neeeded). There is a fixed number of places available, and you will be informed if you can participate as soon as possible.
+	      </p>
+
+	      <p>
+		The deadline for registration is 19 January 2018.
+              </p>
+
+              <h4 class="blue">Call for Abstracts</h4>
+
+              <p>
+                Researchers are invited to submit, in English, abstracts describing work on all aspects of computational linguistics and related language and speech technologies and applications.
+
+                Submissions should include:
+                <ul>
+                  <li> Name, affiliation and contact details of each author</li>
+                  <li> Presentation title</li>
+                  <li> An abstract in PDF of 500 words maximum (excluding references), outlining their presentation</li>
+                  <li> A stated preference for oral presentation or poster</li>
+                </ul>
+
+                Presentation abstracts should be submitted electronically, no later than November 14th, 2017 (12PM, GMT/UTC + 01:00 hour) via the submission website at <a href="https://easychair.org/conferences/?conf=clin28" target="_blank">EasyChair</a>.
+
+              </p>
+
+              <h4 class="blue">STIL Thesis Prize</h4>
+
+              <p>
+                Since CLIN 20, a special annual thesis prize, sponsored by STIL, is awarded to the best Master thesis in computational linguistics. STIL is the Stichting Toepassing Inductieve Leertechnieken. Master theses submitted to and evaluated at a university or organization of higher education in the Netherlands or Flanders are eligible for the prize. The thesis should address a topic in computational linguistics or its applications, and may be written in Dutch or English. See <a href="{% url 'stil_thesis_prize' %}">Thesis prize</a> for the full requirements and procedure.
+              </p>
+
+              <h4 class="blue">Shared Task</h4>
+
+              <p>
+                CLIN 28 includes a shared task on spelling correction for Dutch. See <a href="{% url 'shared_task' %}">Shared task</a> for the full details.
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
