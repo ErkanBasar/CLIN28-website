@@ -46,7 +46,14 @@
                   <a class="btn text-white" href="#about">ABOUT</a>
                 </li>
                 <li class="mbr-navbar__item dropdown-item">
-                    <a class="btn text-white">DATES & CALLS</a>
+                    <a class="btn text-white">GALLERIES</a>
+                    <div class="dropdown-item-content">
+                      <a href="{% url 'posters' %}">POSTERS</a>
+                      <a href="{% url 'photos' %}">PHOTOS</a>
+                    </div>
+                </li>
+                <li class="mbr-navbar__item dropdown-item">
+                    <a class="btn text-white">DATES &amp; CALLS</a>
                     <div class="dropdown-item-content">
                       <a href="{% url 'dates' %}">IMPORTANT DATES</a>
                       <a href="{% url 'calls' %}">CALLS</a>
@@ -91,7 +98,7 @@
 {% block main %}
 
 <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
-<!-- <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" style="background-image: url({% static 'images/Radboud/nijmegen.jpg' %});" > -->
+<!-- <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" style="background-image: url({% static 'images/nijmegen.jpg' %});" > -->
 
     <div class="mbr-box__magnet mbr-box__magnet--center-left">
         <!-- <div class="mbr-overlay" style="opacity: 0.6; background-color: #9ACBDB;"></div> -->
@@ -200,7 +207,7 @@
 </section>
 
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="venue" style="background-image: url({% static 'images/Radboud/vereeniging-nijmegen.jpg' %}); height:100%;">
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="venue" style="background-image: url({% static 'images/venue.jpg' %}); height:100%;">
     <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #e7e7e7;"></div>
     <section id="#features1-42">
 
@@ -262,7 +269,7 @@
                 <h4><b>Professor Multimedia Technologies, Radboud University</b><br><b>Multimedia Computing Group, TU Delft</b></h4>
               </div>
               <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
-                <img id="keynote-img" src="{% static 'images/keynote_mini_martha.jpg'%}"/>
+                <img id="keynote-img" src="{% static 'images/keynote_martha.jpg'%}"/>
               </div>
               <div class="col-sm-4 text-center">
                 <p>

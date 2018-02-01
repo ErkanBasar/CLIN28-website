@@ -16,7 +16,14 @@
                   <a class="btn text-white" href="{% url 'home' %}#about">ABOUT</a>
                 </li>
                 <li class="mbr-navbar__item dropdown-item">
-                    <a class="btn text-white">DATES & CALLS</a>
+                    <a class="btn text-white">GALLERIES</a>
+                    <div class="dropdown-item-content">
+                      <a href="{% url 'posters' %}">POSTERS</a>
+                      <a href="{% url 'photos' %}">PHOTOS</a>
+                    </div>
+                </li>
+                <li class="mbr-navbar__item dropdown-item">
+                    <a class="btn text-white">DATES &amp; CALLS</a>
                     <div class="dropdown-item-content">
                       <a href="{% url 'dates' %}">IMPORTANT DATES</a>
                       <a href="{% url 'calls' %}">CALLS</a>
@@ -55,7 +62,7 @@
   </div>
 </section>
 
-<section class="header-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted mbr-after-navbar mbr-parallax-background" style="color:white; background-image: url({% static 'images/Radboud/nijmegen2.jpg' %}); text-align:center; padding:100px 0; font-size:3em;">
+<section class="header-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted mbr-after-navbar mbr-parallax-background" style="color:white; background-image: url({% static 'images/nijmegen2.jpg' %}); text-align:center; padding:100px 0; font-size:3em;">
   <div class="mbr-overlay" style="opacity: 0.5; background-color: #503e3e;"></div>
   <section id="#features1-42">
       <div class="container">

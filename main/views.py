@@ -38,8 +38,14 @@ def thesis_prize(request):
         'keys': 'CLIN28, CLIN 28, thesis prize, best thesis',
     })
 
-def gallery(request):
-    return render(request, 'gallery.html', {
+def posters(request):
+    return render(request, 'posters.html', {
+        'title': 'Gallery',
+        'keys': 'CLIN28, CLIN 28, posters, display posters, dowload posters',
+    })
+
+def photos(request):
+    return render(request, 'photos.html', {
         'title': 'Gallery',
         'keys': 'CLIN28, CLIN 28, photos, photo gallery',
     })

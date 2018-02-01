@@ -1,0 +1,28 @@
+{% extends 'second_base.html' %}
+{% load static %}
+
+{% block pageBasedCSS %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
+{% endblock %}
+
+{% block main %}
+
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
+  <div class="mbr-section__container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;" >
+          <p class="imglist" style="padding-left:15px;">
+            {% block imgList %}{% endblock %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block pageBasedJS %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+{% endblock %}

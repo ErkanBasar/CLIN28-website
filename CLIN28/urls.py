@@ -2,6 +2,7 @@
 CLIN28 URL Configuration
 """
 from django.conf.urls import url
+from django.views.generic import RedirectView
 from main import views
 
 urlpatterns = [
@@ -16,6 +17,10 @@ urlpatterns = [
 
     url(r'^stil_thesis_prize$', views.thesis_prize, name='stil_thesis_prize'),
 
-    url(r'^gallery$', views.gallery, name='gallery'),
+    url(r'^gallery$', RedirectView.as_view(url='/photos'), name='gallery'),
+
+    url(r'^posters$', views.posters, name='posters'),
+
+    url(r'^photos$', views.photos, name='photos'),
 
 ]
