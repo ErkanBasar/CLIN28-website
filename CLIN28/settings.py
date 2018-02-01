@@ -3,20 +3,20 @@ Django settings for CLIN28 project.
 """
 
 import os
-import configparser
-
-config = configparser.ConfigParser()
-config.read("data/auth.ini")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HOSTNAME = os.uname()[1]
 
-SECRET_KEY = config.get('settings', 'secret_key')
+# Add the secret-key as an environment variable
+# export SECRET_KEY=< generate a random key and place it here >
+SECRET_KEY = os.environ["SECRET_KEY"]
 
-if HOSTNAME[:9] == "applejack":
+# Create an environment variable as "DJANGO_ENV"
+if os.environ["DJANGO_ENV"] == "production":
     DEBUG = False
 else:
     DEBUG = True
+
+UNDER_CONST = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'clin28.cls.ru.nl', 'soothsayer.cls.ru.nl']
 
@@ -62,9 +62,8 @@ WSGI_APPLICATION = 'CLIN28.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.dummy',
+    },
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -85,14 +84,6 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = config.get('mail', 'fromaddr')
-EMAIL_HOST_PASSWORD = config.get('mail', 'password')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Amsterdam'
@@ -103,14 +94,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-if HOSTNAME[:9] == "applejack":
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static")
-    ]
-else:
-    STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static")
-    ]
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]

@@ -22,12 +22,12 @@
       {
         "text": "Feedback to submissions",
         "date": "19 January 2018",
-        "active": true
+        "active": false
       },
       {
         "text": "Presentation of results at the 28th CLIN conference",
         "date": "26 January 2018",
-        "active": true
+        "active": false
       }
     ]
   },
@@ -36,17 +36,17 @@
     "dates": [{
         "text": "Registration open",
         "date": "1 December 2017",
-        "active": true
+        "active": false
       },
       {
         "text": "Registration closes",
         "date": "19 January 2018",
-        "active": true
+        "active": false
       },
       {
         "text": "Date of conference",
         "date": "26 January 2018",
-        "active": true
+        "active": false
       }
     ]
   }
