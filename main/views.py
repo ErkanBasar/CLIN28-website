@@ -37,3 +37,9 @@ def thesis_prize(request):
         'title': 'Thesis prize',
         'keys': 'CLIN28, CLIN 28, thesis prize, best thesis',
     })
+
+def gallery(request):
+    return render(request, 'gallery.html', {
+        'title': 'Gallery',
+        'keys': 'CLIN28, CLIN 28, photos, photo gallery',
+    })

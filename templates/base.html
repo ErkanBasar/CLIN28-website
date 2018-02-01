@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="{% static 'css/mbr-additional.css' %}" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+  {% block pageBasedCSS %}{% endblock %}
+
 </head>
 <body>
 
@@ -630,7 +632,7 @@
 
   </script>
 
-{% block datesJS %}{% endblock %}
+{% block pageBasedJS %}{% endblock %}
 
 </body>
 </html>

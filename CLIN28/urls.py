@@ -16,4 +16,6 @@ urlpatterns = [
 
     url(r'^stil_thesis_prize$', views.thesis_prize, name='stil_thesis_prize'),
 
+    url(r'^gallery$', views.gallery, name='gallery'),
+
 ]
