@@ -1,9 +1,9 @@
 {% extends 'second_base.html' %}
 {% load static %}
 
-{% block pageBasedCSS %}
+<!-- {% block pageBasedCSS %}
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
-{% endblock %}
+{% endblock %} -->
 
 {% block main %}
 
@@ -11,10 +11,10 @@
   <div class="mbr-section__container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;" >
-          <p class="imglist" style="padding-left:15px;">
+        <div class="col-sm-8 col-sm-offset-2 container" style="background-color:white; padding:40px 0;" >
+          <div class="imglist" style="padding-left:15px;">
             {% block imgList %}{% endblock %}
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -23,6 +23,6 @@
 
 {% endblock %}
 
-{% block pageBasedJS %}
+<!-- {% block pageBasedJS %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
-{% endblock %}
+{% endblock %} -->

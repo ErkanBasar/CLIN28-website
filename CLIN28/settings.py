@@ -16,8 +16,6 @@ if os.environ["DJANGO_ENV"] == "production":
 else:
     DEBUG = True
 
-UNDER_CONST = False
-
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'clin28.cls.ru.nl', 'soothsayer.cls.ru.nl']
 
 INSTALLED_APPS = [

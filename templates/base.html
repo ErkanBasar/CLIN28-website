@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/mbr-additional.css' %}" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
 
   {% block pageBasedCSS %}{% endblock %}
 
@@ -435,8 +436,8 @@
       <p id="talk-authors"></p>
     </div>
     <div class="modal-body">
-      <a id="copy-abstract-url"></a>
-      <a id="download-abstract-pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Download the PDF</a>
+      <a id="copy-abstract-url"></a><br>
+      <a id="show-presentation" data-fancybox="" data-type="pdf"><i class="fa fa-file-pdf-o"></i> Slides are available</a>
       <p id="talk-abstract"></p>
     </div>
   </div>
@@ -450,6 +451,7 @@
   <script src="{% static 'libs/jquery-mb-ytplayer/jquery.mb.YTPlayer.min.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/locale/nl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
   <script src="{% static 'js/script.js' %}"></script>
   <script src="{% static 'js/global.js' %}"></script>
@@ -457,7 +459,7 @@
   <script>
     window.globaldict.urls.program = '{% static "data/program.json" %}';
     window.globaldict.urls.dates = '{% static "data/dates.json" %}';
-    window.globaldict.urls.pdfPath = '{% static "data/abstract-pdf/123" %}';
+    window.globaldict.urls.presentationPath = '{% static "presentations/123" %}';
 
     function makeid(text) {
       var text = text ? text : '';
@@ -467,19 +469,25 @@
       return text;
     }
 
+    function urlExists(url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status!=404;
+    }
+
     function initialize (hideProgram) {
       $('.program-talk').click(function () {
         $('#talk-title').html($(this).data('title'));
         $('#talk-authors').html($(this).data('authors'));
         $('#talk-abstract').html($(this).data('abstract'));
         $('#copy-abstract-url').html('<i class="fa fa-link"></i> http://clin28.cls.ru.nl/#abstract-' + $(this).attr('id'));
-        if ($(this).data('pdf')) {
-          var url_mask = window.globaldict.urls.pdfPath.replace(/123/, $(this).data('pdf'));
-          $('#download-abstract-pdf').attr("href", url_mask);
-          $('#download-abstract-pdf').show();
+        var url_mask = window.globaldict.urls.presentationPath.replace(/123/, $(this).attr('id') + '.pdf');
+        $('#show-presentation').attr("href", url_mask);
+        if (urlExists(url_mask)) {
+          $('#show-presentation').show();
         } else {
-          $('#download-abstract-pdf').attr("href", '');
-          $('#download-abstract-pdf').hide();
+          $('#show-presentation').hide();
         }
         $('#abstract-popup').show();
       });
@@ -509,7 +517,6 @@
         var talkId = window.location.href.split('/')[3].split('-')[1];
         $('#' + talkId).click();
       }
-      //  <a href="{% static 'data/abstract-pdf/mbt-manual.pdf' %}" download="HTML 5 PDF">click me</a>
       if (hideProgram) {
         $('#program').css('display', 'none');
       }
@@ -607,7 +614,6 @@
                 'data-title': talk.title,
                 'data-authors': talk.authors,
                 'data-abstract': talk.abstract,
-                'data-pdf': talk.pdf ? talk.pdf : ''
               });
               infoColumns.append(talkColumn);
             });

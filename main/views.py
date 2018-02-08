@@ -1,10 +1,11 @@
-from django.shortcuts import render
 
-from django.conf import settings
+import os
+
+from django.shortcuts import render
 
 def home(request):
 
-    if settings.UNDER_CONST:
+    if os.environ["UNDER_CONST"] == 'True':
         request = render(request, 'under_construction.html', {})
     else:
         request = render(request, 'base.html', {
@@ -39,13 +40,37 @@ def thesis_prize(request):
     })
 
 def posters(request):
+
+    # Convert pdf to png;
+    # for i in $( ls *.pdf); do convert -verbose -density 150 -trim $i -quality 100 -flatten -sharpen 0x1.0 thumbnails/$i.png; done
+    # Resize the png;
+    # for i in $( ls thumbnails/*.png); do convert -geometry x200 $i thumbnails/$i; done
+
+    poster_paths = sorted([{'thumbnail': 'posters/thumbnails/' + poster + '.png',
+                            'original': 'posters/' + poster} \
+                           for poster in os.listdir('static/posters') \
+                           if poster.endswith('.pdf')],
+                          key=lambda k: k['original'])
+
     return render(request, 'posters.html', {
         'title': 'Gallery',
         'keys': 'CLIN28, CLIN 28, posters, display posters, dowload posters',
+        'poster_paths': poster_paths,
     })
 
 def photos(request):
+
+    # Create the thumbnails (install imagemagick)
+    # for i in $( ls *.jpg); do convert -geometry x200 $i thumbnails/$i; done
+
+    photo_paths = sorted([{'thumbnail': 'images/photos/thumbnails/' + photo,
+                           'original': 'images/photos/' + photo} \
+                          for photo in os.listdir('static/images/photos') \
+                          if photo.endswith('.jpg')],
+                         key=lambda k: k['original'])
+
     return render(request, 'photos.html', {
         'title': 'Gallery',
         'keys': 'CLIN28, CLIN 28, photos, photo gallery',
+        'photo_paths': photo_paths,
     })
