@@ -2975,4 +2975,9 @@ h4.blue {
   padding-bottom: 3px;
 }
 
+.pdf-available a {
+  text-decoration: none;
+  font-size: 12px;
+}
+
 /* color : rgb(28, 73, 110) */

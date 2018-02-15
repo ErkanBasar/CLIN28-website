@@ -1,9 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 (function (window, document, $, undefined) {
 
-  window.globaldict = {};
-  window.globaldict.urls = {};
-
   $(document).ready(function () {
     $('#map').addClass('scrolloff');                // set the mouse events to none when doc is ready
     $('#overlay-map').on('mouseup',function(){          // lock it when mouse up
@@ -43,6 +40,5 @@
   });
 
   $('html').niceScroll({styler:'fb', cursorcolor:'#1c496e', cursorwidth: '10', cursorborderradius: '10px', background: '#e4e4e4', spacebarenabled:false,  cursorborder: '', zindex: '10'});
-
 
 })(window, window.document, window.jQuery);

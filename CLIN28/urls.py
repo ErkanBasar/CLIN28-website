@@ -23,4 +23,6 @@ urlpatterns = [
 
     url(r'^photos$', views.photos, name='photos'),
 
+    url(r'^presentations$', views.presentations, name='presentations'),
+
 ]

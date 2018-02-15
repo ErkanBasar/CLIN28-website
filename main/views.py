@@ -8,9 +8,13 @@ def home(request):
     if os.environ["UNDER_CONST"] == 'True':
         request = render(request, 'under_construction.html', {})
     else:
+        available_pdfs = [pdf_file.split('.pdf')[0] \
+                                for pdf_file in os.listdir('static/on-program') \
+                                if pdf_file.endswith('.pdf')]
         request = render(request, 'base.html', {
             'title': 'Computational Linguistics in the Netherlands',
             'keys': 'CLIN28, CLIN 28, Computational Linguistics in the Netherlands, Nijmegen',
+            'available_pdfs': available_pdfs
         })
 
     return request
@@ -73,4 +77,23 @@ def photos(request):
         'title': 'Gallery',
         'keys': 'CLIN28, CLIN 28, photos, photo gallery',
         'photo_paths': photo_paths,
+    })
+
+def presentations(request):
+
+    # Convert pdf to png;
+    # for i in $( ls *.pdf); do convert -verbose -density 150 -trim $i[0] -quality 100 -flatten -sharpen 0x1.0 thumbnails/$i.png; done
+    # Resize the png;
+    # for i in $( ls thumbnails/*.png); do convert -geometry x200 $i $i; done
+
+    presentations_paths = sorted([{'thumbnail': 'presentations/thumbnails/' + poster + '.png',
+                                   'original': 'presentations/' + poster} \
+                                  for poster in os.listdir('static/presentations') \
+                                  if poster.endswith('.pdf')],
+                                 key=lambda k: k['original'])
+
+    return render(request, 'presentations.html', {
+        'title': 'Gallery',
+        'keys': 'CLIN28, CLIN 28, presentations, presentation gallery',
+        'presentations_paths': presentations_paths,
     })
