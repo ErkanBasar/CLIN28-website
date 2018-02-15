@@ -10,7 +10,7 @@
     {% for pp in poster_paths %}
 
       <a href="{% static pp.original %}" data-fancybox="group" data-type="pdf" data-caption="" >
-        <img class="clin-photo" src="{% static pp.thumbnail %}" alt="">
+        <img class="clin-photo" src="{% static pp.thumbnail %}" alt="" style="margin:8px; border:1px solid #3c3c3c; padding:2px;">
       </a>
 
     {% endfor %}

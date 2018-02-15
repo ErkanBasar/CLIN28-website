@@ -44,7 +44,7 @@ def posters(request):
     # Convert pdf to png;
     # for i in $( ls *.pdf); do convert -verbose -density 150 -trim $i -quality 100 -flatten -sharpen 0x1.0 thumbnails/$i.png; done
     # Resize the png;
-    # for i in $( ls thumbnails/*.png); do convert -geometry x200 $i thumbnails/$i; done
+    # for i in $( ls thumbnails/*.png); do convert -geometry x200 $i $i; done
 
     poster_paths = sorted([{'thumbnail': 'posters/thumbnails/' + poster + '.png',
                             'original': 'posters/' + poster} \
