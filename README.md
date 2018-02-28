@@ -2,7 +2,7 @@
 
 This website is designed for 28th CLIN conference.
 
-URL: <https://clin28.cls.ru.nl>
+URL: <http://clin28.cls.ru.nl>
 
 ### More on CLIN
 

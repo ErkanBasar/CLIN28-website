@@ -13,6 +13,7 @@ old/
 venv/
 env/
 *.pyc
+*presentation*
 
 photos/
 posters/
