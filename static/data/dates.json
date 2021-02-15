@@ -1,28 +1,28 @@
 [{
     "title": "Important Dates",
     "dates": [{
-        "text": "1st call for papers",
-        "date": "20 february 2021",
+        "text": "Full paper submission",
+        "date": "March 26, 2021 (GMT)",
         "active": true
       },
       {
-        "text": "2nd call for papers",
-        "date": "2 March 2021",
+        "text": "Reviews Due",
+        "date": "April 23, 2021",
         "active": true
       },
       {
-        "text": "Paper submission",
-        "date": "26 March 2021",
+        "text": "Paper notification",
+        "date": "April 26, 2021",
         "active": true
       },
       {
-        "text": "Notification to authors",
-        "date": "19 April 2021",
+        "text": "Camera-ready deadline",
+        "date": "May 7, 2021",
         "active": true
       },
       {
-        "text": "Camera-ready versions of accepted papers",
-        "date": "7 may 2021",
+        "text": "PICA 2021 Workshop",
+        "date": "June 2021",
         "active": true
       }
     ]
