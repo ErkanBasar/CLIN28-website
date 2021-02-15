@@ -14,7 +14,8 @@ def home(request):
                                 if pdf_file.endswith('.pdf')]
         request = render(request, 'base.html', {
             'title': 'Personalized Intelligent Conversational Agents Workshop',
-            'keys': 'PICA, 2021, PICA2021, Computational Linguistics in the Netherlands, Nijmegen',
+            'keys': ('workshop, natural language processing, artificial intelligence, '
+                     'machine learning, conversational agents'),
             'available_pdfs': available_pdfs
         })
 
@@ -25,7 +26,8 @@ def calls(request):
     """
     return render(request, 'calls.html', {
         'title': 'Dates & Calls',
-        'keys': 'PICA, 2021, PICA2021, calls, abstracts',
+        'keys': ('calls, call for paper, submission, instructions, '
+                'important dates, dates, abstracts'),
     })
 
 def posters(request):
