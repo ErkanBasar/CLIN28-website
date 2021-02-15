@@ -1,52 +1,29 @@
 [{
-    "title": "Abstract submission",
+    "title": "Important Dates",
     "dates": [{
-        "text": "Submissions due",
-        "date": "14 November 2017 (extended)",
-        "active": false
+        "text": "1st call for papers",
+        "date": "20 february 2021",
+        "active": true
       },
       {
-        "text": "Notification of acceptance",
-        "date": "5 December 2017",
-        "active": false
-      }
-    ]
-  },
-  {
-    "title": "Shared task: Spelling correction",
-    "dates": [{
-        "text": "Submission deadline (submit source code and output)",
-        "date": "12 January 2018",
-        "active": false
+        "text": "2nd call for papers",
+        "date": "2 March 2021",
+        "active": true
       },
       {
-        "text": "Feedback to submissions",
-        "date": "19 January 2018",
-        "active": false
+        "text": "Paper submission",
+        "date": "26 March 2021",
+        "active": true
       },
       {
-        "text": "Presentation of results at the 28th CLIN conference",
-        "date": "26 January 2018",
-        "active": false
-      }
-    ]
-  },
-  {
-    "title": "Conference",
-    "dates": [{
-        "text": "Registration open",
-        "date": "1 December 2017",
-        "active": false
+        "text": "Notification to authors",
+        "date": "19 April 2021",
+        "active": true
       },
       {
-        "text": "Registration closes",
-        "date": "19 January 2018",
-        "active": false
-      },
-      {
-        "text": "Date of conference",
-        "date": "26 January 2018",
-        "active": false
+        "text": "Camera-ready versions of accepted papers",
+        "date": "7 may 2021",
+        "active": true
       }
     ]
   }

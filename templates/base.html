@@ -13,7 +13,7 @@
   Computational Linguistics organised in Flanders (Belgium) and The Netherlands. On January 26th 2018, the 28th edition
   of CLIN is organized by the Centre for Language Studies, Radboud University">
   <meta name="keywords" content="{{ keys }}" />
-  <title>CLIN28 - {{ title }}</title>
+  <title>PICA 2021 - {{ title }}</title>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&amp;subset=cyrillic,latin,greek,vietnamese">
@@ -46,44 +46,38 @@
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="#about">ABOUT</a>
                 </li>
-                <li class="mbr-navbar__item dropdown-item">
+                <!-- <li class="mbr-navbar__item dropdown-item">
                     <a class="btn text-white">GALLERIES</a>
                     <div class="dropdown-item-content">
                       <a href="{% url 'presentations' %}">PRESENTATIONS</a>
                       <a href="{% url 'posters' %}">POSTERS</a>
                       <a href="{% url 'photos' %}">PHOTOS</a>
                     </div>
-                </li>
+                </li> -->
                 <li class="mbr-navbar__item dropdown-item">
-                    <a class="btn text-white">DATES &amp; CALLS</a>
-                    <div class="dropdown-item-content">
-                      <a href="{% url 'dates' %}">IMPORTANT DATES</a>
-                      <a href="{% url 'calls' %}">CALLS</a>
-                      <a href="{% url 'shared_task' %}">SHARED TASK</a>
-                      <a href="{% url 'stil_thesis_prize' %}">THESIS PRIZE</a>
-                    </div>
+                    <a class="btn text-white" href="{% url 'calls' %}">DATES &amp; CALLS</a>
                 </li>
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="#program">PROGRAM</a>
                 </li>
                 <li class="mbr-navbar__item dropdown-item">
-                    <a class="btn text-white">VENUE</a>
-                    <div class="dropdown-item-content">
+                    <a class="btn text-white" href="#venue">VENUE</a>
+                    <!-- <div class="dropdown-item-content">
                       <a href="#venue">CONFERENCE CENTER</a>
                       <a href="#acommodation">ACOMMODATION</a>
-                      <!-- <a href="http://www.netherlands-tourism.com/nijmegen/", target="_blank">ABOUT NIJMEGEN</a> -->
-                    </div>
+                      <a href="http://www.netherlands-tourism.com/nijmegen/", target="_blank">ABOUT NIJMEGEN</a>
+                    </div> -->
                 </li>
-                <li class="mbr-navbar__item">
+                <!-- <li class="mbr-navbar__item">
                   <a class="btn text-white" href="#keynote">KEYNOTE</a>
-                </li>
-                <li class="mbr-navbar__item" data-toggle="tooltip"  data-placement="bottom">
+                </li> -->
+                <!-- <li class="mbr-navbar__item" data-toggle="tooltip"  data-placement="bottom">
                   <a class="btn text-white" href="#sponsors">SPONSORS</a>
-                </li>
+                </li> -->
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="#contact">CONTACT</a>
                 </li>
-                <li class="mbr-navbar__item" data-toggle="tooltip" data-placement="bottom" title="Registration is closed.">
+                <li class="mbr-navbar__item" data-toggle="tooltip" data-placement="bottom" title="Registration is not yet open. Please check again later.">
                   <a class="mbr-buttons__btn btn btn-default text-white register-btn" href="#">REGISTER</a>
                 </li>
               </ul>
@@ -99,7 +93,7 @@
 
 {% block main %}
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" data-bg-video="https://www.youtube.com/watch?v=8h1rxzUuvQE" >
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" data-bg-video="https://www.youtube.com/watch?v=u6KYia3h00U" >
 <!-- <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-after-navbar" id="header1-40" style="background-image: url({% static 'images/nijmegen.jpg' %});" > -->
 
     <div class="mbr-box__magnet mbr-box__magnet--center-left">
@@ -111,7 +105,7 @@
                             <header>
                                 <div class="container">
                                     <div class="intro-text">
-                                        <div class="intro-heading">CLIN28</div>
+                                        <div class="intro-heading">PICA 2021</div>
                                     </div>
                                 </div>
                             </header>
@@ -139,50 +133,20 @@
           <h2 class="mbr-header__text">ABOUT</h2>
         </div>
 
-        <p>Computational Linguistics in the Netherlands (CLIN) is an annual conference about Computational Linguistics organised in Flanders (Belgium) and The Netherlands. On January 26th 2018, the 28th edition of CLIN is organized by the Centre for Language Studies, Radboud University, under the auspices of the <a href="http://www.siks.nl"  target="_blank">Dutch Research School for Information and Knowledge Systems (SIKS)</a>.</p>
+        <p><b>Towards a new generation of Personalized Intelligent Conversational Agents (PICA)</b></p>
 
-        <p>CLIN is a splendid occasion for the whole Dutch and Belgian computational linguistics community to get together and present their current work, even if in an ongoing state. International researchers often take part in the conference as well. Submissions usually cover a diverse range of computational linguistics topics resulting in a stimulating event where researchers exchange early research results, compare approaches and get a good sense of the direction of computational linguistics in the Netherlands and Belgium as a whole.</p>
+        <p>Recent years have seen the rise of conversational agents (CAs) in everyday life: chatbots that use written communications above all, but also spoken digital assistants. Moreover, conversation is becoming a key mode of human-computer interaction. However, despite much recent success in natural language processing and dialogue research, the communication between a human and a system is still in its infancy. In this context, dialogue personalization could be key to narrow part of the gap, making sense of users’  features (e.g., preferences, expertise, communication style, emotions, personality) when engaged in a conversation with a system. Learning user features directly from the dialogue with a CA, in order to adapt its response, is an opportunity to improve the interaction with the user.   Conversational recommender systems can exploit the same paradigm to improve the interaction between the user and system and better elicit information about the user. By exploiting personalized dialogue strategies, users’ preferences can be gathered in a very natural and straightforward fashion and this will lead to more effective recommendations.</p>
 
-        <p>The first CLIN conference was held in 1990 in Utrecht. For an impression of the previous CLIN conferences see the CLIN conference pages from previous years:</p>
+        <p>We are interested in both long-term engaging spoken dialogue systems and text-based chatbots, as well as conversational recommender systems. Papers can be about different approaches to this: (pilot) evaluations, design guidelines, personalization, natural language processing, protection of privacy and (health) data, (cognitive) architectures and frameworks, implementations, context analyses. We are also very interested in studies on the effectiveness of behaviour change support systems and changing health related behaviour (such as quit smoking, lose weight, etc.).</p>
 
-        <span class="open" style="color: #1c496e; cursor: pointer;" data-toggle="collapse" data-target="#prev-years">Click to see the previous years &raquo;</span><br><br>
-        <div id="prev-years" class="collapse">
+        <p>The main goal of the workshop is to stimulate discussion around problems, challenges, possible solutions and research directions regarding the exploitation of NLP and ML techniques to learn user features and use them to personalize the dialogue in the next generation of intelligent conversational agents.</p>
 
-          <ul>
-            <li>October 26, 1990 – OTS Utrecht</li>
-            <li>November 29, 1991 – CWI Amsterdam</li>
-            <li>October 30, 1992 – ITK Tilburg</li>
-            <li>November 25, 1993 – Alfa-informatica Groningen</li>
-            <li>November 23, 1994 – TU Twente</li>
-            <li><a href="http://www.cnts.ua.ac.be/~walter/projects/clin95.html">December 1, 1995 – Antwerpen</a></li>
-            <li><a href="http://www.let.rug.nl/~kersten/clinVII.html">November 15, 1996 – IPO Eindhoven</a></li>
-            <li><a href="http://www.let.rug.nl/vannoord/Clin/nijmegen97.html">December 12, 1997 – Letteren KUN, Nijmegen</a></li>
-            <li><a href="http://www.ccl.kuleuven.ac.be/clin98/general.html">December 11, 1998 – CCL, KU Leuven</a></li>
-            <li><a href="http://www.let.uu.nl/~Paola.Monachesi/personal/clin.html">December 10, 1999 – OTS Utrecht</a></li>
-            <li><a href="http://ilk.uvt.nl/clin2000/">November 3, 2000 – Taal en Informatica, Tilburg</a></li>
-            <li><a href="http://parlevink.cs.utwente.nl/Conferences/clin2001.html">November 30, 2001 – Computer Science, University of Twente</a></li>
-            <li><a href="http://www.let.rug.nl/clin2002/">November 29, 2002 – Alfa-informatica, University of Groningen</a></li>
-            <li><a href="http://www.cnts.ua.ac.be/clin2003/">December 19, 2003 – Centre for Dutch Language and Speech, University of Antwerp</a></li>
-            <li><a href="http://www.ulcl.leidenuniv.nl/clin2004">December 17, 2004 – Leiden Centre for Linguistics</a></li>
-            <li><a href="http://www.science.uva.nl/events/CLIN2005/">December 16, 2005 – University of Amsterdam</a></li>
-            <li><a href="http://www.ccl.kuleuven.be/CLIN17/">January 12, 2007 – CCL, KU Leuven</a></li>
-            <li><a href="http://lands.let.ru.nl/~clin2007/">December 7, 2007 – Radboud University Nijmegen</a></li>
-            <li><a href="http://www.let.rug.nl/clin/">January 22, 2009 – Groningen University</a></li>
-            <li><a href="http://www.clin.nl/20">February 5, 2010 – UiL-OTS, Utrecht University</a></li>
-            <li><a href="http://www.clin.nl/21">February 11, 2011 – LT3, University College Ghent</a></li>
-            <li><a href="http://ilk.uvt.nl/clin22/">January 20, 2012 – ILK, Tilburg University</a></li>
-            <li><a href="http://hmi.ewi.utwente.nl/clin2013">January 18, 2013 – HMI, University of Twente, Enschede</a></li>
-            <li><a href="http://clin24.inl.nl/">January 17, 2014 – INL & TST-Centrale, Leiden</a></li>
-            <li><a href="http://www.clips.uantwerpen.be/clin25/home">February 5-6, 2015 – CLiPS, University of Antwerp</a></li>
-            <li><a href="http://wordpress.let.vupr.nl/clin26">December 18, 2015 – VU Amsterdam</a></li>
-            <li><a href="http://www.ccl.kuleuven.be/CLIN27/">February 10, 2017 – CCL, KU Leuven</a></li>
-            <li><a href="http://clin28.cls.ru.nl" style="color: #1c496e;">January 26, 2018 – Radboud University Nijmegen</a></li>
-          </ul>
-        </div>
+        <p><i>We are still figuring out all the details, which we hope to announce bit by bit during the next couple of months. Stay tuned for further updates.</i></p>
+
       </div>
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
-        <a class="twitter-timeline" data-lang="en" data-width="1000" data-height="500" href="https://twitter.com/clin_28?ref_src=twsrc%5Etfw">Tweets by clin_28</a>
+        <a class="twitter-timeline" data-lang="en" data-width="1000" data-height="500" href="https://twitter.com/pica_2021?ref_src=twsrc%5Etfw">Tweets by pica_2021 will be displayed here soon.</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
@@ -201,7 +165,8 @@
                         <h2 class="mbr-header__text">PROGRAM</h2>
                         <!-- <h4 class="section-subheading warning"><b>The section is under construction.</b><br>It will be hidden until the content and the design is ready.</h4> -->
                     </div>
-                    <div id="program-table-wrapper"></div>
+                    <!-- <div id="program-table-wrapper"></div> -->
+                    <p style="text-align:center;">To Be Announced</p>
                 </div>
             </div>
         </div>
@@ -209,7 +174,7 @@
 </section>
 
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="venue" style="background-image: url({% static 'images/venue.jpg' %}); height:100%;">
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="venue" style="background-image: url({% static 'images/utrecht.jpg' %}); height:100%;">
     <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #e7e7e7;"></div>
     <section id="#features1-42">
 
@@ -221,42 +186,26 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a href="https://www.stadsschouwburgendevereeniging.nl/" style="color:black; text-decoration:none;"  target="_blank">
-                        <h2 class="section-heading">Concertgebouw De Vereeniging</h2></a>
-                    <h3 class="section-subheading ">Keizer Karelplein 2D - 6511 NC - Nijmegen</h3>
-                    <p class="black-font">CLIN28 will be held at Concertgebouw De Vereeniging, located in the city centre of Nijmegen at about 8 minutes by foot from the central train station. Click the link below for more information, including parking options.</p>
+                    <a href="#venue" style="color:black; text-decoration:none;"  target="_blank">
+                        <h2 class="section-heading">TBA & Online</h2></a>
+                    <h3 class="section-subheading ">To Be Announced - Utrecht</h3>
+                    <!-- <p class="black-font">PICA 2021 will be held at To Be Announced, located in the city centre of Nijmegen at about 8 minutes by foot from the central train station. Click the link below for more information, including parking options.</p> -->
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <a href="https://www.stadsschouwburgendevereeniging.nl/informatie/Parkeren_en_route" style="color:black; text-decoration:none; cursor:pointer;" target="_blank">
                 <i class="fa fa-external-link fa-stack-2x"></i>
               </a>
-            </div>
-            <div class="row text-center" id="acommodation">
-                <div class="col-md-12">
-
-                    <div class="black-font">
-                        <div>
-                            <h3>Acommodation</h3>
-                            <ul>
-                              <li><b><a href="http://www.in-credible.nl/">Hotel Credible</a></b></li>
-                              <li><b><a href="http://www.mercure.com/nl/nederland/index.shtml">Hotel Mercure</a></b></li>
-                              <li><b><a href="http://www.blue-nijmegen.nl/">Hotel Blue Nijmegen</a></b></li>
-                              <li><b><a href="http://www.hoteloranjestaete.nl/">Hotel Oranjestaete</a></b></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </section>
 
 <section class="mbr-section mbr-section--relative mbr-section--fixed-size map" id="overlay-map">
-  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.7543632752127!2d5.856837111495565!3d51.84237952507273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f88353c48ca3949!2sConcertgebouw+de+Vereeniging!5e0!3m2!1sen!2snl!4v1498747021174" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78456.20167142518!2d5.012452692177598!3d52.08416599709322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f4339d32d37%3A0xd6c8fc4c19af4ae9!2sUtrecht!5e0!3m2!1sen!2snl!4v1613091570574!5m2!1sen!2snl"  width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 </section>
 
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="keynote" style="background-color: #7fb6bb;">
+<!-- <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="keynote" style="background-color: rgb(217, 166, 45);">
   <div class="mbr-section__container mbr-section__container--std-padding container">
     <div class="row">
       <div class="col-sm-12">
@@ -267,18 +216,15 @@
             </div>
             <div class="row keynote-row">
               <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
-                <h2 id="keynote-name">Martha Larson</h2>
-                <h4><b>Professor Multimedia Technologies, Radboud University</b><br><b>Multimedia Computing Group, TU Delft</b></h4>
+                <h2 id="keynote-name">TBA Speaker Name</h2>
+                <h4><b>TBA Speaker Title/Position</b></h4>
               </div>
               <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
-                <img id="keynote-img" src="{% static 'images/keynote_martha.jpg'%}"/>
+                <img id="keynote-img" src="{% static 'images/keynote-dummy.png'%}"/>
               </div>
               <div class="col-sm-4 text-center">
                 <p>
-                  Martha Larson combines a unique profile of mathematics, linguistics, speech and language technogy and information retrieval to focus on multimedia retrieval. She is a professor in Multimedia Information Technology at the faculty of Science and faculty of Arts at the Radboud University. She also works one day per week at the Multimedia Computing Group at TU Delft.
-                </p>
-                <p>
-                  She is the founder of MediaEval, a Multimedia Evaluation Benchmark that offers challenges in the form of shared tasks that aim to develop and evaluate new algorithms and technologies for multimedia retrieval, access and exploration. MediaEval focuses on the human and social aspects of multimedia and encompasses the potential of multiple modalities, including speech, language and context.
+                  TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction.
                 </p>
               </div>
             </div>
@@ -287,9 +233,9 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section class="content-2 col-4" id="sponsors" style="background-color: rgb(255, 255, 255);">
+<!-- <section class="content-2 col-4" id="sponsors" style="background-color: rgb(255, 255, 255);">
 
   <div class="container">
     <div class="col-md-12">
@@ -383,7 +329,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 {% endblock %}
 
@@ -399,7 +345,7 @@
     </div>
     <div class="mbr-footer mbr-footer--wysiwyg row" style="padding: 0px;">
       <div class="col-sm-12 text-center">
-        <p class="mbr-footer__copyright">Do not hesitate to contact us! <br>E-mail: <a href="mailto:clin28@cls.ru.nl"  target="_blank">clin28@cls.ru.nl</a> - Twitter: <a href="https://twitter.com/clin_28"  target="_blank">@clin_28</a></p><hr>
+        <p class="mbr-footer__copyright">Do not hesitate to contact us! <br>E-mail: <a href="mailto:f.a.kunneman@vu.nl"  target="_blank">f.a.kunneman@vu.nl</a> - Twitter: <a href="https://twitter.com/pica_2021"  target="_blank">@pica_2021</a></p><hr>
         </div>
       </div>
     </div>
@@ -407,10 +353,9 @@
     <div class="mbr-footer mbr-footer--wysiwyg row" style="padding: 0px;">
       <div class="col-sm-2"></div>
       <div class="col-sm-8 text-center">
-        <p class="mbr-footer__copyright"><span class="clin-font" style="font-weight:bold; font-size:1.5em">CLIN28</span> Organization Team: <br><br>
+        <p class="mbr-footer__copyright"><span class="clin-font" style="font-weight:bold; font-size:1.5em">PICA 2021</span> Organization Team: <br><br>
           <p class="mbr-footer__copyright">
-            Christoph Aurnhammer, M. Erkan Basar, Merijn Beeksma, Antal van den Bosch, Franc Grootjen, Iris Hendrickx,
-            Florian Kunneman, Alessandro Lopopolo, Louis Onrust, Chara Tsoukala
+            Federica Cena​, Iris Hendrickx, Erkan Basar, Luigi Di Caro, Florian Kunneman, Elena Musi, Cataldo Musto, Amon Rapp, Jelte van Waterschoot
           </p><hr>
         </p>
       </div>
@@ -420,7 +365,7 @@
     <div class="mbr-footer mbr-footer--wysiwyg row" style="padding: 0px 0px 39px">
       <div class="col-sm-12 text-center">
         <p class="mbr-footer__copyright">
-           Timelapse video by <a href="http://nymegen.blogspot.nl/2015/06/time-lapse-anderhalf-uur-zonsondergang.html"  target="_blank">Arthur.</a> | Fueled by <a href="https://www.djangoproject.com/"  target="_blank">Django</a> &amp; <a href="http://getbootstrap.com/"  target="_blank">Bootstrap</a> | Redesigned Template by <a href="https://mobirise.com/free-template/"  target="_blank">Mobirise</a>
+           Timelapse video by <a href="https://www.youtube.com/user/deGemeenteUtrecht"  target="_blank">Gemeente Utrecht.</a> | Fueled by <a href="https://www.djangoproject.com/"  target="_blank">Django</a> &amp; <a href="http://getbootstrap.com/"  target="_blank">Bootstrap</a> | Redesigned Template by <a href="https://mobirise.com/free-template/"  target="_blank">Mobirise</a>
         </p>
       </div>
     </div>
@@ -453,14 +398,14 @@
     window.globaldict.urls.program = '{% static "data/program.json" %}';
     window.globaldict.urls.dates = '{% static "data/dates.json" %}';
     window.globaldict.urls.PDFPath = '{% static "on-program/123456.pdf" %}';
-    window.globaldict.urls.abstractURL = 'http://clin28.cls.ru.nl/#abstract-123456'
-  </script>
+    window.globaldict.urls.abstractURL = 'http://pica.cls.ru.nl/#abstract-123456'
 
-  {% if available_pdfs %}
-  <script>
-    window.globaldict.availablePDFs = {{ available_pdfs|safe }};
+    {% if available_pdfs %}
+      window.globaldict.availablePDFs = {{ available_pdfs|safe }};
+    {% else %}
+      window.globaldict.availablePDFs = [];
+    {% endif %}
   </script>
-  {% endif %}
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>

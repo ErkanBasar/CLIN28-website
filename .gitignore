@@ -13,12 +13,11 @@ old/
 venv/
 env/
 *.pyc
-*presentation*
 
-photos/
-posters/
-presentations/
-on-program/
+photos/*
+posters/*
+presentations/*
+on-program/*
 
 .DS_Store
 

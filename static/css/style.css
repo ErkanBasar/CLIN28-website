@@ -1820,7 +1820,7 @@ html {
   text-decoration: none;
 }
 .mbr-footer__copyright a{
-  color: #6dadc1;
+  color: #d9a62d;
   text-decoration: none;
 }
 .mbr-buttons {
@@ -2530,6 +2530,7 @@ header .intro-text {
   padding-top: 25vh;
   /*padding-bottom: 50px;*/
 }
+
 header .intro-text .intro-lead-in {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
@@ -2537,6 +2538,7 @@ header .intro-text .intro-lead-in {
   line-height: 22px;
   margin-bottom: 25px;
 }
+
 header .intro-text .intro-heading {
   font-family: "FinalFrontier", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -2544,8 +2546,9 @@ header .intro-text .intro-heading {
   font-size: 8em;
   line-height: 50px;
   margin-bottom: 25px;
-  text-shadow: -3px -1px 0 rgb(28, 73, 110), 0 1px rgb(28, 73, 110), 1px 0 rgb(28, 73, 110), 0 -1px rgb(28, 73, 110);
+  text-shadow: -3px -1px 0 rgb(217, 166, 45), 0 1px rgb(217, 166, 45), 1px 0 rgb(217, 166, 45), 0 -1px rgb(217, 166, 45);
 }
+
 @media (min-width: 768px) {
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2554,6 +2557,7 @@ header .intro-text .intro-heading {
     line-height: 40px;
     margin-bottom: 25px;
   }
+
   header .intro-text .intro-heading {
     text-transform: uppercase;
     font-weight: 700;
@@ -2570,6 +2574,7 @@ section h2.section-heading {
   margin-bottom: 15px;
   font-weight: 700;
 }
+
 section h3.section-subheading {
   font-size: 16px;
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2581,7 +2586,7 @@ section h3.section-subheading {
 }
 
 .warning {
-  color: #FF0000;
+  color: #ff0000;
   width: 80%;
   margin: auto;
 }

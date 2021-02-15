@@ -1,22 +1,23 @@
 """
-Django settings for CLIN28 project.
+Django settings for PICA project.
 """
 
 import os
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Add the secret-key as an environment variable
 # export SECRET_KEY=< generate a random key and place it here >
-SECRET_KEY = os.environ["SECRET_KEY"]
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # Create an environment variable as "DJANGO_ENV"
-if os.environ["DJANGO_ENV"] == "production":
+if os.getenv('DJANGO_ENV', 'dev') == "production":
     DEBUG = False
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'clin28.cls.ru.nl', 'soothsayer.cls.ru.nl']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'pica.cls.ru.nl', 'soothsayer.cls.ru.nl']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -33,12 +34,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CLIN28.urls'
+
+ROOT_URLCONF = 'PICA.urls'
 
 TEMPLATES = [
     {
@@ -56,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CLIN28.wsgi.application'
+WSGI_APPLICATION = 'PICA.wsgi.application'
 
 DATABASES = {
     'default': {
@@ -84,7 +85,7 @@ LOGIN_REDIRECT_URL = '/'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Amsterdam'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -92,6 +93,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [

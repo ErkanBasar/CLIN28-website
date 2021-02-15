@@ -1,7 +1,7 @@
 {% extends 'second_base.html' %}
 {% load static %}
 
-{% block header %}CALLS{% endblock %}
+{% block header %}DATES & CALLS{% endblock %}
 
 {% block main %}
 
@@ -11,58 +11,58 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--std-padding container" style="background-color:white;">
+          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--sm-padding container" style="background-color:white;">
 
             <div class="col-sm-10 col-sm-offset-1">
 
               <h4 class="blue">Call for Participation</h4>
 
-              <p>
-		The 28th Meeting of Computational Linguistics in The Netherlands (CLIN 28) will take place in Nijmegen, The Netherlands on January 26, 2018. We invite everyone with an interest in computational linguistics to take part in the meeting.
-	      </p>
+              <p>Recent years have seen the rise of conversational agents (CAs) in everyday life: chatbots that use written communications above all, but also spoken digital assistants. Moreover, conversation is becoming a key mode of human-computer interaction. However, despite much recent success in natural language processing and dialogue research, the communication between a human and a system is still in its infancy. In this context, dialogue personalization could be key to narrow part of the gap, making sense of users’  features (e.g., preferences, expertise, communication style, emotions, personality) when engaged in a conversation with a system. Learning user features directly from the dialogue with a CA, in order to adapt its response, is an opportunity to improve the interaction with the user.   Conversational recommender systems can exploit the same paradigm to improve the interaction between the user and system and better elicit information about the user. By exploiting personalized dialogue strategies, users’ preferences can be gathered in a very natural and straightforward fashion and this will lead to more effective recommendations.</p>
 
-	      <p>
-		Online registration can be done by clicking on 'register' in the menu of this website. The fee is 55 euro for regular registrations, and a reduced fee of 25 euros for master students (limited number of tickets available).
-	      </p>
+              <p>We are interested in both long-term engaging spoken dialogue systems and text-based chatbots, as well as conversational recommender systems. Papers can be about different approaches to this: (pilot) evaluations, design guidelines, personalization, natural language processing, protection of privacy and (health) data, (cognitive) architectures and frameworks, implementations, context analyses. We are also very interested in studies on the effectiveness of behaviour change support systems and changing health related behaviour (such as quit smoking, lose weight, etc.).</p>
 
-	      <p>
-		Also, as part of the co-operation with SIKS, SIKS-PhD-students can register for CLIN 28 without paying the fee. To participate, inform the SIKS office that you want to join the event by sending an e-mail to office@siks.nl (no registration on the CLIN 28 website neeeded). There is a fixed number of places available, and you will be informed if you can participate as soon as possible.
-	      </p>
+              <p>The main goal of the workshop is to stimulate discussion around problems, challenges, possible solutions and research directions regarding the exploitation of NLP and ML techniques to learn user features and use them to personalize the dialogue in the next generation of intelligent conversational agents.</p>
 
-	      <p>
-		The deadline for registration is 19 January 2018.
-              </p>
+              <p>Topics of interest of the workshops are but not limited to:</p>
 
-              <h4 class="blue">Call for Abstracts</h4>
+              <b>Applications for personalized dialogues</b>
+              <ul>
+                <li>Commercial chatbot and voicebot</li>
+                <li>Health management systems</li>
+                <li>E-learning systems</li>
+                <li>Conversational Recommender systems</li>
+                <li>Counseling and coaching agents</li>
+              </ul>
 
-              <p>
-                Researchers are invited to submit, in English, abstracts describing work on all aspects of computational linguistics and related language and speech technologies and applications.
+              <b>Methodologies for learning personal data from dialogue</b>
+              <ul>
+                <li>User modeling and/or memory for long-term engaging dialogues</li>
+                <li>NLP technologies for learning from dialogue</li>
+                <li>Personality detection</li>
+                <li>Semantic Content Analysis of Social and Linked Open Data</li>
+                <li>Information retrieval and elicitation by agents</li>
+              </ul>
 
-                Submissions should include:
-                <ul>
-                  <li> Name, affiliation and contact details of each author</li>
-                  <li> Presentation title</li>
-                  <li> An abstract in PDF of 500 words maximum (excluding references), outlining their presentation</li>
-                  <li> A stated preference for oral presentation or poster</li>
-                </ul>
+              <b>Methodologies for  dialogue personalisation</b>
+              <ul>
+                <li>NLG for dialogue generation</li>
+                <li>Intelligent explanation provision</li>
+                <li>Resource and corpora creation</li>
+              </ul>
 
-                Presentation abstracts should be submitted electronically, no later than November 14th, 2017 (12PM, GMT/UTC + 01:00 hour) via the submission website at <a href="https://easychair.org/conferences/?conf=clin28" target="_blank">EasyChair</a>.
-
-              </p>
-
-              <h4 class="blue">STIL Thesis Prize</h4>
-
-              <p>
-                Since CLIN 20, a special annual thesis prize, sponsored by STIL, is awarded to the best Master thesis in computational linguistics. STIL is the Stichting Toepassing Inductieve Leertechnieken. Master theses submitted to and evaluated at a university or organization of higher education in the Netherlands or Flanders are eligible for the prize. The thesis should address a topic in computational linguistics or its applications, and may be written in Dutch or English. See <a href="{% url 'stil_thesis_prize' %}">Thesis prize</a> for the full requirements and procedure.
-              </p>
-
-              <h4 class="blue">Shared Task</h4>
-
-              <p>
-                CLIN 28 includes a shared task on spelling correction for Dutch. See <a href="{% url 'shared_task' %}">Shared task</a> for the full details.
-              </p>
-
+              <b>Open Issues in Personalized Intelligent Agents</b>
+              <ul>
+                <li>Ethical issues and privacy management of Personal data</li>
+                <li>Need for transparency (e.g., in compliance with GDPR)</li>
+                <li>Gathering implicit feedbacks (e.g. social activities) to infer user interests.</li>
+                <li>Evaluation of personalized conversational agents</li>
+                <li>Trustworthiness, risks of bias in agent conversations</li>
+                <li>Engagement and conversational strategies in dialogues</li>
+                <li>Self-disclosure of agents</li>
+              </ul>
             </div>
+
+            <div id="dates-table"></div>
 
           </div>
         </div>
@@ -73,4 +73,30 @@
 
 {% endblock %}
 
-{% block pageBasedJS %}{% endblock %}
+{% block pageBasedJS %}
+  <script>
+    $.getJSON(window.globaldict.urls.dates, function (data) {
+      var toPush = $('<div>', {
+        class: 'col-sm-10 col-sm-offset-1'
+      });
+      data.forEach(function (item) {
+        toPush.append($('<h4>', {
+          class: 'blue',
+          text: item.title
+        }));
+        toPush.append($('<p>', {}));
+        item.dates.forEach(function (impDate) {
+          var spanClass = (impDate.active) ? '' : 'inactive'
+          toPush.append($('<span>', {
+            class: spanClass
+          }).append($('<b>', {
+            text: impDate.text + ': '
+          })).append(impDate.date));
+          toPush.append($('<br>'));
+        });
+        toPush.append($('<br>'));
+      });
+      $('#dates-table').html(toPush);
+    });
+  </script>
+{% endblock %}

@@ -1,42 +1,13 @@
-# CLIN28 Website
+# PICA2021 Website
 
-This website is designed for 28th CLIN conference.
+This website is designed for PICA 2021 workshop.
 
-URL: <http://clin28.cls.ru.nl>
+URL: <http://pica.cls.ru.nl>
 
-### More on CLIN
+### More on PICA 2021
 
-Computational Linguistics in the Netherlands (CLIN) is an annual conference about Computational Linguistics organised in Flanders (Belgium) and The Netherlands. On January 26th 2018, the 28th edition of CLIN is organized by the Centre for Language Studies, Radboud University, under the auspices of the Dutch Research School for Information and Knowledge Systems (SIKS).
+Recent years have seen the rise of conversational agents (CAs) in everyday life: chatbots that use written communications above all, but also spoken digital assistants. Moreover, conversation is becoming a key mode of human-computer interaction. However, despite much recent success in natural language processing and dialogue research, the communication between a human and a system is still in its infancy. In this context, dialogue personalization could be key to narrow part of the gap, making sense of users’ features (e.g., preferences, expertise, communication style, emotions, personality) when engaged in a conversation with a system. Learning user features directly from the dialogue with a CA, in order to adapt its response, is an opportunity to improve the interaction with the user. Conversational recommender systems can exploit the same paradigm to improve the interaction between the user and system and better elicit information about the user. By exploiting personalized dialogue strategies, users’ preferences can be gathered in a very natural and straightforward fashion and this will lead to more effective recommendations.
 
-CLIN is a splendid occasion for the whole Dutch and Belgian computational linguistics community to get together and present their current work, even if in an ongoing state. International researchers often take part in the conference as well. Submissions usually cover a diverse range of computational linguistics topics resulting in a stimulating event where researchers exchange early research results, compare approaches and get a good sense of the direction of computational linguistics in the Netherlands and Belgium as a whole.
+We are interested in both long-term engaging spoken dialogue systems and text-based chatbots, as well as conversational recommender systems. Papers can be about different approaches to this: (pilot) evaluations, design guidelines, personalization, natural language processing, protection of privacy and (health) data, (cognitive) architectures and frameworks, implementations, context analyses. We are also very interested in studies on the effectiveness of behaviour change support systems and changing health related behaviour (such as quit smoking, lose weight, etc.).
 
-The first CLIN conference was held in 1990 in Utrecht. For an impression of the previous CLIN conferences see the CLIN conference pages from previous years:
-
-1.  October 26, 1990 – OTS Utrecht
-1.  November 29, 1991 – CWI Amsterdam
-1.  October 30, 1992 – ITK Tilburg
-1.  November 25, 1993 – Alfa-informatica Groningen
-1.  November 23, 1994 – TU Twente
-1.  December 1, 1995 – Antwerpen
-1.  November 15, 1996 – IPO Eindhoven
-1.  December 12, 1997 – Letteren KUN, Nijmegen
-1.  December 11, 1998 – CCL, KU Leuven
-1.  December 10, 1999 – OTS Utrecht
-1.  November 3, 2000 – Taal en Informatica, Tilburg
-1.  November 30, 2001 – Computer Science, University of Twente
-1.  November 29, 2002 – Alfa-informatica, University of Groningen
-1.  December 19, 2003 – Centre for Dutch Language and Speech, University of Antwerp
-1.  December 17, 2004 – Leiden Centre for Linguistics
-1.  December 16, 2005 – University of Amsterdam
-1.  January 12, 2007 – CCL, KU Leuven
-1.  December 7, 2007 – Radboud University Nijmegen
-1.  January 22, 2009 – Groningen University
-1.  February 5, 2010 – UiL-OTS, Utrecht University
-1.  February 11, 2011 – LT3, University College Ghent
-1.  January 20, 2012 – ILK, Tilburg University
-1.  January 18, 2013 – HMI, University of Twente, Enschede
-1.  January 17, 2014 – INL & TST-Centrale, Leiden
-1.  February 5-6, 2015 – CLiPS, University of Antwerp
-1.  December 18, 2015 – VU Amsterdam
-1.  February 10, 2017 – CCL, KU Leuven
-1.  January 26, 2018 – Radboud University Nijmegen
+The main goal of the workshop is to stimulate discussion around problems, challenges, possible solutions and research directions regarding the exploitation of NLP and ML techniques to learn user features and use them to personalize the dialogue in the next generation of intelligent conversational agents.
