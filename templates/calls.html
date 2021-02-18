@@ -1,7 +1,7 @@
-{% extends 'second_base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block header %}DATES & CALLS{% endblock %}
+{% block header-title %}DATES & CALLS{% endblock %}
 
 {% block main %}
 
@@ -90,7 +90,7 @@
               </p>
 
               <p>
-                Papers have to be submitted via the <a href="https://easychair.org/conferences/?conf=acmumap2021">EasyChair conference system</a> (select the <a href="https://easychair.org/conferences/?conf=acmumap2021">‘Workshop-PICA’</a> track within EasyChair), must be written in English and contain original material that has not been published or is currently undergoing review elsewhere. Papers are peer-reviewed by a committee of experts in the field. Accepted papers will be listed on DBLP and published via the ACM Digital Library. 
+                Papers have to be submitted via the <a href="https://easychair.org/conferences/?conf=acmumap2021">EasyChair conference system</a> (select the <a href="https://easychair.org/conferences/?conf=acmumap2021">‘Workshop-PICA’</a> track within EasyChair), must be written in English and contain original material that has not been published or is currently undergoing review elsewhere. Papers are peer-reviewed by a committee of experts in the field. Accepted papers will be listed on DBLP and published via the ACM Digital Library.
               </p>
 
               <p>
@@ -149,6 +149,9 @@
 
 {% block pageBasedJS %}
   <script>
+
+    window.globaldict.urls.dates = '{% static "data/dates.json" %}';
+
     $.getJSON(window.globaldict.urls.dates, function (data) {
       var toPush = $('<div>', {
         class: 'col-sm-10 col-sm-offset-1'
@@ -172,5 +175,6 @@
       });
       $('#dates-table').html(toPush);
     });
+
   </script>
 {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- {% block pageBasedCSS %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css">
+{% endblock %} -->
+
+{% block header-title %}{{ title }}{% endblock %}
+
+{% block main %}
+
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
+  <div class="mbr-section__container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-8 col-sm-offset-2 container" style="background-color:white; padding:40px 0;" >
+          <div class="imglist" style="padding-left:15px;">
+            {% block imgList %}{% endblock %}
+
+            {% if photo_paths %}
+              {% for pp in photo_paths %}
+                <a data-fancybox="group" data-caption="If you want this photo to be removed, please let us know by email at <a href'mailto:f.a.kunneman@vu.nl'>f.a.kunneman@vu.nl</a>" href="{% static pp.original %}">
+                  <img class="clin-photo" src="{% static pp.thumbnail %}" alt="">
+                </a>
+              {% endfor %}
+            {% endif %}
+
+            {% if poster_paths %}
+              {% for pp in poster_paths %}
+                <a href="{% static pp.original %}" data-fancybox="group" data-type="pdf" data-caption="" >
+                  <img class="clin-photo" src="{% static pp.thumbnail %}" alt="" style="margin:8px; border:1px solid #3c3c3c; padding:2px;">
+                </a>
+              {% endfor %}
+            {% endif %}
+
+            {% if presentations_paths %}
+              {% for pp in presentations_paths %}
+                <a href="{% static pp.original %}" data-fancybox="group" data-type="pdf" data-caption="" >
+                  <img class="clin-photo" src="{% static pp.thumbnail %}" alt="" style="margin:8px; border:1px solid #3c3c3c; padding:2px;">
+                </a>
+              {% endfor %}
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+
+{% block pageBasedJS %}{% endblock %}

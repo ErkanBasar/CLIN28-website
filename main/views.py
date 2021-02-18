@@ -12,7 +12,7 @@ def home(request):
         available_pdfs = [pdf_file.split('.pdf')[0] \
                                 for pdf_file in os.listdir('static/on-program') \
                                 if pdf_file.endswith('.pdf')]
-        request = render(request, 'base.html', {
+        request = render(request, 'home.html', {
             'title': 'Personalized Intelligent Conversational Agents Workshop',
             'keys': ('workshop, natural language processing, artificial intelligence, '
                      'machine learning, conversational agents'),
@@ -30,6 +30,14 @@ def calls(request):
                 'important dates, dates, abstracts'),
     })
 
+def organization(request):
+    """Loads the Organization page
+    """
+    return render(request, 'organization.html', {
+        'title': 'Organization',
+        'keys': 'organization, organizers, people',
+    })
+
 def posters(request):
     """Loads the Gallery page where the posters are displayed
 
@@ -44,9 +52,9 @@ def posters(request):
                            if poster.endswith('.pdf')],
                           key=lambda k: k['original'])
 
-    return render(request, 'posters.html', {
-        'title': 'Gallery',
-        'keys': 'PICA, 2021, PICA2021, posters, display posters, dowload posters',
+    return render(request, 'gallery.html', {
+        'title': 'POSTERS',
+        'keys': 'posters, poster sessions, display posters, dowload posters',
         'poster_paths': poster_paths,
     })
 
@@ -62,9 +70,9 @@ def photos(request):
                           if photo.endswith('.jpg')],
                          key=lambda k: k['original'])
 
-    return render(request, 'photos.html', {
-        'title': 'Gallery',
-        'keys': 'PICA, 2021, PICA2021, photos, photo gallery',
+    return render(request, 'gallery.html', {
+        'title': 'PHOTOS',
+        'keys': 'photos, photo gallery, people',
         'photo_paths': photo_paths,
     })
 
@@ -82,8 +90,8 @@ def presentations(request):
                                   if poster.endswith('.pdf')],
                                  key=lambda k: k['original'])
 
-    return render(request, 'presentations.html', {
-        'title': 'Gallery',
+    return render(request, 'gallery.html', {
+        'title': 'PRESENTATIONS',
         'keys': 'PICA, 2021, PICA2021, presentations, presentation gallery',
         'presentations_paths': presentations_paths,
     })

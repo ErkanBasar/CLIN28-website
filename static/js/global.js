@@ -39,6 +39,6 @@
     $('#loading').css('display', 'inline');
   });
 
-  $('html').niceScroll({styler:'fb', cursorcolor:'rgb(217, 166, 45)', cursorwidth: '10', cursorborderradius: '10px', background: '#e4e4e4', spacebarenabled:false,  cursorborder: '', zindex: '10'});
+  $('html').niceScroll({styler:'fb', cursorcolor:'rgb(217, 166, 45)', cursorwidth: '10', cursorborderradius: '10px', background: '#00000000', spacebarenabled:false,  cursorborder: '', zindex: '10'});
 
 })(window, window.document, window.jQuery);

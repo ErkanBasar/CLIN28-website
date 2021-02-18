@@ -11,6 +11,8 @@ urlpatterns = [
 
     path(r'calls', views.calls, name='calls'),
 
+    path(r'organization', views.organization, name='organization'),
+
     path(r'gallery', RedirectView.as_view(url='/photos'), name='gallery'),
 
     path(r'posters', views.posters, name='posters'),

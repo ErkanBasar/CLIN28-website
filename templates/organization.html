@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header-title %}ORGANIZATION{% endblock %}
+
+{% block main %}
+
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
+
+  <div class="mbr-section__container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--sm-padding container" style="background-color:white;">
+
+            <div class="col-sm-10 col-sm-offset-1">
+              <h4 class="blue">Workshop Organization</h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block pageBasedJS %}
+  <script>
+    $.getJSON(window.globaldict.urls.dates, function (data) {
+      var toPush = $('<div>', {
+        class: 'col-sm-10 col-sm-offset-1'
+      });
+      data.forEach(function (item) {
+        toPush.append($('<h4>', {
+          class: 'blue',
+          text: item.title
+        }));
+        toPush.append($('<p>', {}));
+        item.dates.forEach(function (impDate) {
+          var spanClass = (impDate.active) ? '' : 'inactive'
+          toPush.append($('<span>', {
+            class: spanClass
+          }).append($('<b>', {
+            text: impDate.text + ': '
+          })).append(impDate.date));
+          toPush.append($('<br>'));
+        });
+        toPush.append($('<br>'));
+      });
+      $('#dates-table').html(toPush);
+    });
+  </script>
+{% endblock %}
