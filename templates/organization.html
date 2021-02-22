@@ -1,32 +1,133 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block header-title %}ORGANIZATION{% endblock %}
+{% block pageBasedCSS %}
+  <link rel="stylesheet" href="{% static 'css/team-profile.css' %}" type="text/css">
+{% endblock %}
+
+{% block header-title %}WORKSHOP CHAIRS{% endblock %}
 
 {% block main %}
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted" id="form1-54346" style="background-color: #efefef;">
-
-  <div class="mbr-section__container">
+<section class="mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted mbr-parallax-background">
+  <div class="mbr-overlay" style="opacity: 0.8 ; background-color: white;"></div>
+  <div class="mbr-section__container container">
     <div class="row">
       <div class="col-sm-12">
         <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 mbr-section__container--sm-padding container" style="background-color:white;">
+          <div class="col-sm-12 mbr-section__container--sm-padding container" style="background-color:white;">
+              <!-- The following cards are from: https://www.bootdey.com/snippets/view/bs4-seller-cards -->
+              <div class="container">
 
-            <div class="col-sm-10 col-sm-offset-1">
-              <h4 class="blue">Workshop Organization</h4>
-            </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/organization-photos/hendrickx.jpg' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Iris Hendrickx</h4>
+                        <p class="text-muted">Radboud University Nijmegen</p>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="row">
-              <div class="thumbnail" style="float: unset; width: 100%;">
-                <div class="image row" data-toggle="tooltip" data-placement="bottom" title="NWO: Nederlandse Organisatie voor Wetenschappelijk Onderzoek">
-                  <a href="http://www.nwo.nl/"  target="_blank">
-                    <img src="{% static 'images/keynote-dummy.png'%}">
-                   </a>
-                </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/keynote-dummy.png' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Federica Cena</h4>
+                        <p class="text-muted">University of Torino</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/organization-photos/basar.jpg' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Erkan Basar</h4>
+                        <p class="text-muted">Radboud University Nijmegen</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/keynote-dummy.png' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Luigi Di Caro</h4>
+                        <p class="text-muted">University of Torino</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/organization-photos/kunneman.jpg' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Florian Kunneman</h4>
+                        <p class="text-muted">Vrije University</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/keynote-dummy.png' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Elena Musi</h4>
+                        <p class="text-muted">University of Liverpool</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/organization-photos/musto.jpg' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Cataldo Musto</h4>
+                        <p class="text-muted">University of Bari</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/keynote-dummy.png' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Amon Rapp</h4>
+                        <p class="text-muted">University of Torino</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card user-card">
+                      <div class="card-block">
+                        <div class="user-image">
+                          <img src="{% static 'images/organization-photos/waterschoot.jpg' %}" class="img-radius">
+                        </div>
+                        <h4 class="f-w-600 m-t-25 m-b-10">Jelte van Waterschoot</h4>
+                        <p class="text-muted">University of Twente</p>
+                      </div>
+                    </div>
+                  </div>
+
               </div>
-            </div>
-
           </div>
         </div>
       </div>
