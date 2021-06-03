@@ -12,10 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # Create an environment variable as "DJANGO_ENV"
-if os.getenv('DJANGO_ENV', 'dev') == "production":
-    DEBUG = False
-else:
-    DEBUG = True
+#if os.getenv('DJANGO_ENV', 'dev') == "production":
+DEBUG = False
+#else:
+#    DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'pica.cls.ru.nl', 'soothsayer.cls.ru.nl']
 
