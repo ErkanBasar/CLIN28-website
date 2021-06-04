@@ -73,12 +73,52 @@
                         <h2 class="mbr-header__text">PROGRAM</h2>
                         <!-- <h4 class="section-subheading warning"><b>The section is under construction.</b><br>It will be hidden until the content and the design is ready.</h4> -->
                     </div>
-                    <!-- <div id="program-table-wrapper"></div> -->
-                    <p style="text-align:center;">To Be Announced</p>
+                    <div id="program-table-wrapper"></div>
+                    <!-- <p style="text-align:center;">To Be Announced</p> -->
                 </div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- <section class="mbr-section mbr-section--relative mbr-section--fixed-size map" id="overlay-map">
+  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78456.20167142518!2d5.012452692177598!3d52.08416599709322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f4339d32d37%3A0xd6c8fc4c19af4ae9!2sUtrecht!5e0!3m2!1sen!2snl!4v1613091570574!5m2!1sen!2snl"  width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</section> -->
+
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="keynote" style="background-color: rgb(217, 166, 45);">
+  <div class="mbr-section__container mbr-section__container--std-padding container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="mbr-header mbr-header--center mbr-header--std-padding" style="margin-bottom:20px;">
+              <h2 class="mbr-header__text text-white">KEYNOTE SPEAKER</h2>
+            </div>
+            <div class="row keynote-row">
+              <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
+                <h2 id="keynote-name">Chris Reed</h2>
+                <h4><b>
+                  Professor of Computer Science and Philosophy<br>
+                  Head of the Centre for Argument Technology<br>
+                  The University of Dundee, Scotland
+                </b></h4>
+              </div>
+              <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
+                <img id="keynote-img" src="{% static 'images/keynote-chrisreed.jpg'%}"/>
+              </div>
+              <div class="col-sm-4 text-center">
+                <p>
+                  Chris Reed has been working at the overlap between argumentation theory and artificial intelligence for two decades and specialises in the theory, practice and commercialisation of argument technology. He has won over £6.5m of funding from government, charity and commercial sources, has over 200 peer-reviewed papers in the area including five books, and has served as a director of several technology companies. <br><br>
+
+                  He has also been instrumental in the development of the Argument Interchange Format, an international standard for computational work in the area; he is spear-heading the major engineering effort behind the Argument Web; and he is a founding editor of the Journal of Argument & Computation. He also provides evidence to various committees at Westminster and his media appearances and writing have reached an audience in excess of 30 million people.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="venue" style="background-image: url({% static 'images/utrecht.jpg' %}); height:100%;">
@@ -94,8 +134,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <a href="#venue" style="color:black; text-decoration:none;"  target="_blank">
-                        <h2 class="section-heading">TBA & Online</h2></a>
-                    <h3 class="section-subheading ">To Be Announced - Utrecht</h3>
+                        <!-- <h2 class="section-heading">Online</h2></a> -->
+                    <h3 class="section-subheading ">The workshop is going to be held online.</h3>
                     <!-- <p class="black-font">PICA 2021 will be held at To Be Announced, located in the city centre of Nijmegen at about 8 minutes by foot from the central train station. Click the link below for more information, including parking options.</p> -->
                 </div>
             </div>
@@ -107,40 +147,6 @@
         </div>
     </section>
 </section>
-
-<section class="mbr-section mbr-section--relative mbr-section--fixed-size map" id="overlay-map">
-  <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78456.20167142518!2d5.012452692177598!3d52.08416599709322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66f4339d32d37%3A0xd6c8fc4c19af4ae9!2sUtrecht!5e0!3m2!1sen!2snl!4v1613091570574!5m2!1sen!2snl"  width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-</section>
-
-<!-- <section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="keynote" style="background-color: rgb(217, 166, 45);">
-  <div class="mbr-section__container mbr-section__container--std-padding container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="mbr-header mbr-header--center mbr-header--std-padding" style="margin-bottom:20px;">
-              <h2 class="mbr-header__text text-white">KEYNOTE SPEAKER</h2>
-            </div>
-            <div class="row keynote-row">
-              <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
-                <h2 id="keynote-name">TBA Speaker Name</h2>
-                <h4><b>TBA Speaker Title/Position</b></h4>
-              </div>
-              <div class="col-sm-4 text-center" style="margin-bottom: 30px;">
-                <img id="keynote-img" src="{% static 'images/keynote-dummy.png'%}"/>
-              </div>
-              <div class="col-sm-4 text-center">
-                <p>
-                  TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction. TBA Speaker Introduction.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <section class="content-2 col-4" id="sponsors" style="background-color: rgb(255, 255, 255);">
 
@@ -176,6 +182,7 @@
 {% block pageBasedJS %}
   <script>
     // Transfer Django variables to JS variables
+    window.globaldict.urls.dates = '{% static "data/dates.json" %}';
     window.globaldict.urls.program = '{% static "data/program.json" %}';
     window.globaldict.urls.PDFPath = '{% static "on-program/123456.pdf" %}';
     window.globaldict.urls.abstractURL = 'http://pica.cls.ru.nl/#abstract-123456'

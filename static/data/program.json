@@ -1,1 +1,173 @@
-[]
+[
+  {
+    "start": "13:00",
+    "end": "13:05",
+    "location": "",
+    "title": "Welcome & Introduction"
+  },
+  {
+    "description": "",
+    "start": "13:05",
+    "end": "13:45",
+    "subslots": [[{
+          "title": "Chatbots in the tourism industry: the effects of communication style and brand familiarity on social presence and brand attitude",
+          "authors": "Charlotte van Hooijdonk and Christine Liebrecht",
+          "abstract": "In the tourism sector, chatbots are increasingly implemented to supplement online customer service encounters. However, customers often perceive conversations with chatbots as unnatural and impersonal. Therefore, we investigated whether a humanlike communication style enhances users’ chatbot and brand perceptions. Two experiments were conducted in which the effects of informal language (vs. formal language) and invitational rhetoric (present vs. absent) were examined separately. In both experiments, participants engaged in conversations with a customer service chatbot in the tourism sector after which they evaluated social presence and attitude towards the brand. Also, brand familiarity was included as a factor in both experiments as users’ brand familiarity affects their perceptions of the communication style in human-to-human interaction. <br><br> The results showed chatbots using informal language or invitational rhetoric increase one’s brand attitude via social presence. Moreover, brand familiarity only moderated the findings when the chatbot used invitational rhetoric: participants who were familiar with the brand experienced more social presence when the chatbot messages contained invitational rhetoric. We conclude that the perceived humanness of chatbots can be increased by adopting a communication style consisting of informal language and invitational rhetoric. Implications for the design and evaluation of chatbot messages are discussed",
+          "id": 1
+    },{
+          "title": "Unaddressed challenges in persuasive dieting chatbots",
+          "authors": "Simone Balloccu, Ehud Reiter, Matteo Gioele Collu, Federico Sanna, Manuela Sanguinetti and Maurizio Atzori",
+          "abstract": "Diet coaching gathered lots of interest in research. Recently, chatbots have been leveraged to address this task, with a focus on persuasion to motivate people towards behaviour change. In this paper, we take a look at current approaches in building persuasive dieting chatbots and expose a number of major unsolved challenges. We motivate them with evidence from previous work and show that current chatbots don't approach certain scenarios properly, hence limiting their communication and persuasion capabilities.",
+          "id": 2
+    }]],
+    "title": "Paper Presentations",
+    "sessions": [{"chair": "", "location": "", "title": ""}]
+  },
+  {
+    "start": "13:45",
+    "end": "14:00",
+    "location": "",
+    "title": "Break"
+  },
+  {
+    "start": "14:00",
+    "end": "14:45",
+    "location": "",
+    "title": "Chris Reed (Invited speaker)"
+  },
+  {
+    "start": "14:45",
+    "end": "15:30",
+    "location": "",
+    "title": "Break"
+  },
+  {
+    "description": "",
+    "start": "15:30",
+    "end": "16:15",
+    "subslots": [[{
+          "title": "Make your own. The Potential of Chatbot Customization for the Development of User Trust",
+          "authors": "Rebecca Wald, Evelien Heijselaar and Tibor Bosse",
+          "abstract": "Interacting with chatbots has become ubiquitous nowadays. Nevertheless, conversational agents often remain unable to reliably succeed in social contexts, which negatively influences users’ experience and prevents them from exploiting the technology’s full potential. To improve user experience and subsequent trust-formation in chatbots only very little attention has been paid to the active involvement of the user and with that to customization options. Employing a preregistered experimental 1x2 between-subjects study design (N = 171) this study explores an alternative approach to the typical one- chatbot-fits-all solution and investigates the potential of active user-based chatbot customization for the development of trust in chatbots. While customization had no direct effect on trust, anthropomorphism was identified as a significant mediator. The chatbot’s interpersonal communicational competence was not affected by customization, yet it did predict trust. Exploratory analyses of participants’ feedback point towards the importance of individual differences between users and generally show a positive impact of customization on the overall chatbot experience.",
+          "id": 3
+    },{
+          "title": "Not directly stated, not explicitly stored: Conversational Agents and the Privacy Threat of Implicit Information",
+          "authors": "Martha Larson, Nelleke Oostdijk and Frederik Zuiderveen Borgesius",
+          "abstract": "As conversational agents continue to evolve, it will become increasingly common to interact with search engines and recommender systems via natural language dialogue. Such interactions guide and shape our decision making, especially our consumption of products and services. The evolution of conversational agents will bring new challenges in protecting the privacy of users, and research has already begun to identify and address potential threats. Current research, however, focuses on how conversational agents acquire and process explicit information. In this position paper, we consider the future and bring to light the up-and-coming privacy risks posed by implicit information. Our first point is that meaning that is expressed implicitly is an integral part of natural language, implying that agents with the ability to engage in a fully humanlike dialogue will also have the ability to manipulate implied meaning. As a result, they will be capable of acquiring sensitive personal information about users that is not directly stated. Users have little awareness of or control over information that is implicitly communicated. Our second point is that in today’s search and recommender systems user profiles are not explicitly stored. As a result, it is not obvious that a user is being targeted on the basis of implicit personal information. The way forward, we argue, is for research in the area of conversational agents to devote more attention to the linguistic principles that underlie implicit meaning and the legal means that are available to protect users.",
+          "id": 4
+    }]],
+    "title": "Paper Presentations",
+    "sessions": [{"chair": "", "location": "", "title": ""}]
+  },
+  {
+    "start": "16:15",
+    "end": "16:30",
+    "location": "",
+    "title": "Break"
+  },
+  {
+    "title": "Project Talks",
+    "description": "",
+    "start": "16:30",
+    "end": "17:15",
+    "subslots": [[{
+          "title": "BLISS: Behaviour-based Language-Interactive Speaking.",
+          "authors": "",
+          "abstract": "Project website: <a href=\"http://bliss.ruhosting.nl\">http://bliss.ruhosting.nl</a> <br><br> The increasing availability of large amounts of (personal) data (Big Data) and the performance boost of advanced Human Language Technologies (HLT) hold great potential for self-management and empowerment in health and wellbeing. The topic of the present proposal is the combination of text mining of Dutch written and spoken client data with the design of an intelligent, personalized Dutch spoken dialogue system (SDS) that communicates with clients in an accessible manner to facilitate their self/joint-management of health and wellbeing. The project is couched in a broad conceptualization of health and wellbeing as happiness. The goal of this proposal is to study how text mining can be used for personalizing such a system and how this can be applied to a large-scale investigation of wellbeing happiness and self-empowerment of clients. <br><br> The chosen approach is innovative in that it combines text mining, HLT and large-scale use by clients. So far text mining has mainly been based on written data, while here it is extended to Dutch spoken, complex data like interviews and dialogues, as these are increasingly being used in healthcare instead of written questionnaires. The use of spoken dialogue systems in healthcare applications is here extended to complex, personalized communication on happiness and wellbeing in the Dutch language. The proposed research will produce Dutch language technologies that are relevant for a whole range of applications in healthcare and other fields, and important insights for personalized healthcare innovation. Its potential impact thus stretches well beyond the scope of this project.",
+          "id": 5
+    },{
+          "title": "Look Who's Talking: Towards Engaging Long-Term Interactions with Conversational Agents",
+          "authors": "",
+          "abstract": "Project website: <a href=\"https://look.uvt.nl\">https://look.uvt.nl</a> <br><br> Look Who’s Talking is an interdisciplinary collaboration between three universities from the Netherlands, funded by the Dutch Research Council (NWO), working together to develop and test a new generation of conversational agents (chatbots) which can engage with humans in long-term motivational interactions. The ​ main aim of this project is to create and field-test chatbots designed to develop and foster long-term engaging and human-like conversations with humans for two technologically and linguistically diverse domains (smoking cessation and promotion of safe sex, respectively) based on recent insights from artificial intelligence, computational linguistics, humanities, and social sciences with expertise from our societal partners. Additionally, we will study if and how people build up a social relationship with such more advanced chatbots, and what the ethical implications of communication with such health chatbots are.",
+          "id": 6
+    },{
+          "title": "eCG Family Clinic: the Electronic Cardiovascular Genetic Family Clinic to Facilitate Genetic Screening in Family Members",
+          "authors": "",
+          "abstract": "Project website: <a href=\"https://www.zonmw.nl/nl/over-zonmw/e-health-en-ict-in-de-zorg/programmas/project-detail/imdi/ecg-family-clinic-the-electronic-cardiovascular-genetic-family-clinic-to-facilitate-genetic-screeni/\">https://www.zonmw.nl/nl/over-zonmw/e-health-en-ict-in-de-zorg/programmas/project-detail/imdi/ecg-family-clinic-the-electronic-cardiovascular-genetic-family-clinic-to-facilitate-genetic-screeni/ (Dutch)</a> <br><br> ",
+          "id": 7
+    },{
+          "title": "Smooth Operators: Personalized Conversational Agents in Customer Service",
+          "authors": "",
+          "abstract": "Project website: <a href=\"https://www.conversationalagentsresearch.com/\">https://www.conversationalagentsresearch.com/</a> <br><br> With the development of virtual assistants, like Apple’s Siri, social chatbots such as Woebot, and conversational agents in customer services, people become acquainted with conversational AI to contact companies for their questions and complaints. However, the technology does not live up to its full potential yet. Currently, people perceive their conversations with conversational AI in customer service as unnatural and not cooperative. <br><br> There are both technological and social challenges in the implementation of conversational AI in people’s everyday life. It is challenging to translate content into a conversational format taking the social context into account, and to optimize AI as valuable co-workers for employees. Also, users face challenges when interacting with AI: they fear that their intent will be misunderstood and evaluate the interaction as impersonal. <br><br> In the Smooth Operator project conversational AI will be developed, evaluated, and tested in real-life customer service settings resulting in the experience of AI as cooperative communication partner by both service employees and customers. A multidisciplinary team of scholars therefore closely collaborates with private partners from industry.",
+          "id": 8
+    },{
+          "title": "Hybrid Intelligence: Augmenting Human Intellect",
+          "authors": "",
+          "abstract": "Project website: <a href=\"https://www.hybrid-intelligence-centre.nl/projects/\">https://www.hybrid-intelligence-centre.nl/projects/</a> <br><br> Hybrid Intelligence (HI) is the combination of human and machine intelligence, expanding human intellect instead of replacing it. HI takes human expertise and intentionality into account when making meaningful decisions and perform appropriate actions, together with ethical, legal and societal values. Our goal is to design Hybrid Intelligent systems, an approach to Artificial Intelligence that puts humans at the centre, changing the course of the ongoing AI revolution. <br><br> By providing intelligent artificial collaborators that interact with people we strengthen our human capacity for learning, reasoning, decision making and problem solving. This interaction has the potential to amplify both human and machine intelligence by combining their complementary strengths. Hybrid Intelligence requires meaningful interaction between artificial intelligent agents and humans to negotiate and align goals, intentions and implications of actions. Developing HI needs fundamentally new solutions to core research problems in AI: current AI technology surpasses humans in many pattern recognition and machine learning tasks, it falls short on general world knowledge, common sense reasoning, and human capabilities such as collaboration,  adaptivity, responsibility and explainability (CARE). These challenges are being addressed in four interconnected research lines. <br><br> The Hybrid Intelligence Centre is a collaboration of top AI researchers from the VU Amsterdam, the University of Amsterdam, the TU Delft, and the Universities of Groningen, Leiden, and Utrecht, in areas such as machine learning, knowledge representation, natural language understanding & generation, information retrieval, multi-agent systems,  psychology, multimodal interaction, social robotics, AI & law and ethics of technology. The HI centre will create a national and international focus point for research on all aspects of Hybrid Intelligent systems.",
+          "id": 9
+    },{
+          "title": "Studies and Research on Intelligent Conversational Systems with TIM s.p.a.",
+          "authors": "",
+          "abstract": "",
+          "id": 10
+    },{
+          "title": "LEAVES: optimizing the mentaL health and resiliencE of older Adults that haVe lost thEir spouSe via blended, online therapy",
+          "authors": "",
+          "abstract": "Project website: <a href=\"https://www.leaves-project.eu\">https://www.leaves-project.eu</a> <br><br> Loss of a spouse is a frequent occurrence in later life. While most older adults successfully process this loss and will return to a normal life, a significant proportion is unable to do this. They end up with prolonged grief (PG), a condition where grief symptoms occur longer than 6 months after the loss, and which can result in many mental and physical problems, like poor sleep, cardiovascular problems, depression, loneliness and suicidal tendencies. <br><br> In order to prevent PG or to treat it, so that older mourners can lead an active, meaningful and dignified life, we will develop an online grief program: Leaves. Leaves will cater to secondary end-users (family, informal caregivers) by reducing stress. Older adults, informal caregivers and relevant care professionals will, together with the project team, develop the Leaves service model, and, through iterative design and development, will optimize its usability and user experience.",
+          "id": 11
+    },{
+          "title": "Staying Alone Together: Developing Fake News Immunity",
+          "authors": "",
+          "abstract": "Project website: <a href=\"https://fakenewsimmunity.liverpool.ac.uk/\">https://fakenewsimmunity.liverpool.ac.uk/</a> <br><br> The Being Alone Together: Developing Fake News Immunity project is about empowering citizens to critically understand and engage with the information manipulations they encounter on the internet, especially during the Covid-19 pandemic. The main goal of this project is to reverse-engineer the manipulation of information providing citizens with the means to act as fact checkers. We believe that fostering global digital activism constitutes a necessary means to fight the current info-pandemic. <br><br> The majority of fact-checking and myth-busting sites (e.g. EUvsDisinfo, https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters) counter false narratives and news that have already become viral, unable to prevent their spread. <br><br> Leveraging NLP techniques for topic modelling and frame analysis we will trace the topics and frames which characterize semi-fake COVID-19 news using FullFact and the Coronavirus debunking archive built by First Draft as benchmarks. With the data we collect we will create a digital platform with a chatbot for training citizens to spot misinformation. Citizens who have been trained will have access to the Fake News Immunity platform, working together with experts in the common effort of flagging semi-fake news.",
+          "id": 12
+    }]],
+    "sessions": [{"chair": "", "location": "", "title": ""}]
+  },
+  {
+    "start": "17:15",
+    "end": "17:30",
+    "location": "",
+    "title": "Break"
+  },
+  {
+    "start": "17:30",
+    "end": "18:00",
+    "location": "",
+    "title": "Breakout Session",
+    "subslots": [[{
+          "abstract": "",
+          "authors": "What should a personalized user model contain? How much privacy can we sacrifice to build a proper user model?",
+          "id": 5,
+          "title": ""
+    },{
+          "abstract": "",
+          "authors": "How to adapt to changing user needs and unobtained goals? (social communication skills, feedback on user performance)",
+          "id": 5,
+          "title": ""
+    },{
+          "abstract": "",
+          "authors": "How to prevent high dropout rates with agents? (retain engagement)",
+          "id": 5,
+          "title": ""
+    },{
+          "abstract": "",
+          "authors": "What benefits do agents have over traditional apps/forms?",
+          "id": 5,
+          "title": ""
+    }]]
+  },
+  {
+    "start": "18:00",
+    "end": "18:05",
+    "location": "",
+    "title": "Break"
+  },
+  {
+    "start": "18:05",
+    "end": "18:20",
+    "location": "",
+    "title": "Breakout Session Summary"
+  },
+  {
+    "start": "18:20",
+    "end": "18:50",
+    "location": "",
+    "title": "Panel Discussion"
+  },
+  {
+    "start": "18:50",
+    "end": "19:00",
+    "location": "",
+    "title": "Closing"
+  }
+]

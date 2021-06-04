@@ -60,11 +60,15 @@
                 <li class="mbr-navbar__item">
                     <a class="btn text-white" href="{% url 'home' %}#venue">VENUE</a>
                 </li>
-                <!-- <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="#keynote">KEYNOTE</a>
-                </li> -->
                 <li class="mbr-navbar__item">
-                  <a class="btn text-white" href="{% url 'organization' %}">ORGANIZATION</a>
+                  <a class="btn text-white" href="#keynote">KEYNOTE</a>
+                </li>
+                <li class="mbr-navbar__item dropdown-item">
+                    <a class="btn text-white" href="{% url 'organization' %}">ORGANIZATION</a>
+                    <div class="dropdown-item-content">
+                      <a href="{% url 'organization' %}#workshop-chairs">Workshop Chairs</a>
+                      <a href="{% url 'organization' %}#program-committee">Program Committee</a>
+                    </div>
                 </li>
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="{% url 'home' %}#sponsors">SPONSORS</a>
@@ -72,9 +76,11 @@
                 <li class="mbr-navbar__item">
                   <a class="btn text-white" href="{% url 'home' %}#contact">CONTACT</a>
                 </li>
-                <li class="mbr-navbar__item" data-toggle="tooltip" data-placement="bottom" title="Registration is not yet open. Please check again later.">
+                <!-- <li class="mbr-navbar__item" data-toggle="tooltip" data-placement="bottom" title="Registration is not yet open. Please check again later.">
                   <a class="mbr-buttons__btn btn btn-default text-white register-btn" href="#">REGISTER</a>
-                </li>
+                </li> -->
+                <li class="mbr-navbar__item">
+                  <a class="mbr-buttons__btn btn btn-default text-white register-btn" href="https://www.um.org/umap2021/registration">REGISTER</a>
               </ul>
             </div>
           </nav>
@@ -149,7 +155,7 @@
     </div>
     <div class="modal-body">
       <div id="link-box" class="container">
-        <a id="copy-abstract-url" class="col-lg-3"></a>
+        <!-- <a id="copy-abstract-url" class="col-lg-3"></a> -->
         <a id="show-presentation" class="col-lg-3" data-fancybox data-type="pdf"><i class="fa fa-file-pdf-o"></i> PDF available</a>
       </div>
       <p id="talk-abstract"></p>

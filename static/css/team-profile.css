@@ -63,6 +63,10 @@
   height: 150px;
 }
 
+.user-card .card-block h4 {
+  font-size: 18px;
+}
+
 .img-radius {
   border-radius: 10%;
 }
@@ -117,4 +121,12 @@
 
 .user-card .card-block .user-social-link i {
   font-size: 30px;
+}
+
+div.list-group-item {
+  padding: 15px 15px;
+}
+
+div.list-group-item .list-group-item-heading {
+  font-size: 18px;
 }

@@ -5,15 +5,21 @@
   <link rel="stylesheet" href="{% static 'css/team-profile.css' %}" type="text/css">
 {% endblock %}
 
-{% block header-title %}WORKSHOP CHAIRS{% endblock %}
+{% block header-title %}PICA Organization{% endblock %}
 
 {% block main %}
 
-<section class="mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted mbr-parallax-background">
+<section id="workshop-chairs" class="mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted mbr-parallax-background">
   <div class="mbr-overlay" style="opacity: 0.8 ; background-color: white;"></div>
   <div class="mbr-section__container container">
     <div class="row">
       <div class="col-sm-12">
+        <!-- <div class="row">
+          <br>
+          <div class="mbr-header mbr-header--center mbr-header--std-padding">
+              <h2 class="mbr-header__text">Workshop Chairs</h2>
+          </div>
+        </div> -->
         <div class="row">
           <div class="col-sm-12 mbr-section__container--sm-padding container" style="background-color:white;">
               <!-- The following cards are from: https://www.bootdey.com/snippets/view/bs4-seller-cards -->
@@ -132,6 +138,99 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="content-2 col-12" id="program-committee" style="background-color: rgb(255, 255, 255);">
+  <!-- <div class="mbr-overlay" style="opacity: 0.8 ; background-color: #efefef;"></div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mbr-header mbr-header--center mbr-header--std-padding">
+          <h2 class="mbr-header__text">Program Committee</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="list-group">
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Francesca Alloatti</h4>
+            <p class="list-group-item-text text-muted">University of Torino, Italy</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Laura Barnes</h4>
+            <p class="list-group-item-text text-muted">University of Virginia, VA, USA</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Louis ten Bosch</h4>
+            <p class="list-group-item-text text-muted">Radboud University Nijmegen, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Aurélien Bossard</h4>
+            <p class="list-group-item-text text-muted">University of Paris 8, France</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Tibor Bosse</h4>
+            <p class="list-group-item-text text-muted">Radboud University Nijmegen, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Roel Bouman</h4>
+            <p class="list-group-item-text text-muted">Radboud University Nijmegen, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Mario Cataldi</h4>
+            <p class="list-group-item-text text-muted">University of Paris 8, France</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Anita Cremers</h4>
+            <p class="list-group-item-text text-muted">TNO, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Marco de Gemmis</h4>
+            <p class="list-group-item-text text-muted">University of Bari, Italy</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Arjan van Hessen</h4>
+            <p class="list-group-item-text text-muted">University of Twente, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Dirk Heylen</h4>
+            <p class="list-group-item-text text-muted">University of Twente, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Evelien Heyselaar</h4>
+            <p class="list-group-item-text text-muted">Radboud University Nijmegen, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Dietmar Jannach</h4>
+            <p class="list-group-item-text text-muted">University of Klagenfurt, Austria</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Emiel Krahmer</h4>
+            <p class="list-group-item-text text-muted">Tilburg University, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Fedelucio Narducci</h4>
+            <p class="list-group-item-text text-muted">Polytechnic University of Bari, Italy</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Giovanni Siragusa</h4>
+            <p class="list-group-item-text text-muted">University of Torino, Italy</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Helmer Strik</h4>
+            <p class="list-group-item-text text-muted">Radboud University Nijmegen, The Netherlands</p>
+          </div>
+          <div class="list-group-item">
+            <h4 class="list-group-item-heading">Svitlana Vakulenko</h4>
+            <p class="list-group-item-text text-muted">University of Amsterdam, The Netherlands</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

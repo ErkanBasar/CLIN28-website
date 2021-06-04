@@ -117,17 +117,17 @@
           class: 'col-md-1'
         });
         tableRow.append(timeColumn);
-        var infoColumns = $('<div>', {
-          class: 'col-md-11'
-        });
-        slot.sessions.forEach(function (session) {
-          var talkColumn = $('<div>', {
-            class: 'col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
-            html: '<h4>' + session.title + '</h4><p>' + (session.chair ? 'Chair: ' + session.chair + '<br>' : '') + 'Loc: ' + session.location + '</p>'
-          });
-          infoColumns.append(talkColumn);
-        });
-        tableRow.append(infoColumns);
+        // var infoColumns = $('<div>', {
+        //   class: 'col-md-11'
+        // });
+        // slot.sessions.forEach(function (session) {
+        //   var talkColumn = $('<div>', {
+        //     class: 'col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
+        //     html: '<h4>' + session.title + '</h4><p>' + (session.chair ? 'Chair: ' + session.chair + '<br>' : '') + 'Loc: ' + session.location + '</p>'
+        //   });
+        //   infoColumns.append(talkColumn);
+        // });
+        // tableRow.append(infoColumns);
         slotContent.append(tableRow);
       }
 
@@ -135,13 +135,13 @@
       var time = '';
       if(slot.subslots) {
         slot.subslots.forEach(function (subslot, index) {
-          if (slot.sessions) {
-            var mins = 20*index;
-            time = moment('26 January 2018 ' + slot.start).add(mins, 'm').format('HH:mm');
-          } else {
-            slot.columnWidth = Math.floor(12/subslot.length);
-            slot.columnWidthCustom = (12/subslot.length).toFixed(1).toString().replace('.', '').replace(',', '');
-          }
+          // if (slot.sessions) {
+          //   var mins = 20*index;
+          //   time = moment('26 January 2018 ' + slot.start).add(mins, 'm').format('HH:mm');
+          // } else {
+          //   slot.columnWidth = Math.floor(12/subslot.length);
+          //   slot.columnWidthCustom = (12/subslot.length).toFixed(1).toString().replace('.', '').replace(',', '');
+          // }
           var tableRow = $('<div>', {
             class: 'row subslot-row'
           });
@@ -157,7 +157,7 @@
             var talkColumn = $('<div>', {
               class: 'program-talk col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
               id: talk.id,
-              html: '<b>' + talk.title + '</b><br><i>' + (talk.authors ? talk.authors : '') + '</i>',
+              html: '<b>' + talk.title + '</b>' + (talk.title ? '<br>' : '') + '<i>' + (talk.authors ? talk.authors : '') + '</i>',
               'data-title': talk.title,
               'data-authors': talk.authors,
               'data-abstract': talk.abstract,
@@ -182,7 +182,7 @@
 
       if (slotContent) {
         var collapseButton = $('<span>', {
-          class: 'fa collapse-button pull-right' + (slot.sessions ? '' : ' collapsed'),
+          class: 'fa collapse-button pull-right',
           'data-divid': slot.uniqueId
         });
         slotTitle.append(collapseButton);
@@ -198,7 +198,7 @@
       }
     });
 
-    initialize();
+    initialize(false);
   });
 
 })(window, window.document, window.jQuery, window.moment, window.globaldict);
