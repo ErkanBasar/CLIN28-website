@@ -157,7 +157,7 @@
             var talkColumn = $('<div>', {
               class: 'program-talk col-md-' + slot.columnWidth + ' col-md-' + slot.columnWidthCustom,
               id: talk.id,
-              html: '<b>' + talk.title + '</b>' + (talk.title ? '<br>' : '') + '<i>' + (talk.authors ? talk.authors : '') + '</i>',
+              html: '<b>' + talk.title + '</b>' + (talk.title ? '<br>' : '') + (slot.title.includes('Keynote') ? '<span>' + (talk.abstract ? talk.abstract : '') + '</span>' : '<i>' + (talk.authors ? talk.authors : '') + '</i>'),
               'data-title': talk.title,
               'data-authors': talk.authors,
               'data-abstract': talk.abstract,

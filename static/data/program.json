@@ -33,7 +33,14 @@
     "start": "14:00",
     "end": "14:45",
     "location": "",
-    "title": "Chris Reed (Invited speaker)"
+    "title": "Keynote Speech by Chris Reed",
+    "subslots": [[{
+          "title": "Dialogue as a Service (or, why GPT-4 isn't going to solve the problems of conversational AI)",
+          "authors": "",
+          "abstract": "One might be forgiven for thinking that big language models are going to provide imminent solutions to most problems in computational linguistics and AI communication. Dialogue, and particularly task-oriented dialogue, however, presents challenges that are different in kind and are not yielding well no matter how large the models become. Something else is required in order to capture the intentional regularities of dialogical structure -- but that can then interface effectively with those large-scale statistically driven language models. At the Centre for Argument Technology, we focus on exploring models of argumentative discourse, of debate and of deliberation, where these strong dialogical structures are critical to capturing what is going on. In such a context, we have developed an approach to handling intentional and interactional aspects of dialogue structure which is wrapped up in a modular framework known as Dialogue as a Service or DaaS. DaaS comprises programming language, execution platform, middleware and knowledge graphs seamlessly integrated into a development environment that allows rapid prototyping of naturalistic dialogue structures.",
+          "id": 17
+    }]],
+    "sessions": [{"chair": "", "location": "", "title": ""}]
   },
   {
     "start": "14:45",
@@ -127,22 +134,22 @@
     "subslots": [[{
           "abstract": "",
           "authors": "What should a personalized user model contain? How much privacy can we sacrifice to build a proper user model?",
-          "id": 5,
+          "id": 13,
           "title": ""
     },{
           "abstract": "",
           "authors": "How to adapt to changing user needs and unobtained goals? (social communication skills, feedback on user performance)",
-          "id": 5,
+          "id": 14,
           "title": ""
     },{
           "abstract": "",
           "authors": "How to prevent high dropout rates with agents? (retain engagement)",
-          "id": 5,
+          "id": 15,
           "title": ""
     },{
           "abstract": "",
           "authors": "What benefits do agents have over traditional apps/forms?",
-          "id": 5,
+          "id": 16,
           "title": ""
     }]]
   },
